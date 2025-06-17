@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>Bienvenue sur luxeEvents.me ✨</h1>
+    <div className="App">
+      <h1>LuxeEvents.me</h1>
       <p>Le luxe, à la portée de tous.</p>
     </div>
   );
