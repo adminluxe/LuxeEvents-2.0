@@ -1,17 +1,11 @@
 import React from 'react';
-import './App.css';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
 
-function App() {
-  return (
-    <div className="App">
-      <h1 style={{ fontFamily: 'serif', fontSize: '3rem', color: '#bfa046', textAlign: 'center', marginTop: '3rem' }}>
-        Le Luxe, à la portée de Tous.
-      </h1>
-      <p style={{ textAlign: 'center', fontStyle: 'italic', color: '#555' }}>
-        Une expérience d'excellence au creux de votre main.
-      </p>
-    </div>
-  );
-}
-
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
