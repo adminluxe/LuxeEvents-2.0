@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LuxeEvents – Le Luxe, à la portée de Tous !</title>
+  <meta name="description" content="LuxeEvents – Créez des événements d’exception sans compromis, alliant raffinement et accessibilité.">
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="font-sans antialiased text-gray-800">
+  <header class="relative bg-gradient-to-r from-purple-800 to-indigo-700 text-white py-32 overflow-hidden">
+    <canvas id="hero-canvas" class="absolute inset-0 opacity-20"></canvas>
+    <div class="relative z-10 max-w-3xl mx-auto text-center px-4 space-y-6">
+      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight hero-title">LuxeEvents</h1>
+      <p class="text-lg md:text-xl">L’Excellence, à la portée de Tous. Transformez vos rêves en événements inoubliables.</p>
+      <a href="#services" class="inline-block bg-white text-purple-800 font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-2xl transition">Découvrir nos offres</a>
+    </div>
+  </header>
+
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-5xl mx-auto text-center space-y-8 px-4">
+      <h2 class="text-3xl font-bold">Nos Prestations d’Exception</h2>
+      <div class="grid gap-8 md:grid-cols-3 mt-8">
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
+          <h3 class="text-2xl font-semibold mb-2">Mariages & Cérémonies</h3>
+          <p class="text-gray-600">Coordination parfaite, décor sur-mesure et moments empreints d’émotion.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
+          <h3 class="text-2xl font-semibold mb-2">Soirées Privées</h3>
+          <p class="text-gray-600">Ambiance raffinée, DJs & artistes de renom, scénographie immersive.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
+          <h3 class="text-2xl font-semibold mb-2">Événements d’Entreprise</h3>
+          <p class="text-gray-600">Séminaires, lancements de produits et galas clés-en-main. Impact garanti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-20">
+    <div class="max-w-xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Contactez-nous</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Votre nom" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400" required>
+        <input type="email" placeholder="Votre email" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400" required>
+        <textarea placeholder="Votre message" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400" required></textarea>
+        <button type="submit" class="w-full bg-indigo-700 text-white py-3 rounded-xl font-semibold hover:bg-indigo-800 transition">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-gray-400 py-6 text-center">
+    <p>© <span id="year"></span> LuxeEvents. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
+    const canvas = document.getElementById("hero-canvas");
+    if (canvas.getContext) {
+      const ctx = canvas.getContext("2d");
+      const w = canvas.width = canvas.offsetWidth;
+      const h = canvas.height = canvas.offsetHeight;
+      const particles = Array.from({length: 80}, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2 + 1,
+        speed: Math.random() * 0.5 + 0.2
+      }));
+      function draw() {
+        ctx.clearRect(0,0,w,h);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, 2*Math.PI);
+          ctx.fillStyle = "white";
+          ctx.fill();
+          p.y -= p.speed;
+          if (p.y < 0) p.y = h;
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
