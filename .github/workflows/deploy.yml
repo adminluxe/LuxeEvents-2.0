@@ -5,49 +5,38 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
-    name: 🔄 Build & Deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v3
+    - name: ⬇️ Checkout code
+      uses: actions/checkout@v4
 
-      - name: 🔧 Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+    - name: 🧰 Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
 
-      - name: 📦 Install dependencies
-        run: npm ci
+    - name: 📦 Install dependencies
+      run: npm install
 
-      - name: 🏗️ Build frontend
-        run: npm run build
+    - name: 🛠 Build project
+      run: npm run build
 
-      - name: 📤 Upload deploy script
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: \${{ secrets.SSH_HOST }}
-          username: \${{ secrets.SSH_USER }}
-          key: \${{ secrets.SSH_PRIVATE_KEY }}
-          source: "deploy/scripts/deploy_frontend.sh"
-          target: "~/deploy/scripts/deploy_frontend.sh"
-          rm: false
+    - name: 📤 Deploy to Purple Server via SCP
+      uses: appleboy/scp-action@master
+      with:
+        host: $\{{ secrets.SERVER_HOST }}
+        username: $\{{ secrets.SERVER_USER }}
+        key: $\{{ secrets.SERVER_KEY }}
+        source: "build/*"
+        target: "/var/www/luxeevents-frontend"
 
-      - name: 🔐 Ensure script is executable
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: \${{ secrets.SSH_HOST }}
-          username: \${{ secrets.SSH_USER }}
-          key: \${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            chmod +x ~/deploy/scripts/deploy_frontend.sh
-
-      - name: 🚀 Run deployment script on server
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          host: \${{ secrets.SSH_HOST }}
-          username: \${{ secrets.SSH_USER }}
-          key: \${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            bash ~/deploy/scripts/deploy_frontend.sh
+    - name: 🔁 Reload NGINX
+      uses: appleboy/ssh-action@master
+      with:
+        host: $\{{ secrets.SERVER_HOST }}
+        username: $\{{ secrets.SERVER_USER }}
+        key: $\{{ secrets.SERVER_KEY }}
+        script: |
+          sudo systemctl reload nginx
