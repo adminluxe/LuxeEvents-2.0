@@ -1,0 +1,29 @@
+[0;1;32m●[0m nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Tue 2025-06-17 07:49:14 CEST; 7h ago
+       Docs: man:nginx(8)
+    Process: 844661 ExecReload=/usr/sbin/nginx -g daemon on; master_process on; -s reload [0;1;31m(code=exited, status=1/FAILURE)[0m
+   Main PID: 1536 (nginx)
+      Tasks: 9 (limit: 9393)
+     Memory: 15.5M
+     CGroup: /system.slice/nginx.service
+             ├─1536 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+             ├─1537 nginx: worker process
+             ├─1538 nginx: worker process
+             ├─1539 nginx: worker process
+             ├─1540 nginx: worker process
+             ├─1541 nginx: worker process
+             ├─1542 nginx: worker process
+             ├─1543 nginx: worker process
+             └─1544 nginx: worker process
+
+juin 17 15:11:15 purple-server systemd[1]: [0;1;39m[0;1;31m[0;1;39mnginx.service: Control process exited, code=exited, status=1/FAILURE[0m
+juin 17 15:11:15 purple-server systemd[1]: [0;1;31m[0;1;39m[0;1;31mReload failed for A high performance web server and a reverse proxy server.[0m
+juin 17 15:16:45 purple-server systemd[1]: Reloading A high performance web server and a reverse proxy server.
+juin 17 15:16:45 purple-server nginx[810231]: nginx: [emerg] open() "/etc/nginx/sites-enabled/luxeevents.me" failed (2: No such file or directory) in /etc/nginx/nginx.conf:62
+juin 17 15:16:45 purple-server systemd[1]: [0;1;39m[0;1;31m[0;1;39mnginx.service: Control process exited, code=exited, status=1/FAILURE[0m
+juin 17 15:16:45 purple-server systemd[1]: [0;1;31m[0;1;39m[0;1;31mReload failed for A high performance web server and a reverse proxy server.[0m
+juin 17 15:17:53 purple-server systemd[1]: Reloading A high performance web server and a reverse proxy server.
+juin 17 15:17:53 purple-server nginx[844661]: nginx: [emerg] open() "/etc/nginx/sites-enabled/luxeevents.me" failed (2: No such file or directory) in /etc/nginx/nginx.conf:62
+juin 17 15:17:53 purple-server systemd[1]: [0;1;39m[0;1;31m[0;1;39mnginx.service: Control process exited, code=exited, status=1/FAILURE[0m
+juin 17 15:17:53 purple-server systemd[1]: [0;1;31m[0;1;39m[0;1;31mReload failed for A high performance web server and a reverse proxy server.[0m
