@@ -8,7 +8,7 @@
   "scripts": {
     "prepare-assets": "bash ../uploads/clean_optimize_rename.sh && bash ../uploads/optimize.sh",
     "dev": "npx kill-port 3000 3001 && vite",
-    "build": "npm run prepare-assets && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {

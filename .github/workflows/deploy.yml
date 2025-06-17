@@ -32,6 +32,7 @@ jobs:
           key: \${{ secrets.SSH_PRIVATE_KEY }}
           source: "deploy/scripts/deploy_frontend.sh"
           target: "~/deploy/scripts/deploy_frontend.sh"
+          rm: false
 
       - name: 🔐 Ensure script is executable
         uses: appleboy/ssh-action@v0.1.6
