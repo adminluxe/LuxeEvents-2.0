@@ -6,38 +6,47 @@ on:
 
 jobs:
   deploy:
+    name: 🔄 Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: 📥 Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: 🔧 Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: 🏗️ Build frontend
         run: npm run build
 
-      - name: Deploy to EC2
-        uses: appleboy/scp-action@master
+      - name: 📤 Upload deploy script
+        uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "build/*"
-          target: "/var/www/luxeevents-frontend"
-          rm: false
+          host: \${{ secrets.SSH_HOST }}
+          username: \${{ secrets.SSH_USER }}
+          key: \${{ secrets.SSH_PRIVATE_KEY }}
+          source: "deploy/scripts/deploy_frontend.sh"
+          target: "~/deploy/scripts/deploy_frontend.sh"
 
-      - name: Reload NGINX
-        uses: appleboy/ssh-action@master
+      - name: 🔐 Ensure script is executable
+        uses: appleboy/ssh-action@v0.1.6
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: \${{ secrets.SSH_HOST }}
+          username: \${{ secrets.SSH_USER }}
+          key: \${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            sudo systemctl reload nginx
+            chmod +x ~/deploy/scripts/deploy_frontend.sh
+
+      - name: 🚀 Run deployment script on server
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: \${{ secrets.SSH_HOST }}
+          username: \${{ secrets.SSH_USER }}
+          key: \${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            bash ~/deploy/scripts/deploy_frontend.sh
