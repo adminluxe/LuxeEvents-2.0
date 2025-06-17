@@ -1,0 +1,14 @@
+[2025-06-18 00:58:55] === Hermès Deploy Start: 2025-06-18_00-58-55 ===
+[2025-06-18 00:58:55] [1] Sauvegarde Frontend → /home/tontoncestcarre/backups/2025-06-18_00-58-55/frontend
+[2025-06-18 00:59:30] [1] Sauvegarde Backend  → /home/tontoncestcarre/backups/2025-06-18_00-58-55/backend
+[2025-06-18 00:59:37] [2] Lancement des tests lint & unit
+[2025-06-18 00:59:39] ❌ Erreur survenue. Abandon.
+[2025-06-18 01:18:34] === Hermès Deploy Start: 2025-06-18_01-18-34 ===
+[2025-06-18 01:18:34] [1] Sauvegarde Frontend → /home/tontoncestcarre/backups/2025-06-18_01-18-34/frontend
+[2025-06-18 01:18:39] [1] Sauvegarde Backend  → /home/tontoncestcarre/backups/2025-06-18_01-18-34/backend
+[2025-06-18 01:18:40] [2] Vérification de la présence des scripts npm pour lint & unit tests
+[2025-06-18 01:18:41] [2] Script 'lint' non trouvé, skipped
+[2025-06-18 01:18:41] [2] Script 'test' non trouvé, skipped
+[2025-06-18 01:18:41] [3] Build Frontend
+[2025-06-18 01:19:21] [3] Build Backend (si applicable)
+[2025-06-18 01:19:25] [4] Commit & push Git
