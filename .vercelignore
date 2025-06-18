@@ -1,0 +1,8 @@
+# Exclure les archives de backup
+*.tar.gz
+
+# Éventuellement :
+node_modules/
+.git/
+.gitignore
+deploy/         # si tu as un dossier de scripts
