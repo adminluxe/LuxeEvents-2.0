@@ -35,8 +35,3 @@ Find out more about deployment here:
 
   https://cra.link/deployment
 
-[main 8b0d546] 🚀 Auto-deploy mer. 18 juin 2025 21:34:20 CEST
- 2 files changed, 59 insertions(+)
- create mode 100644 deploy_frontend_2025-06-18_21-33-03.log
-To github.com:adminluxe/luxeevents-frontend.git
-   b42cc37..8b0d546  main -> main
