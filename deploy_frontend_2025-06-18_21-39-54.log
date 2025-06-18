@@ -35,3 +35,9 @@ Find out more about deployment here:
 
   https://cra.link/deployment
 
+[main 9038d01] 🚀 Auto-deploy mer. 18 juin 2025 21:41:11 CEST
+ 2 files changed, 42 insertions(+)
+ create mode 100644 deploy_frontend_2025-06-18_21-39-54.log
+To github.com:adminluxe/luxeevents-frontend.git
+   8b0d546..9038d01  main -> main
+./deploy_frontend_pipeline.sh: line 33: vercel: command not found
