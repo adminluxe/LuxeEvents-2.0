@@ -12,3 +12,7 @@
 [2025-06-18 01:18:41] [3] Build Frontend
 [2025-06-18 01:19:21] [3] Build Backend (si applicable)
 [2025-06-18 01:19:25] [4] Commit & push Git
+[2025-06-18 01:19:27] [5] Déploiement Vercel via GitHub Actions
+[2025-06-18 01:19:27] [6] Nettoyage node_modules et cache
+[2025-06-18 01:19:30] [7] Notification Slack (via webhook)
+[2025-06-18 01:19:30] === Hermès Deploy End: 2025-06-18_01:19:30 ===
