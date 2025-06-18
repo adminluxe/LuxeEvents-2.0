@@ -40,3 +40,25 @@ Find out more about deployment here:
 
   https://cra.link/deployment
 
+[main 61512b7] 🚀 Auto-deploy mer. 18 juin 2025 20:50:12 CEST
+ 17 files changed, 815 insertions(+), 4 deletions(-)
+ create mode 100644 .env
+ create mode 100644 clean_and_start.sh
+ create mode 100644 deploy_frontend_2025-06-18_20-48-19.log
+ create mode 100755 deploy_frontend_pipeline.sh
+ create mode 100755 deploy_luxeevents.sh
+ create mode 100755 fix_and_start.sh
+ create mode 100755 luxe_magic.sh
+ create mode 100755 mega_clean_start.sh
+ create mode 100755 nova_deploy.sh
+ create mode 100644 public/assets/media/logos/logo-react.svg
+ create mode 100644 public/assets/media/logos/logo192.png
+ create mode 100644 public/assets/media/logos/logo512.png
+ create mode 100755 update_app.sh
+ create mode 100755 update_gallery_css.sh
+ create mode 100755 update_gallery_js.sh
+ssh: Could not resolve hostname github.com: Temporary failure in name resolution
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
