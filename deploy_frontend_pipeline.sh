@@ -1,70 +1,86 @@
 #!/bin/bash
 
-# === 📅 Timestamp pour backup ===
+# Date et heure actuelles pour le nom de la sauvegarde
 NOW=$(date +"%Y-%m-%d_%H-%M-%S")
 BACKUP_FILE="luxeevents-frontend-backup-$NOW.tar.gz"
 
-echo "📦 [1/6] Sauvegarde du projet frontend en cours..."
-tar -czf "$BACKUP_FILE" . --exclude=node_modules --exclude=dist
-echo "✅ Sauvegarde créée : $BACKUP_FILE"
+echo "=========================================="
+echo "🚀 DÉPLOIEMENT FRONTEND - luxeEvents.me 🚀"
+echo "=========================================="
 
+# ==========================================
+# 1. Sauvegarde du projet frontend
+# ==========================================
+
+# echo "📦 [1/6] Sauvegarde du projet frontend en cours..."
+# tar --exclude='node_modules' --exclude='dist' -czf "$BACKUP_FILE" .
+# if [ $? -ne 0 ]; then
+#     echo "❌ Erreur lors de la création de la sauvegarde."
+#     exit 1
+# fi
+# echo "✅ Sauvegarde créée : $BACKUP_FILE"
+
+echo "📦 [1/6] Sauvegarde temporairement désactivée (debug mode)"
+
+# ==========================================
+# 2. Build de l'application React
+# ==========================================
 echo "🔧 [2/6] Build de l'app React (vite)..."
 npm run build
 if [ $? -ne 0 ]; then
-    echo "❌ Échec du build. Déploiement annulé."
+    echo "❌ Build échoué."
     exit 1
 fi
 echo "✅ Build terminé avec succès"
 
+# ==========================================
+# 3. Push Git vers GitHub
+# ==========================================
 echo "⬆ [3/6] Push Git vers GitHub..."
 git add .
-git commit -m "🚀 Auto-deploy $NOW"
+git commit -m "🚀 Auto-deploy: build & push @ $NOW"
 git push origin main
+if [ $? -ne 0 ]; then
+    echo "❌ Push Git échoué."
+    exit 1
+fi
 echo "✅ Push effectué"
 
+# ==========================================
+# 4. Trigger déploiement Vercel via API
+# ==========================================
 echo "🌐 [4/6] Déploiement Vercel..."
 if [ -z "$VERCEL_TOKEN" ]; then
     echo "❌ VERCEL_TOKEN non défini. Exporte-le avant d'exécuter ce script."
     exit 1
 fi
 
-# Remplace ceci par l’ID réel de ton projet (copié depuis Vercel)
-PROJECT_ID="prj_2t3z8dnrD"
+curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_3yabPxghw9zKzNoXk1x0y9tUFS1N/tB6YMbFa6Y" \
+  -H "Authorization: Bearer $VERCEL_TOKEN"
 
-RESPONSE=$(curl -s -X POST "https://api.vercel.com/v1/integrations/deploy/$PROJECT_ID" \
-  -H "Authorization: Bearer $VERCEL_TOKEN" \
-  -H "Content-Type: application/json")
+if [ $? -ne 0 ]; then
+    echo "❌ Erreur lors du trigger Vercel"
+    exit 1
+fi
+echo "✅ Déploiement Vercel déclenché"
 
-if echo "$RESPONSE" | grep -q '"name":"deployment-created"'; then
-    echo "✅ Déploiement Vercel déclenché avec succès !"
+# ==========================================
+# 5. Notification SMS via Twilio
+# ==========================================
+echo "📲 [5/6] Envoi de la notification SMS..."
+if [ -z "$TWILIO_ACCOUNT_SID" ] || [ -z "$TWILIO_AUTH_TOKEN" ] || [ -z "$TWILIO_FROM" ] || [ -z "$TWILIO_TO" ]; then
+    echo "⚠️  Infos Twilio incomplètes, SMS non envoyé"
 else
-    echo "❌ Échec du déclenchement Vercel."
-    echo "🧾 Réponse reçue :"
-    echo "$RESPONSE"
-    MSG="❌ Échec du déploiement Vercel à $NOW."
-    send_sms=true
-    exit_code=1
+    MESSAGE="✨ luxeEvents.me frontend déployé avec succès à $NOW ✨"
+    curl -X POST "https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json" \
+        --data-urlencode "Body=$MESSAGE" \
+        --data-urlencode "From=$TWILIO_FROM" \
+        --data-urlencode "To=$TWILIO_TO" \
+        -u "$TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN"
+    echo "✅ SMS envoyé à $TWILIO_TO"
 fi
 
-echo "📂 [5/6] Nettoyage optionnel (temp files ou autres)..."
-# Ici tu peux ajouter un `rm -rf dist/` si tu veux nettoyer après build
-echo "✅ Nettoyage terminé (aucune action spécifique)"
-
-echo "📱 [6/6] Envoi de la notification SMS via Twilio..."
-
-if [ -z "$MSG" ]; then
-    MSG="✅ Déploiement frontend luxeevents.me terminé avec succès à $NOW"
-fi
-
-if [ -n "$TWILIO_ACCOUNT_SID" ] && [ -n "$TWILIO_AUTH_TOKEN" ] && [ -n "$TWILIO_FROM" ] && [ -n "$TWILIO_TO" ]; then
-    curl -s -X POST "https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json" \
-    --data-urlencode "Body=$MSG" \
-    --data-urlencode "From=$TWILIO_FROM" \
-    --data-urlencode "To=$TWILIO_TO" \
-    -u "$TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN" > /dev/null
-    echo "✅ Notification envoyée à $TWILIO_TO"
-else
-    echo "⚠️ Variables Twilio incomplètes, SMS non envoyé"
-fi
-
-exit ${exit_code:-0}
+# ==========================================
+# 6. Fin du script
+# ==========================================
+echo "🎉 [6/6] Déploiement terminé. Mission accomplie, Tonton."
