@@ -1,86 +1,47 @@
 #!/bin/bash
 
-# Date et heure actuelles pour le nom de la sauvegarde
-NOW=$(date +"%Y-%m-%d_%H-%M-%S")
-BACKUP_FILE="luxeevents-frontend-backup-$NOW.tar.gz"
-
 echo "=========================================="
 echo "🚀 DÉPLOIEMENT FRONTEND - luxeEvents.me 🚀"
 echo "=========================================="
 
-# ==========================================
-# 1. Sauvegarde du projet frontend
-# ==========================================
-
-# echo "📦 [1/6] Sauvegarde du projet frontend en cours..."
-# tar --exclude='node_modules' --exclude='dist' -czf "$BACKUP_FILE" .
-# if [ $? -ne 0 ]; then
-#     echo "❌ Erreur lors de la création de la sauvegarde."
-#     exit 1
-# fi
-# echo "✅ Sauvegarde créée : $BACKUP_FILE"
-
+# 1. Sauvegarde du projet frontend (désactivée en debug pour éviter les erreurs)
 echo "📦 [1/6] Sauvegarde temporairement désactivée (debug mode)"
+# BACKUP_NAME="luxeevents-frontend-backup-$(date +%Y-%m-%d_%H-%M-%S).tar.gz"
+# tar --exclude='node_modules' --exclude='build' -czf "$BACKUP_NAME" . || { echo "❌ Erreur lors de la création de la sauvegarde."; exit 1; }
+# echo "✅ Sauvegarde créée : $BACKUP_NAME"
 
-# ==========================================
-# 2. Build de l'application React
-# ==========================================
+# 2. Build de l'app React
 echo "🔧 [2/6] Build de l'app React (vite)..."
-npm run build
-if [ $? -ne 0 ]; then
-    echo "❌ Build échoué."
-    exit 1
-fi
+npm run build || { echo "❌ Build échoué"; exit 1; }
 echo "✅ Build terminé avec succès"
 
-# ==========================================
 # 3. Push Git vers GitHub
-# ==========================================
 echo "⬆ [3/6] Push Git vers GitHub..."
 git add .
-git commit -m "🚀 Auto-deploy: build & push @ $NOW"
-git push origin main
-if [ $? -ne 0 ]; then
-    echo "❌ Push Git échoué."
-    exit 1
-fi
+git commit -m "Déploiement automatisé $(date '+%Y-%m-%d %H:%M:%S')" || echo "⚠️ Aucun changement à committer"
+git push origin main || { echo "❌ Push Git échoué"; exit 1; }
 echo "✅ Push effectué"
 
-# ==========================================
-# 4. Trigger déploiement Vercel via API
-# ==========================================
+# 4. Déploiement Vercel
 echo "🌐 [4/6] Déploiement Vercel..."
 if [ -z "$VERCEL_TOKEN" ]; then
-    echo "❌ VERCEL_TOKEN non défini. Exporte-le avant d'exécuter ce script."
-    exit 1
+  echo "❌ VERCEL_TOKEN non défini. Exporte-le avant d'exécuter ce script."
+  exit 1
 fi
+vercel deploy --prod --token "$VERCEL_TOKEN" || { echo "❌ Déploiement Vercel échoué"; exit 1; }
+echo "✅ Déploiement terminé"
 
-curl -X POST "https://api.vercel.com/v1/integrations/deploy/prj_3yabPxghw9zKzNoXk1x0y9tUFS1N/tB6YMbFa6Y" \
-  -H "Authorization: Bearer $VERCEL_TOKEN"
-
-if [ $? -ne 0 ]; then
-    echo "❌ Erreur lors du trigger Vercel"
-    exit 1
-fi
-echo "✅ Déploiement Vercel déclenché"
-
-# ==========================================
 # 5. Notification SMS via Twilio
-# ==========================================
-echo "📲 [5/6] Envoi de la notification SMS..."
+echo "📲 [5/6] Envoi de notification SMS..."
 if [ -z "$TWILIO_ACCOUNT_SID" ] || [ -z "$TWILIO_AUTH_TOKEN" ] || [ -z "$TWILIO_FROM" ] || [ -z "$TWILIO_TO" ]; then
-    echo "⚠️  Infos Twilio incomplètes, SMS non envoyé"
+  echo "⚠️ Variables Twilio manquantes, notification SMS annulée."
 else
-    MESSAGE="✨ luxeEvents.me frontend déployé avec succès à $NOW ✨"
-    curl -X POST "https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json" \
-        --data-urlencode "Body=$MESSAGE" \
-        --data-urlencode "From=$TWILIO_FROM" \
-        --data-urlencode "To=$TWILIO_TO" \
-        -u "$TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN"
-    echo "✅ SMS envoyé à $TWILIO_TO"
+  curl -s -X POST https://api.twilio.com/2010-04-01/Accounts/$TWILIO_ACCOUNT_SID/Messages.json \
+  --data-urlencode "To=$TWILIO_TO" \
+  --data-urlencode "From=$TWILIO_FROM" \
+  --data-urlencode "Body=🚀 Déploiement frontend luxeevents.me réussi le $(date '+%Y-%m-%d %H:%M:%S')" \
+  -u $TWILIO_ACCOUNT_SID:$TWILIO_AUTH_TOKEN
+  echo "✅ SMS envoyé"
 fi
 
-# ==========================================
-# 6. Fin du script
-# ==========================================
-echo "🎉 [6/6] Déploiement terminé. Mission accomplie, Tonton."
+echo "🎉 Déploiement complet terminé !"
