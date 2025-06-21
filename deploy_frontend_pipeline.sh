@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'deploy_frontend_pipeline'. Description à compléter.
 
 echo "=========================================="
 echo "🚀 DÉPLOIEMENT FRONTEND - luxeEvents.me 🚀"

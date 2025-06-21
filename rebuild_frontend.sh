@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'rebuild_frontend'. Description à compléter.
 
 echo "🔧 Réinitialisation des fichiers de base React CRA..."
 

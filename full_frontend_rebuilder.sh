@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'full_frontend_rebuilder'. Description à compléter.
 
 set -e
 

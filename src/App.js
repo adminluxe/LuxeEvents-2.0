@@ -1,35 +1,39 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Gallery from './pages/Gallery.js';  // <- extension ajoutée
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-function Home() {
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import EventSlider from "./components/EventSlider";
+import Footer from "./components/Footer";
+import LanguageSwitcher from "./components/LanguageSwitcher";
+
+import "./i18n";
+import "./App.css";
+
+const Nav = () => {
+  const { t } = useTranslation();
   return (
-    <div style={{ marginTop: '2rem' }}>
-      <p>Bienvenue sur la plateforme d’événements les plus chics et audacieux.</p>
-    </div>
+    <nav className="flex justify-between p-4 bg-gray-900 text-white">
+      <Link to="/" className="font-bold text-xl">luxeEvents</Link>
+      <div className="flex items-center space-x-4">
+        <Link to="/events" className="hover:underline">{t("events")}</Link>
+        <LanguageSwitcher />
+      </div>
+    </nav>
   );
-}
+};
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <div className="App">
-        <h1>LuxeEvents.me</h1>
-        <p>Le luxe, à la portée de tous.</p>
-
-        <nav style={{ marginTop: '1rem' }}>
-          <Link to="/" style={{ marginRight: '1rem' }}>Accueil</Link>
-          <Link to="/gallery">Galerie</Link>
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/gallery" element={<Gallery />} />
-        </Routes>
-      </div>
+      <Nav />
+      <main className="mt-4 space-y-16">
+        <Hero />
+        <Services />
+        <EventSlider />
+      </main>
+      <Footer />
     </Router>
   );
 }
-
-export default App;

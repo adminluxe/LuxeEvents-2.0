@@ -1,3 +1,5 @@
+#!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'luxe_magic'. Description à compléter.
 #!/usr/bin/env bash
 
 # --------------------------------------------------

@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'spa_deploy'. Description à compléter.
 
 ## --------------------------------------------------
 ## 🌺 LUXEEVENTS SPA SCRIPT - Version Royale 🌺

@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'force_push_and_fix'. Description à compléter.
 
 echo "🔄 Reset & Préparation du frontend Luxeevents..."
 

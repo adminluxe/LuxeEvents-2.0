@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'update_gallery_js'. Description à compléter.
 mkdir -p src/pages
 
 cat > src/pages/Gallery.js << 'EOF'

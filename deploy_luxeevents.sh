@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'deploy_luxeevents'. Description à compléter.
 
 PAGES_DIR="./src/pages"
 mkdir -p "$PAGES_DIR"

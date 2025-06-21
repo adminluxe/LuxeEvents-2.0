@@ -1,3 +1,5 @@
+#!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'deploy_frontend'. Description à compléter.
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'

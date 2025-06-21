@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'git_cleanup'. Description à compléter.
 echo "🧹 Nettoyage des gros backups .tar.gz du repo Git"
 
 # 1. Supprimer les backups volumineux de l'index Git (sans toucher aux fichiers locaux)

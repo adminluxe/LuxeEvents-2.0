@@ -1,0 +1,30 @@
+{
+  "welcome": "Welcome to luxeEvents",
+  "events": "Events",
+  "activeEvents": "Active Events",
+  "archivedEvents": "Archived Events",
+  "language": "Language",
+  "selectLanguage": "Select Language",
+  "hero": {
+    "title": "Reimagine your events",
+    "subtitle": "Luxury, elegance and innovation for every moment",
+    "cta": "Explore our events"
+  },
+  "services": {
+    "title": "Our Services",
+    "organisation": "Planning",
+    "organisation.desc": "End-to-end event coordination",
+    "scenographie": "Scenography",
+    "scenographie.desc": "Tailor-made decor and staging",
+    "catering": "Catering",
+    "catering.desc": "Premium gourmet experiences"
+  },
+  "eventsSection": {
+    "title": "Upcoming Events",
+    "loading": "Loading events…"
+  },
+  "footer": {
+    "copy": "© 2025 LuxeEvents. All rights reserved.",
+    "contact": "Contact"
+  }
+}

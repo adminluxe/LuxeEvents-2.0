@@ -3,119 +3,106 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="manifest" href="/manifest.json" />
   <title>LuxeEvents – Le Luxe, à la portée de Tous !</title>
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="LuxeEvents – Le luxe à la portée de Tous!" />
-    <meta property="og:description" content="Créez et vivez des événements chics, accessibles et haut de gamme." />
-    <meta property="og:image" content="https://luxeevents.me/assets/og-image.jpg" />
-    <meta property="og:url" content="https://luxeevents.me" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="LuxeEvents – Le luxe à la portée de Tous!" />
-    <meta property="og:description" content="Créez et vivez des événements chics, accessibles et haut de gamme." />
-    <meta property="og:image" content="https://luxeevents.me/assets/og-image.jpg" />
-    <meta property="og:url" content="https://luxeevents.me" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="LuxeEvents – Le luxe à la portée de Tous!" />
-    <meta property="og:description" content="Créez et vivez des événements chics, accessibles et haut de gamme." />
-    <meta property="og:image" content="https://luxeevents.me/assets/og-image.jpg" />
-    <meta property="og:url" content="https://luxeevents.me" />
-    <meta name="twitter:card" content="summary_large_image" />
-  <meta name="description" content="LuxeEvents – Créez des événements d’exception sans compromis, alliant raffinement et accessibilité.">
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-XXXXX-Y');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-XXXXX-Y');</script>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-XXXXX-Y');</script>
+  <meta name="description" content="Créez des événements d’exception sans compromis, alliant raffinement et accessibilité.">
+
+  <!-- Favicon & Manifest -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="LuxeEvents – Le luxe à la portée de Tous!">
+  <meta property="og:description" content="Créez et vivez des événements chics, accessibles et haut de gamme.">
+  <meta property="og:image" content="https://luxeevents.me/assets/og-image.jpg">
+  <meta property="og:url" content="https://luxeevents.me">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Tailwind & GSAP -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
 </head>
-<body class="font-sans antialiased text-gray-800">
-  <header class="relative bg-gradient-to-r from-purple-800 to-indigo-700 text-white py-32 overflow-hidden">
-    <canvas id="hero-canvas" class="absolute inset-0 opacity-20"></canvas>
-    <div class="relative z-10 max-w-3xl mx-auto text-center px-4 space-y-6">
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight hero-title">LuxeEvents</h1>
-      <p class="text-lg md:text-xl">L’Excellence, à la portée de Tous. Transformez vos rêves en événements inoubliables.</p>
-      <a href="#services" class="inline-block bg-white text-purple-800 font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-2xl transition">Découvrir nos offres</a>
-    </div>
+
+<body class="bg-black text-white font-serif antialiased">
+
+  <header class="bg-gradient-to-br from-yellow-400 via-white to-purple-900 py-20 text-center">
+    <h1 class="text-5xl md:text-6xl font-extrabold tracking-wide">LuxeEvents</h1>
+    <p id="welcome-text" class="mt-4 text-xl"></p>
+    <a id="cta-link"
+       href="#services"
+       class="inline-block mt-6 bg-white text-black py-3 px-6 rounded-full shadow-xl hover:bg-yellow-300 transition">
+    </a>
   </header>
 
-  <section id="services" class="py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto text-center space-y-8 px-4">
-      <h2 class="text-3xl font-bold">Nos Prestations d’Exception</h2>
-      <div class="grid gap-8 md:grid-cols-3 mt-8">
-        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
-          <h3 class="text-2xl font-semibold mb-2">Mariages & Cérémonies</h3>
-          <p class="text-gray-600">Coordination parfaite, décor sur-mesure et moments empreints d’émotion.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
-          <h3 class="text-2xl font-semibold mb-2">Soirées Privées</h3>
-          <p class="text-gray-600">Ambiance raffinée, DJs & artistes de renom, scénographie immersive.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
-          <h3 class="text-2xl font-semibold mb-2">Événements d’Entreprise</h3>
-          <p class="text-gray-600">Séminaires, lancements de produits et galas clés-en-main. Impact garanti.</p>
-        </div>
-      </div>
-    </div>
+  <section id="services" class="p-12 text-center">
+    <h2 class="text-3xl font-bold mb-6">Nos Prestations</h2>
+    <!-- Contenu dynamique ou statique ici -->
   </section>
 
-  <section id="contact" class="py-20">
-    <div class="max-w-xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-6">Contactez-nous</h2>
-      <form class="space-y-4">
-        <input type="text" placeholder="Votre nom" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400" required>
-        <input type="email" placeholder="Votre email" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400" required>
-        <textarea placeholder="Votre message" rows="5" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400" required></textarea>
-        <button type="submit" class="w-full bg-indigo-700 text-white py-3 rounded-xl font-semibold hover:bg-indigo-800 transition">Envoyer</button>
-      </form>
-    </div>
+  <section id="contact" class="p-12 bg-gray-900 text-white">
+    <h2 class="text-3xl font-bold text-center mb-6">Contactez-nous</h2>
+    <form id="contact-form" class="max-w-md mx-auto space-y-4">
+      <input type="text" name="name" placeholder="Votre nom"
+             class="w-full p-4 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-400"
+             required>
+      <input type="email" name="email" placeholder="Votre email"
+             class="w-full p-4 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-400"
+             required>
+      <textarea name="message" placeholder="Votre message" rows="5"
+                class="w-full p-4 border border-gray-700 rounded-lg focus:ring-2 focus:ring-indigo-400"
+                required></textarea>
+      <button type="submit"
+              class="w-full bg-indigo-700 text-white py-3 rounded-xl font-semibold hover:bg-indigo-800 transition">
+        Envoyer
+      </button>
+    </form>
   </section>
 
-  <footer class="bg-gray-800 text-gray-400 py-6 text-center">
-    <p>© <span id="year"></span> LuxeEvents. Tous droits réservés.</p>
+  <footer class="text-center py-6 text-gray-400 bg-black">
+    © <span id="year"></span> LuxeEvents. Tous droits réservés.
   </footer>
 
+  <!-- Config backend URL -->
   <script>
-    gsap.from(".hero-title", { opacity: 0, y: -50, duration: 1 });
-    const canvas = document.getElementById("hero-canvas");
-    if (canvas.getContext) {
-      const ctx = canvas.getContext("2d");
-      const w = canvas.width = canvas.offsetWidth;
-      const h = canvas.height = canvas.offsetHeight;
-      const particles = Array.from({length: 80}, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 2 + 1,
-        speed: Math.random() * 0.5 + 0.2
-      }));
-      function draw() {
-        ctx.clearRect(0,0,w,h);
-        particles.forEach(p => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, 2*Math.PI);
-          ctx.fillStyle = "white";
-          ctx.fill();
-          p.y -= p.speed;
-          if (p.y < 0) p.y = h;
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Remplace par la valeur exportée dans ton shell ou dans ton déploiement env
+    const BACKEND_URL = window.BACKEND_URL || 'https://luxeevents-backend-ddcezxmch-adminluxes-projects.vercel.app';
   </script>
+
+  <!-- Chargement multilingue & année -->
+  <script type="module">
+    (async () => {
+      const lang = navigator.language.startsWith('en') ? 'en' : 'fr';
+      const res = await fetch(`/assets/lang/${lang}.json`);
+      const t = await res.json();
+      document.getElementById('welcome-text').textContent = t.welcome;
+      document.getElementById('cta-link').textContent = t.cta;
+      document.getElementById('cta-link').href = '#services';
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <!-- Soumission du formulaire -->
+  <script type="module">
+    document.getElementById('contact-form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const data = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        message: e.target.message.value
+      };
+      try {
+        const res = await fetch(`${BACKEND_URL}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        alert(json.success ? 'Merci, message reçu !' : 'Erreur lors de l’envoi.');
+        e.target.reset();
+      } catch {
+        alert('Impossible de contacter le serveur.');
+      }
+    });
+  </script>
+
 </body>
 </html>

@@ -1,3 +1,5 @@
+#!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'hermes_deploy'. Description à compléter.
 #!/usr/bin/env bash
 
 # --------------------------------------------------

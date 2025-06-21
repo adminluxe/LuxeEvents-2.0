@@ -1,3 +1,5 @@
+#!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'mega_clean_start'. Description à compléter.
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'

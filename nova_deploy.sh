@@ -1,4 +1,5 @@
 #!/bin/bash
+# DESC: Déploie ou exécute automatiquement le script 'nova_deploy'. Description à compléter.
 
 echo "🚀 Nova déploie LuxeEvents avec puissance..."
 
