@@ -1,11 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom"; // ✅ Ajout du bon import
 
 export default function Hero() {
+  /* build-v2.1-test */
   const { t } = useTranslation();
+
   return (
-    <section className="relative h-screen bg-cover bg-center" style={{backgroundImage: "url('/assets/hero-bg.jpg')"}}>
+    <section
+      className="relative h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/assets/hero-bg.jpg')" }} // ✅ Chemin complété
+    >
       <div className="absolute inset-0 bg-black bg-opacity-50" />
       <motion.div
         className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4"
@@ -15,7 +21,10 @@ export default function Hero() {
       >
         <h1 className="text-5xl font-serif mb-4">{t("hero.title")}</h1>
         <p className="text-xl max-w-2xl mb-8">{t("hero.subtitle")}</p>
-        <Link to="/events" className="px-6 py-3 bg-gold-500 hover:bg-gold-600 rounded-lg text-lg">
+        <Link
+          to="/events"
+          className="px-6 py-3 bg-gold-500 hover:bg-gold-600 rounded-lg text-lg"
+        >
           {t("hero.cta")}
         </Link>
       </motion.div>
