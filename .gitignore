@@ -24,3 +24,5 @@ yarn-error.log*
 luxeevents-frontend-backup-*.tar.gz
 .vercel
 *.tar.gz
+/deploy/
+*.sh
