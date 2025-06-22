@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Pragma",         "value": "no-cache" },
+        { "key": "Expires",        "value": "0" }
+      ]
+    }
+  ],
+  "env": {
+    "VITE_API_URL": "https://luxeevents-backend.vercel.app/api",
+    "VITE_BACKEND_URL": "https://luxeevents-backend.vercel.app/api"
+  }
+}
