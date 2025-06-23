@@ -19,13 +19,14 @@
     "react-i18next": "15.5.3",
     "framer-motion": "12.18.1",
     "gsap": "3.13.0",
-    "@vercel/speed-insights": "1.2.0",
     "web-vitals": "5.0.3",
     "autoprefixer": "10.4.21",
+    "tailwindcss": "4.1.10",
     "@tailwindcss/postcss": "4.1.10",
-    "tailwindcss": "4.1.10"
+    "@vercel/speed-insights": "1.2.0"
   },
   "devDependencies": {
+    "vite": "^4.4.9",
     "@vitejs/plugin-react": "^4.2.1",
     "kill-port": "2.0.1",
     "husky": "9.1.7"
