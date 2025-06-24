@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_DIR="\$HOME/purpleorchid/p/web/luxeevents-frontend"
+BASE_DIR="$HOME/purpleorchid/p/web/luxeevents-frontend"
 echo "🔄 Déploiement FRONTEND démarré…"
 
-cd "\$BASE_DIR"
+cd "$BASE_DIR"
 git fetch
 git reset --hard origin/main
 

@@ -1,42 +1,45 @@
-import React from "react";
+import React from 'react';
 
 export default function Home() {
   return (
-    <main style={{ fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif", maxWidth: "900px", margin: "3rem auto", padding: "0 1rem", color: "#222" }}>
-      <section style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <h1 style={{ fontWeight: "900", fontSize: "3rem", color: "#4a148c", letterSpacing: "0.1em" }}>
-          Le luxe n’est plus une question de moyens, mais d’expérience.
-        </h1>
-        <p style={{ fontSize: "1.3rem", marginTop: "1rem", fontWeight: "600", color: "#6a1b9a" }}>
-          Chez LuxeEvents, nous orchestrons des moments uniques, élégants, et accessibles.<br />
-          Laissez-nous sublimer votre prochain événement avec une touche d’excellence sur-mesure.
-        </p>
-        <button style={{ marginTop: "2rem", padding: "1rem 2rem", backgroundColor: "#4a148c", color: "#fff", border: "none", borderRadius: "6px", fontWeight: "700", cursor: "pointer" }}>
-          Demandez un devis
-        </button>
+    <main className="font-sans mx-auto p-4 max-w-4xl">
+      {/* Hero */}
+      <section className="relative h-96 mb-12">
+        <img src="/assets/hero-bg.jpg" alt="Événement Luxeevents" className="w-full h-full object-cover filter brightness-75"/>
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">Luxe &amp; Élégance sur-Mesure</h1>
+          <p className="text-lg md:text-2xl mb-6 max-w-2xl">
+            Chez Luxeevents, chaque instant devient une expérience inoubliable.
+          </p>
+          <a href="/contact" className="px-8 py-3 bg-purple-700 hover:bg-purple-800 rounded-full font-semibold transition">
+            Demander un devis
+          </a>
+        </div>
       </section>
 
-      <section style={{ display: "flex", justifyContent: "space-around", marginBottom: "3rem" }}>
+      {/* Confiance */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold text-purple-800 mb-4">Ils nous font confiance</h2>
+        <blockquote className="italic text-gray-700 border-l-4 border-purple-600 pl-4">
+          “Luxeevents a sublimé notre mariage comme un conte de fées moderne !”<br/>
+          <strong>– Julie & Marc</strong>
+        </blockquote>
+      </section>
+
+      {/* Services */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[
-          { icon: "🎉", title: "Organisation complète", desc: "De la conception à la réalisation, on gère tout." },
-          { icon: "🤝", title: "Coordination Jour J", desc: "Pour que vous profitiez sans souci." },
-          { icon: "✨", title: "Détails personnalisés", desc: "Chaque événement est unique, comme vous." },
-          { icon: "💎", title: "Luxe accessible", desc: "Élégance et raffinement à prix juste." }
-        ].map((service, i) => (
-          <div key={i} style={{ maxWidth: "200px", textAlign: "center" }}>
-            <div style={{ fontSize: "3rem" }}>{service.icon}</div>
-            <h3 style={{ color: "#6a1b9a", marginBottom: "0.5rem" }}>{service.title}</h3>
-            <p style={{ color: "#555" }}>{service.desc}</p>
+          { icon: '🎉', title: 'Organisation complète', desc: 'De la conception à la réalisation, on gère tout.' },
+          { icon: '🤝', title: 'Coordination Jour J', desc: 'Profitez, on s’occupe du reste.' },
+          { icon: '✨', title: 'Détails personnalisés', desc: 'Chaque événement est unique comme vous.' },
+          { icon: '💎', title: 'Luxe accessible', desc: 'Raffinement à prix juste.' }
+        ].map((s,i) => (
+          <div key={i} className="bg-white p-6 rounded-lg shadow">
+            <div className="text-4xl mb-4">{s.icon}</div>
+            <h3 className="text-xl font-semibold text-purple-700 mb-2">{s.title}</h3>
+            <p className="text-gray-600">{s.desc}</p>
           </div>
         ))}
-      </section>
-
-      <section style={{ textAlign: "center", borderTop: "1px solid #ddd", paddingTop: "2rem" }}>
-        <h2 style={{ color: "#4a148c", marginBottom: "1rem" }}>Ils nous font confiance</h2>
-        <blockquote style={{ fontStyle: "italic", color: "#444", maxWidth: "700px", margin: "auto" }}>
-          « LuxeEvents a transformé notre mariage en un conte de fées moderne. Professionnalisme et créativité à l’état pur ! » <br />
-          <strong>- Julie & Marc</strong>
-        </blockquote>
       </section>
     </main>
   );

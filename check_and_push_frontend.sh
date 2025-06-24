@@ -25,6 +25,6 @@ fi
 
 echo "✅ Tous les fichiers sont présents."
 git add "${FILES[@]}"
-git commit -m "chore: vérification frontend avant push"
+git commit -m "chore: verification frontend before push"
 git push
 echo "🚀 Push frontend OK !"

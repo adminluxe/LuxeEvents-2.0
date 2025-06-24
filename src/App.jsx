@@ -1,24 +1,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Hero from './components/Hero';
-import ServicesGrid from './components/ServicesGrid';
-import Events from './pages/Events';
-import Contact from './pages/Contact';
-export default function App() {
+import Gallery from './pages/Gallery.jsx';  // <- extension ajoutée
+import './App.css';
+
+function Home() {
+  return (
+    <div style={{ marginTop: '2rem' }}>
+      <p>Bienvenue sur la plateforme d’événements les plus chics et audacieux.</p>
+    </div>
+  );
+}
+
+function App() {
   return (
     <Router>
-      <nav className="p-6 flex space-x-4">
-        <Link to="/" className="font-bold">Home</Link>
-        <Link to="/events">Événements</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
-      <main className="px-6">
+      <div className="App">
+        <h1>LuxeEvents.me</h1>
+        <p>Le luxe, à la portée de tous.</p>
+
+        <nav style={{ marginTop: '1rem' }}>
+          <Link to="/" style={{ marginRight: '1rem' }}>Accueil</Link>
+          <Link to="/gallery">Galerie</Link>
+        </nav>
+
         <Routes>
-          <Route path="/" element={<><Hero /><ServicesGrid /></>} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
-      </main>
+      </div>
     </Router>
   );
 }
+
+export default App;
