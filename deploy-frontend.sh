@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_DIR="$HOME/purpleorchid/p/web/luxeevents-frontend"
-echo "🔄 Déploiement FRONTEND démarré…"
+# Se positionner dans le répertoire du script
+BASE_DIR="$(cd "\$(dirname "\${BASH_SOURCE[0]}")" && pwd)"
+echo "🔄 Déploiement FRONTEND démarré… (base: $BASE_DIR)"
 
 cd "$BASE_DIR"
 git fetch
