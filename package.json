@@ -1,38 +1,37 @@
 {
   "name": "luxeevents-frontend",
-  "version": "1.0.0",
-  "description": "Frontend de LuxeEvents — La plateforme d’événements chic et accessibles",
-  "author": "TontonCestCarré",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "prepare-assets": "bash ../uploads/clean_optimize_rename.sh && bash ../uploads/optimize.sh",
-    "dev": "npx kill-port 3000 3001 && vite",
+    "dev": "vite",
     "build": "vite build",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "4.1.10",
-    "@tailwindcss/vite": "4.1.10",
-    "@vercel/speed-insights": "1.2.0",
-    "clsx": "2.1.1",
-    "framer-motion": "12.18.1",
-    "gsap": "3.13.0",
-    "i18next": "25.2.1",
-    "i18next-browser-languagedetector": "8.2.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-i18next": "15.5.3",
-    "react-router-dom": "6.30.1",
-    "web-vitals": "5.0.3"
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.10.0",
+    "framer-motion": "^12.19.2",
+    "lucide-react": "^0.525.0",
+    "postcss": "^8.5.6",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11",
+    "workbox-build": "^7.3.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "autoprefixer": "10.4.21",
-    "husky": "9.1.7",
-    "kill-port": "2.0.1",
-    "postcss": "8.5.6",
-    "tailwindcss": "4.1.10",
-    "vite": "^4.5.14"
+    "@eslint/js": "^9.29.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.5.2",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.2.0",
+    "vite": "^7.0.0"
   }
 }
