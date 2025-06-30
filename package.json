@@ -12,11 +12,12 @@
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "axios": "^1.10.0",
-    "framer-motion": "^12.19.2",
+    "framer-motion": "^12.20.1",
     "lucide-react": "^0.525.0",
     "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11",
     "workbox-build": "^7.3.0"

@@ -1,0 +1,62 @@
+/* Conteneur principal du carrousel */
+.carrousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Ajuste la hauteur selon tes besoins */
+  overflow: hidden;
+  background-color: #f7f1e1; /* Ivoire */
+}
+
+/* Wrapper pour les slides */
+.carrousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Chaque slide */
+.carrousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style des images et vidéos */
+.carrousel-image, .carrousel-video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Boutons de navigation */
+.carrousel-prev, .carrousel-next {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  background-color: gold; /* Or */
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.carrousel-prev { left: 20px; }
+.carrousel-next { right: 20px; }
+
+/* Effet au survol des boutons */
+.carrousel-prev:hover, .carrousel-next:hover {
+  background-color: #ffd700; /* Jaune */
+}
+
+/* Responsiveness pour les petits écrans */
+@media screen and (max-width: 768px) {
+  .carrousel-container {
+    padding: 10px;
+  }
+  .carrousel-prev, .carrousel-next {
+    padding: 10px;
+    font-size: 1.5rem;
+  }
+}
