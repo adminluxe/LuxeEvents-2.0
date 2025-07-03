@@ -14,9 +14,13 @@ jobs:
         with:
           node-version: "18"
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production bundle
+        run: npm run build
+
       - name: Serve dist & run LHCI
         run: |
-          npm ci
-          npm run build
           npx serve -s dist -l 8080 &
           npx lhci autorun --url=http://127.0.0.1:8080 --chrome-flags="--no-sandbox --headless"
