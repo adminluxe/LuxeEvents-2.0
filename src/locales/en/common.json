@@ -1,1 +1,5 @@
-{"welcome":"Welcome to Luxeevents","event":"Event"}
+{
+  "hero_title": "Welcome to LuxeEvents",
+  "book_now": "Book now",
+  "newsletter": "Newsletter"
+}

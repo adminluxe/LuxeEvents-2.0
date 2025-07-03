@@ -1,1 +1,5 @@
-{"welcome":"Bienvenue sur Luxeevents","event":"Événement"}
+{
+  "hero_title": "Bienvenue chez LuxeEvents",
+  "book_now": "Réservez maintenant",
+  "newsletter": "Newsletter"
+}

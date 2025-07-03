@@ -1,18 +1,38 @@
 import React from 'react'
-import { Routes,Route } from 'react-router-dom'
-import App from './App'
-import Reserve from './pages/Reserve'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Landing from './pages/Landing'
+import MomentsPage from './pages/MomentsPage'
 import GalleryDetail from './pages/GalleryDetail'
+import Reserve from './pages/Reserve'
 import TestimonialsPage from './pages/TestimonialsPage'
 import ContactPage from './pages/ContactPage'
-export default function Router(){
-  return(
-    <Routes>
-      <Route path="/" element={<App/>}/>
-      <Route path="/reserver" element={<Reserve/>}/>
-      <Route path="/moments" element={<GalleryDetail/>}/>
-      <Route path="/temoignages" element={<TestimonialsPage/>}/>
-      <Route path="/contact" element={<ContactPage/>}/>
+
+// Admin Guard example:
+// const jwt = localStorage.getItem('jwt')
+
+export default function Router() {
+  return (
+    import Layout from "./components/Layout";
+
+<Routes>
+    <Route path="/prestations" element={<Prestations/>} />
+    <Route path="/contact" element={<Contact/>} />
+    <Route path="/admin/login" element={<Layout><AdminLogin/>} />
+    <Route path="/admin/*" element={<Layout><PrivateRoute><AdminDashboard/></PrivateRoute>} />
+    <Route path="/reserver" element={<Layout><ReservationForm/>} />
+    <Route path="/detail/:slug" element={<Layout><GalleryDetail/>} />
+      <Route path="/" element={<Layout><Landing />} />
+      <Route path="/moments" element={<Layout><MomentsPage />} />
+      <Route path="/moments/:slug" element={<Layout><GalleryDetail />} />
+      <Route path="/reserver" element={<Layout><Reserve />} />
+      <Route path="/temoignages" element={<Layout><TestimonialsPage />} />
+      <Route path="/contact" element={<Layout><ContactPage />} />
+      {/*
+      <Route
+        path="/admin-area"
+        element={jwt ? <AdminPage /> : <Navigate to="/" replace />}
+      />
+      */}
     </Routes>
   )
 }

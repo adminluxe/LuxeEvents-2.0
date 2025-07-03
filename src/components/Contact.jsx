@@ -26,7 +26,7 @@ export default function Contact() {
     <section className="py-16 px-4 bg-white">
       <h2 className="text-4xl font-serif text-center mb-8">Contactez-Nous</h2>
       <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <form onSubmit={send} className="flex flex-col gap-4">
+        <form role="region" aria-label="Formulaire de contact" onSubmit={send} className="flex flex-col gap-4">
           <input
             type="text"
             required

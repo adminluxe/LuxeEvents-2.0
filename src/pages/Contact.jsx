@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
+import React from 'react'
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useForm } from 'react-hook-form'
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
+import Card from "../components/ui/Card"
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
+import Card from "../components/ui/Card"
+import { ToastContainer, toast } from 'react-toastify'
+import { useContact } from '../hooks/useContact'
+import Button from '../components/ui/Button'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Contact() {
-  const [form, setForm] = useState({ name:'', email:'', message:'' });
-  const [status, setStatus] = useState('idle');
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const handleChange = e => setForm({...form,[e.target.name]:e.target.value});
-  const handleSubmit = async e => {
-    e.preventDefault();
-    setStatus('sending');
-    try {
-      const res = await fetch('/api/contact', {
-        method:'POST',
-        headers:{ 'Content-Type':'application/json' },
-        body: JSON.stringify(form)
-      });
-      if (res.ok) setStatus('sent');
-      else throw new Error(await res.text());
-    } catch(err) {
-      console.error(err);
-      setStatus('error');
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const schema = yup.object().shape({ name: yup.string().required(), email: yup.string().email().required(), subject: yup.string().required(), message: yup.string().required() });
+  const { register, handleSubmit, reset, formState: { errors } } = useForm({ resolver: yupResolver(schema) });
+  const { submit, loading, error } = useContact()
+
+  const onSubmit = async data => {
+    await submit(data)
+    if (!error) {
+      toast.success('Message envoyé !')
+if(window.fbq) fbq('track','Lead');      _linkedin_data_partner_ids && _linkedin_data_partner_ids.forEach(pid => window.lintrk('track',{ conversion_id: pid, event: 'formSubmission' }));
+      reset()
+    } else {
+      toast.error(error)
     }
-  };
+  }
 
-  return (
-    <main className="max-w-xl mx-auto p-4 font-sans">
-      <h1 className="text-3xl font-bold text-purple-800 mb-6">Contactez-nous</h1>
-      {status === 'sent' ? (
-        <p className="text-green-600">Merci ! Nous vous répondrons sous 24 h.</p>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input required name="name" placeholder="Votre nom" onChange={handleChange}
-            className="w-full p-3 border rounded"/>
-          <input required type="email" name="email" placeholder="Votre email" onChange={handleChange}
-            className="w-full p-3 border rounded"/>
-          <textarea required name="message" rows="5" placeholder="Votre message" onChange={handleChange}
-            className="w-full p-3 border rounded"/>
-          <button type="submit" disabled={status==='sending'}
-            className="px-6 py-3 bg-purple-700 text-white rounded hover:bg-purple-800 transition">
-            {status==='sending'?'Envoi…':'Envoyer'}
-          </button>
-          {status==='error' && <p className="text-red-600">Erreur, réessayez.</p>}
-        </form>
-      )}
-    </main>
-  );
-}
+  return (<motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}>
+  (
+    <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}>
+    <Card className="mx-auto max-w-md p-6">
+      <h2 className="text-2xl font-bold mb-4 text-center">Contactez-nous</h2>
+      <form role="region" aria-label="Formulaire de contact" onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <input {...register("subject")} placeholder="Sujet" className="w-full border px-3 py-2 rounded" />
+        {errors.subject && <p className="text-red-600 text-sm">{errors.subject.message}</p>}
+        <input {...register("subject")} placeholder="Sujet" className="w-full border px-3 py-2 rounded" />
+        <div className="text-sm text-red-600">{errors.subject?.message}</div>
+    </motion.div>

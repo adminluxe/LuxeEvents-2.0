@@ -1,0 +1,33 @@
+name: 🔍 Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Serve dist & run LHCI
+        run: |
+          npm install -g serve @lhci/cli puppeteer
+          export LHCI_CHROME_PATH=$(node -e "console.log(require('puppeteer').executablePath())")
+          serve -s dist -l 8080 &
+          lhci autorun \
+            --url=http://127.0.0.1:8080 \
+            --chrome-flags="--no-sandbox --headless"

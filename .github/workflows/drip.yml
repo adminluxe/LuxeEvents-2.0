@@ -1,0 +1,16 @@
+name: Drip Email
+on:
+  schedule:
+    - cron: '0 9 * * *'
+jobs:
+  drip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: node scripts/emails/drip.js
+        env:
+          SIB_API_KEY: \${{ secrets.SIB_API_KEY }}

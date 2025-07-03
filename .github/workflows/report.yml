@@ -1,0 +1,16 @@
+name: Monthly KPI Report
+on:
+  schedule:
+    - cron: '0 8 1 * *'
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: node scripts/report.js
+        env:
+          GA_SECRET: \${{ secrets.GA_SECRET }}

@@ -1,42 +1,18 @@
-name: 🚀 Deploy Frontend to Purple Server
-
+name: Deploy to Vercel
 on:
   push:
-    branches: [main]
-
+    branches: [ main ]
 jobs:
-  build-and-deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: ⬇️ Checkout code
-      uses: actions/checkout@v4
-
-    - name: 🧰 Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
-
-    - name: 📦 Install dependencies
-      run: npm install
-
-    - name: 🛠 Build project
-      run: npm run build
-
-    - name: 📤 Deploy to Purple Server via SCP
-      uses: appleboy/scp-action@master
-      with:
-        host: $\{{ secrets.SERVER_HOST }}
-        username: $\{{ secrets.SERVER_USER }}
-        key: $\{{ secrets.SERVER_KEY }}
-        source: "build/*"
-        target: "/var/www/luxeevents-frontend"
-
-    - name: 🔁 Reload NGINX
-      uses: appleboy/ssh-action@master
-      with:
-        host: $\{{ secrets.SERVER_HOST }}
-        username: $\{{ secrets.SERVER_USER }}
-        key: $\{{ secrets.SERVER_KEY }}
-        script: |
-          sudo systemctl reload nginx
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with: node-version: '18'
+      - run: npm install
+      - run: npm run build
+      - uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: \${{ secrets.VERCEL_TOKEN }}
+          vercel-args: "--prod"
+          working-directory: ./
