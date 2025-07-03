@@ -1,4 +1,4 @@
-kname: Deploy to Vercel
+name: Deploy to Vercel
 on:
   push:
     branches: [ main ]
