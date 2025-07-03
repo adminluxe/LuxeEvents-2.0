@@ -24,10 +24,12 @@ jobs:
         run: npm ci
 
       - name: Build static site
+          npm ci
         run: npm run build
 
       - name: Serve dist & run LHCI
         run: |
+          npm ci
           npm run build
           npm install -g serve @lhci/cli puppeteer
           export LHCI_CHROME_PATH=$(node -e "console.log(require('puppeteer').executablePath())")
