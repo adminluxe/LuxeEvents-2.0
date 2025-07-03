@@ -11,6 +11,7 @@
     "postbuild": "node build-sw.cjs"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "8.1.0",
     "@hookform/resolvers": "5.1.1",
     "@sentry/react": "9.34.0",
     "@sentry/tracing": "7.120.3",
@@ -38,6 +39,7 @@
     "react-router-dom": "^7.6.3",
     "react-slick": "0.30.3",
     "react-toastify": "11.0.5",
+    "sib-api-v3-sdk": "8.5.0",
     "slick-carousel": "1.8.1",
     "swiper": "^11.2.10",
     "tailwindcss": "^4.1.11",
