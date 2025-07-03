@@ -10,13 +10,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
       - run: npm install
       - run: npm run build
       - uses: amondnet/vercel-action@v20
         with:
-          vercel-token: \${{ secrets.VERCEL_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-args: "--prod"
           working-directory: ./
