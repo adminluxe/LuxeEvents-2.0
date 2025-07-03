@@ -1,16 +1,17 @@
-import React from 'react'
+import { images } from '../data/mediaList'
+import { motion } from 'framer-motion'
 
-export default function Gallery({ images = [] }) {
+export default function Gallery() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      {images.map((src, i) => (
-        <div key={i} className="overflow-hidden rounded-lg shadow-lg">
-          <img
-            src={src}
-            alt={'Moment ' + (i + 1)}
-            className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+    <div className="grid grid-cols-3 gap-4">
+      {images.map(src => (
+        <motion.img
+          key={src}
+          src={src}
+          alt="Événement Luxe"
+          className="rounded-lg shadow-lg"
+          whileHover={{ scale: 1.05 }}
+        />
       ))}
     </div>
   )
