@@ -28,6 +28,7 @@ jobs:
 
       - name: Serve dist & run LHCI
         run: |
+          npm run build
           npm install -g serve @lhci/cli puppeteer
           export LHCI_CHROME_PATH=$(node -e "console.log(require('puppeteer').executablePath())")
           serve -s dist -l 8080 &
