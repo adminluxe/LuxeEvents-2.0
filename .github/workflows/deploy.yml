@@ -15,6 +15,10 @@ jobs:
       - run: npm install
       - run: npm run build
       - uses: amondnet/vercel-action@v20
+      with:
+        vercel-token: ${{ secrets.VERCEL_TOKEN }}
+        vercel-args: "--prod"
+        working-directory: ./
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-args: "--prod"
