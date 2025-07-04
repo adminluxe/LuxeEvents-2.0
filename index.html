@@ -15,5 +15,6 @@
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+<script>if(localStorage.theme==='dark'||(!('theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}document.getElementById('theme-toggle')?.addEventListener('click',()=>{const isDark=document.documentElement.classList.toggle('dark');localStorage.theme=isDark?'dark':'light';});</script>
 </body>
 </html>
