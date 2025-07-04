@@ -2,9 +2,3 @@
   .hero { @apply pt-12 pb-12; }
   .btn-luxe { @apply tracking-wider; }
 }
-EOF && git add src/index.css && git commit -m "fix: ajustements marges Hero & tracking CTA" && git push origin V1
-cat << 'EOF' > src/index.css
-@layer components {
-  .hero { @apply pt-12 pb-12; }
-  .btn-luxe { @apply tracking-wider; }
-}
