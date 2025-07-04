@@ -2,3 +2,21 @@
   .hero { @apply pt-12 pb-12; }
   .btn-luxe { @apply tracking-wider; }
 }
+.hero {
+  position: relative;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 175, 55, 0.3);
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .hero {
+    background-position: top center;
+  }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://luxeevents.me/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/services</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/about</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/blog</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/cases</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/contact</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- ajoute tes pages légales -->
+  <url>
+    <loc>https://luxeevents.me/mentions-legales</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/politique-confidentialite</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://luxeevents.me/cgv</loc>
+    <priority>0.5</priority>
+  </url>
+</urlset>
