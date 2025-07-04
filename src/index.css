@@ -1,60 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-/* On laisse le minimum, tout le reste viendra des classes utilitaires CDN */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-:focus { outline: 3px solid #D4AF37; outline-offset: 2px; }
-:focus { outline: 3px solid #D4AF37; outline-offset: 2px; }
-:focus { outline: 2px solid #D4AF37; outline-offset: 2px; }
-
-/* Applique la typo luxe globalement */
-@layer base {
-  body { font-family: 'Playfair Display', serif; }
-}
-
 @layer components {
-  .btn-luxe {
-    @apply inline-block px-6 py-3 bg-gold text-noir font-semibold uppercase rounded-full shadow-lux-light transition transform;
-  }
-  .btn-luxe:hover {
-    @apply scale-105 shadow-lux-heavy;
-  }
-  .btn-luxe:active { @apply scale-95; }
-
-  .typewriter {
-    overflow: hidden; white-space: nowrap;
-    border-right: 2px solid theme('colors.gold');
-    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
-  }
+  .hero { @apply pt-12 pb-12; }
+  .btn-luxe { @apply tracking-wider; }
 }
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink { 50% { border-color: transparent } }
-
-@layer base {
-  body { cursor: url('/cursor-gold.cur'), auto; }
-  a, button { cursor: url('/cursor-or.cur'), pointer; }
-}
-
+EOF && git add src/index.css && git commit -m "fix: ajustements marges Hero & tracking CTA" && git push origin V1
+cat << 'EOF' > src/index.css
 @layer components {
-  .btn-luxe {
-    @apply inline-block px-6 py-3 bg-gold text-noir font-semibold uppercase rounded-full shadow-lux-soft transition transform;
-  }
-  .btn-luxe:hover {
-    @apply scale-105 shadow-lux-glow;
-  }
-  .btn-luxe:active { @apply scale-95; }
-
-  .typewriter {
-    overflow: hidden; white-space: nowrap;
-    border-right: 2px solid theme('colors.gold');
-    animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
-  }
-}
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink { 50% { border-color: transparent } }
-
-@layer base {
-  body { cursor: url('/cursor-gold.cur'), auto; }
-  a, button { cursor: url('/cursor-or.cur'), pointer; }
+  .hero { @apply pt-12 pb-12; }
+  .btn-luxe { @apply tracking-wider; }
 }
