@@ -1,25 +1,19 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import PatternSlider from './PatternSlider'
-
-const patterns = [
-  { src: '/assets/media/images/img-001.webp', quote: '« L’art de l’événement, réinventé à chaque instant. »' },
-  { src: '/assets/media/images/img-002.webp', quote: '« Vos rêves deviennent spectacle. »' },
-  { src: '/assets/media/images/img-003.webp', quote: '« Un univers sur-mesure, infiniment vôtre. »' },
-]
+import React from "react";
+import { motion } from "framer-motion";
+import { useScrollAnim } from "../hooks/useScrollAnim";
 
 export default function BaroccoSection() {
+  const ref = useScrollAnim(el => el.classList.add("animate-pulse"), { threshold: 0.3 });
   return (
-    <section id="barocco" className="py-20 bg-gradient-to-r from-ivory to-gold">
-      <h2 className="text-5xl font-bold text-center text-noir mb-12">Parcours Haute Couture</h2>
-      <motion.div
-        className="max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <PatternSlider patterns={patterns} />
-      </motion.div>
-    </section>
-  )
+    <motion.section
+      ref={ref}
+      className="py-20 bg-gradient-to-r from-ivory to-gold"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <h2 className="text-4xl font-semibold text-center mb-6">Section Barocco</h2>
+      <p className="max-w-2xl mx-auto text-center">Ton contenu sublime ici…</p>
+    </motion.section>
+  );
 }
