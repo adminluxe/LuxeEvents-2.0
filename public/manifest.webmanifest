@@ -7,17 +7,3 @@
   "background_color": "#FDF9F3",
   "theme_color": "#D4AF37"
 }
-EOF && \
-  git add public/manifest.webmanifest && \
-  git commit -m "feat: update PWA manifest" && \
-  git push origin V1
-cat << 'EOF' > public/manifest.webmanifest
-{
-  "name": "LuxeEvents",
-  "short_name": "LuxeEv",
-  "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }],
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#FDF9F3",
-  "theme_color": "#D4AF37"
-}
