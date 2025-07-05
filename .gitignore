@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Cache Vite
+node_modules/
+node_modules/.vite/
+.pnpm-store/
