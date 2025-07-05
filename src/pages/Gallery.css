@@ -50,7 +50,7 @@
   animation: fadeIn 0.35s ease forwards;
   z-index: 1000;
   cursor: zoom-out;
-  color: #eee;
+  color: var(--ivory);
 }
 .lightbox img {
   max-width: 90%;
@@ -63,7 +63,7 @@
   top: 1.2rem;
   right: 1.5rem;
   font-size: 3rem;
-  color: #eee;
+  color: var(--ivory);
   cursor: pointer;
   user-select: none;
   transition: color 0.2s ease;
