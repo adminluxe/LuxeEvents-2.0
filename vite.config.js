@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [
     react(),
-    VitePWA({
+    new VitePWA({
       registerType: 'autoUpdate',
       manifest: {
         name: 'LuxeEvents',
@@ -22,42 +22,19 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            // Cache les images WebP/PNG/ JPG via CDN
             urlPattern: /^https:\/\/cdn\.luxeevents\.me\/.*\.(png|jpg|jpeg|webp)$/,
             handler: 'CacheFirst',
-            options: {
-              cacheName: 'images-cache',
-              expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 jours
-              }
-            }
+            options: { cacheName: 'images-cache', expiration: { maxEntries: 100, maxAgeSeconds: 2592000 } }
           },
           {
-            // API : network-first pour toujours tenter le live data
             urlPattern: /^https:\/\/api\.luxeevents\.me\/.*$/,
             handler: 'NetworkFirst',
-            options: {
-              cacheName: 'api-cache',
-              networkTimeoutSeconds: 10
-            }
+            options: { cacheName: 'api-cache', networkTimeoutSeconds: 10 }
           }
         ]
       },
-      devOptions: {
-        enabled: true,
-        navigateFallback: '/offline.html'
-      }
+      devOptions: { enabled: false, navigateFallback: '/offline.html' }
     })
   ],
-  build: {
-    // si besoin de customiser le dossier de sortie
-    // outDir: 'dist',
-  },
-  server: {
-    // proxy si tu as un backend en local
-    // proxy: {
-    //   '/api': 'http://localhost:3000'
-    // }
-  }
+  server: { host: true, port: 5173, strictPort: true }
 })

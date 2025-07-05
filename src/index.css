@@ -1,7 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tes composants utilitaires Tailwind */
 @layer components {
-  .hero { @apply pt-12 pb-12; }
+  .hero   { @apply pt-12 pb-12; }
   .btn-luxe { @apply tracking-wider; }
 }
+
+/* Ton CSS “maison” */
 .hero {
   position: relative;
   background-image: url('/background.png');
@@ -19,4 +26,16 @@
   .hero {
     background-position: top center;
   }
+}
+
+/* ── Micro-animations LuxeEvents ───────────────────────────────── */
+.btn-luxe:hover {
+  box-shadow: 0 4px 14px rgba(212,175,55,0.4);
+  transform: translateY(-2px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-icon:hover {
+  filter: brightness(1.1);
+  transition: filter 0.3s ease;
 }
