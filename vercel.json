@@ -4,14 +4,7 @@
     { "src": "dist/**", "use": "@vercel/static" }
   ],
   "routes": [
-    // 1) Si on trouve un fichier dans dist/, on le sert
     { "handle": "filesystem" },
-
-    // 2) Sinon, on renvoie index.html pour garantir
-    //    qu’une route comme /about charge bien dist/index.html
-    {
-      "src": "/.*",
-      "dest": "/dist/index.html"
-    }
+    { "src": "/.*", "dest": "/dist/index.html" }
   ]
 }
