@@ -14,3 +14,4 @@ dist.old/
 .pnpm-store/
 # tes scripts utilitaires
 *.sh
+.vercel
