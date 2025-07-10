@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "description": "Ne pas intercepter les assets statiques",
+  "routes": [
+    {
+      "src": "/assets/.*",
+      "continue": true
+    },
+    {
+      "src": "/sw\\.js",
+      "continue": true
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
+    }
+  ]
+}
