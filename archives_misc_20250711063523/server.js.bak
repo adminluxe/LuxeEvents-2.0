@@ -1,0 +1,45 @@
+// server.js
+import express from 'express';
+import { createServer as createViteServer } from 'vite';
+import { renderPage } from 'vite-plugin-ssr/server';
+
+async function start() {
+  const app = express();
+
+  // 1) Middleware Vite
+  const vite = await createViteServer({
+    root: process.cwd(),
+    server: { middlewareMode: true }
+  });
+  app.use(vite.middlewares);
+
+  // 2) Static assets (post-build)
+  app.use('/assets', express.static('dist/client/assets'));
+  app.use('/', express.static('dist/client'));
+
+  // 3) SSR fallback
+  app.get('*', async (req, res, next) => {
+    try {
+      const url = req.originalUrl;
+      const pageContext = await renderPage({ url });
+      if (!pageContext.httpResponse) return res.status(404).end();
+      res
+        .status(pageContext.httpResponse.statusCode)
+        .send(pageContext.httpResponse.body);
+    } catch (err) {
+      next(err);
+    }
+  });
+
+  // 4) Error handler
+  app.use((err, req, res, next) => {
+    console.error('SSR error:', err);
+    res.status(500).send('Erreur serveur');
+  });
+
+  app.listen(8000, () => {
+    console.log('✅ SSR server running at http://localhost:8000');
+  });
+}
+
+start();

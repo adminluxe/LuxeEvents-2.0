@@ -1,30 +1,4 @@
 {
-  "welcome": "Bienvenue sur luxeEvents",
-  "events": "Événements",
-  "activeEvents": "Événements actifs",
-  "archivedEvents": "Événements archivés",
-  "language": "Langue",
-  "selectLanguage": "Choisir la langue",
-  "hero": {
-    "title": "Réinventez vos événements",
-    "subtitle": "Luxe, élégance et innovation pour chaque instant",
-    "cta": "Explorer nos événements"
-  },
-  "services": {
-    "title": "Nos Services",
-    "organisation": "Organisation",
-    "organisation.desc": "Coordination complète d’événements",
-    "scenographie": "Scénographie",
-    "scenographie.desc": "Décor et mise en scène sur mesure",
-    "catering": "Traiteur",
-    "catering.desc": "Expériences gastronomiques haut de gamme"
-  },
-  "eventsSection": {
-    "title": "Événements à venir",
-    "loading": "Chargement des événements…"
-  },
-  "footer": {
-    "copy": "© 2025 LuxeEvents. Tous droits réservés.",
-    "contact": "Contact"
-  }
+  "welcome": "Le luxe réinventé par l'expérience",
+  "cta": "Demandez un devis"
 }

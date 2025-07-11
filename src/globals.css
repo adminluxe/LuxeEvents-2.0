@@ -1,0 +1,77 @@
+:root {
+  --color-bg-day: #faf9f6;
+  --color-bg-night: #1a1a1a;
+  --color-primary: #e6c17e;
+  --color-text: #333;
+  --color-text-invert: #f5f5f5;
+  --font-size-base: clamp(0.9rem, 1.2vw + 0.1rem, 1.1rem);
+  --spacing-base: 1rem;
+  --hero-opacity: 0.5;
+}
+[data-theme="night"] {
+  --color-bg: var(--color-bg-night);
+  --color-text: var(--color-text-invert);
+}
+[data-theme="day"] {
+  --color-bg: var(--color-bg-day);
+  --color-text: var(--color-text);
+}
+html {
+  font-size: var(--font-size-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background 0.4s, color 0.4s;
+}
+body { margin: 0; line-height: 1.6; }
+
+/* Hero video opacity */
+.hero-bg {
+  opacity: var(--hero-opacity);
+}
+
+/* Cursor désactivé sur mobile */
+@media (max-width: 767px) {
+  .cursor { display: none; }
+}
+
+/* Grilles responsive */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: calc(var(--spacing-base) * 1.5);
+}
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .testimonials { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Boutons luxe */
+a, button {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+a:hover, button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+/* Signature Tonton: background riche pour sections */
+.features, .testimonials {
+  background-image:
+    url("/media/motif.svg"),
+    linear-gradient(135deg, rgba(230,193,126,0.1) 0%, rgba(230,193,126,0.05) 100%);
+  background-size: cover, 100% 100%;
+}
+
+.features > *, .testimonials > * {
+  transition: transform 0.3s;
+}
+.features > *:hover, .testimonials > *:hover {
+  transform: scale(1.02);
+}

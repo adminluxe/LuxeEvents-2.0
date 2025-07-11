@@ -1,0 +1,10 @@
+error when starting preview server:
+Error: [vite-plugin-ssr][Wrong Usage] Cannot run $ vite preview: your app isn't built (the build directory /home/tontoncestcarre/luxeevents-frontend/dist/ is missing). Make sure to run $ vite build before running $ vite preview.
+    at file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite-plugin-ssr@0.4.142_vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0_/node_modules/vite-plugin-ssr/dist/esm/node/plugin/plugins/previewConfig.js:39:13
+    at Array.forEach (<anonymous>)
+    at assertDist (file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite-plugin-ssr@0.4.142_vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0_/node_modules/vite-plugin-ssr/dist/esm/node/plugin/plugins/previewConfig.js:38:50)
+    at file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite-plugin-ssr@0.4.142_vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0_/node_modules/vite-plugin-ssr/dist/esm/node/plugin/plugins/previewConfig.js:28:17
+    at file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0/node_modules/vite/dist/node/chunks/dep-CXCa-anf.js:35663:34
+    at Array.forEach (<anonymous>)
+    at preview (file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0/node_modules/vite/dist/node/chunks/dep-CXCa-anf.js:35663:12)
+    at CAC.<anonymous> (file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0/node_modules/vite/dist/node/cli.js:672:18)

@@ -1,0 +1,11 @@
+export { b as build } from './shared/vite-ssg._hJ3U5xC.mjs';
+import 'node:fs';
+import 'node:fs/promises';
+import 'node:path';
+import 'node:process';
+import 'node:url';
+import '@unhead/dom';
+import 'ansis';
+import 'jsdom';
+import 'vite';
+import './shared/vite-ssg.C6pK7rvr.mjs';

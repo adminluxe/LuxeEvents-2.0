@@ -1,13 +1,15 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  root: 'public',          // <-- ici
-  base: '/',               // racine
   plugins: [react()],
-  server: { port: 3000 },
+  publicDir: 'public',
   build: {
-    outDir: '../dist',     // dossier de sortie relatif à ‘public/’
+    outDir: 'dist',
     emptyOutDir: true
+  },
+  define: {
+    // polyfill global
+    global: 'window'
   }
-});
+})
