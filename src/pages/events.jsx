@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
-import { events, splitEvents } from '../utils/eventsData.js';
+import { events, splitEvents } from '../utils/eventsData.jsx';
 
 const Container = styled.div`
   padding: 2rem;

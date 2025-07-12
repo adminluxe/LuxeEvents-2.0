@@ -1,0 +1,24 @@
+import { ReactNode } from "react"
+import LanguageSwitcher from "@/components/LanguageSwitcher"
+import DarkModeToggle from "@/components/DarkModeToggle"
+import NavBar from "@/components/NavBar"
+import Footer from "@/components/Footer"
+import { Helmet } from "react-helmet"
+
+export default function Layout({ children, title, description, image , title = "LuxeEvents" = "LuxeEvents"}) {
+  return (
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description || ""} />
+        {/* OG tags… */}
+      </Helmet>
+      <NavBar>
+        <LanguageSwitcher />
+        <DarkModeToggle />
+      </NavBar>
+      <main>{children}</main>
+      <Footer />
+    </>
+  )
+}

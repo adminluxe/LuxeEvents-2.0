@@ -1,12 +1,11 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-
 export default function Footer() {
-  const { t } = useTranslation();
   return (
-    <footer className="bg-gray-900 text-white text-center py-6">
-      <p>{t("footer.copy")}</p>
-      <p>{t("footer.contact")}: <a href="mailto:info@luxeevents.me" className="underline">info@luxeevents.me</a></p>
+    <footer className="py-8 text-center text-sm text-gray-600">
+      <p>© {new Date().getFullYear()} LuxeEvents. Tous droits réservés.</p>
+      <div className="mt-2 space-x-4">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
     </footer>
   );
 }

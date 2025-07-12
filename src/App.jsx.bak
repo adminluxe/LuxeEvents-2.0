@@ -1,20 +1,17 @@
 import React from 'react'
-import { ThemeProvider } from './hooks/useTheme'  // ou './contexts/ThemeContext'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/index'
 import About from './pages/about'
 import Contact from './pages/contact'
-// ... tes autres imports de pages
+// ... importe tes autres pages ici
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        {/* ... tes autres routes */}
-      </Routes>
-    </ThemeProvider>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      {/* ajoute tes autres routes */}
+    </Routes>
   )
 }
