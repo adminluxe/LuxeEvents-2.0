@@ -1,4 +1,12 @@
 {
   "welcome": "Le luxe réinventé par l'expérience",
-  "cta": "Demandez un devis"
+  "cta": "Demandez un devis",
+  "home": {
+    "title": "Accueil",
+    "intro": "",
+    "features": [],
+    "services": [],
+    "servicesTitle": "Services",
+    "mapTitle": "Nos événements"
+  }
 }

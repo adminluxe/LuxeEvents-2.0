@@ -8,11 +8,11 @@
   --spacing-base: 1rem;
   --hero-opacity: 0.5;
 }
-[data-theme="night"] {
+[data-theme='night'] {
   --color-bg: var(--color-bg-night);
   --color-text: var(--color-text-invert);
 }
-[data-theme="day"] {
+[data-theme='day'] {
   --color-bg: var(--color-bg-day);
   --color-text: var(--color-text);
 }
@@ -20,9 +20,14 @@ html {
   font-size: var(--font-size-base);
   background: var(--color-bg);
   color: var(--color-text);
-  transition: background 0.4s, color 0.4s;
+  transition:
+    background 0.4s,
+    color 0.4s;
 }
-body { margin: 0; line-height: 1.6; }
+body {
+  margin: 0;
+  line-height: 1.6;
+}
 
 /* Hero video opacity */
 .hero-bg {
@@ -31,7 +36,9 @@ body { margin: 0; line-height: 1.6; }
 
 /* Cursor désactivé sur mobile */
 @media (max-width: 767px) {
-  .cursor { display: none; }
+  .cursor {
+    display: none;
+  }
 }
 
 /* Grilles responsive */
@@ -45,33 +52,48 @@ body { margin: 0; line-height: 1.6; }
   grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
-  .testimonials { grid-template-columns: repeat(2, 1fr); }
+  .testimonials {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Boutons luxe */
-a, button {
+a,
+button {
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
   border: 2px solid var(--color-primary);
   border-radius: 2rem;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
-a:hover, button:hover {
+a:hover,
+button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 10px var(--color-primary);
 }
 
 /* Signature Tonton: background riche pour sections */
-.features, .testimonials {
+.features,
+.testimonials {
   background-image:
-    url("/media/motif.svg"),
-    linear-gradient(135deg, rgba(230,193,126,0.1) 0%, rgba(230,193,126,0.05) 100%);
-  background-size: cover, 100% 100%;
+    url('/media/motif.svg'),
+    linear-gradient(
+      135deg,
+      rgba(230, 193, 126, 0.1) 0%,
+      rgba(230, 193, 126, 0.05) 100%
+    );
+  background-size:
+    cover,
+    100% 100%;
 }
 
-.features > *, .testimonials > * {
+.features > *,
+.testimonials > * {
   transition: transform 0.3s;
 }
-.features > *:hover, .testimonials > *:hover {
+.features > *:hover,
+.testimonials > *:hover {
   transform: scale(1.02);
 }

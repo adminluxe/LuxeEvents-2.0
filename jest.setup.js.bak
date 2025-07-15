@@ -1,0 +1,17 @@
+/** @type {import('@testing-library/jest-dom')} */
+require('@testing-library/jest-dom');
+
+// Polyfill window.matchMedia pour react-slick et autres composants
+if (typeof window.matchMedia !== 'function') {
+  window.matchMedia = function (query) {
+    return {
+      matches: false,
+      media: query,
+      addListener: () => {},      // deprecated
+      removeListener: () => {},   // deprecated
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    };
+  };
+}
