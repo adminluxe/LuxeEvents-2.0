@@ -1,0 +1,50 @@
+import React from 'react'
+import { useTranslation } from 'react-i18next'
+import Layout from '@/components/Layout'
+import { eventsData } from '@/data/events'
+import Map from '@/components/Map'
+import { eventsData } from '@/data/events'
+
+export default function Home() {
+  const { t } = useTranslation()
+  const features = t('home.features', { returnObjects: true })
+  const services = t('home.services',  { returnObjects: true })
+
+  return (
+    <Layout title={t('home.title')}>
+      {/* — Features — */}
+      <section className="my-16">
+        {Array.isArray(features) ? (
+          features.map((f, i) => (
+            <div key={i} className="mb-8">
+              <h2 className="text-xl font-semibold">{f.title}</h2>
+              <p className="mt-2 text-gray-600">{f.desc}</p>
+            </div>
+          ))
+        ) : null}
+      </section>
+
+      {/* — Services — */}
+      <section className="my-16">
+        <h3 className="text-2xl font-bold mb-4">
+          {t('home.servicesTitle')}
+        </h3>
+        <ul className="list-disc list-inside space-y-2">
+          {Array.isArray(services)
+            ? services.map((s, i) => (
+                <li key={i} className="text-gray-700">{s}</li>
+              ))
+            : null}
+        </ul>
+      </section>
+
+      {/* — Carte interactive — */}
+      <section className="my-16">
+        <h2 className="text-2xl font-bold mb-4">
+          {t('home.mapTitle')}
+        </h2>
+        <Map events={eventsData} />
+      </section>
+    </Layout>
+  )
+}

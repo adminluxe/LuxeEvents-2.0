@@ -1,0 +1,13 @@
+.luxury-pulse {
+  animation: pulse 2s infinite;
+  transform-origin: center center;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

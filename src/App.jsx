@@ -1,17 +1,28 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/index'
-import About from './pages/about'
-import Contact from './pages/contact'
-// ... importe tes autres pages ici
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
+import Home from './pages/Home';
+import MediaPage from './pages/MediaPage';
+import RequestQuotePage from './pages/RequestQuotePage';
+import Services from './pages/Services';
+import './i18n';
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      {/* ajoute tes autres routes */}
-    </Routes>
-  )
+    <>
+      <Navbar />
+      <main className="pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/media" element={<MediaPage />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/demande-de-devis" element={<RequestQuotePage />} />
+        </Routes>
+      </main>
+      <Footer />
+    <CookieBanner />
+    </>
+  );
 }

@@ -1,0 +1,28 @@
+/** jest.config.cjs **/
+module.exports = {
+  // ignore le dossier public pour éviter les tests embarqués
+  modulePathIgnorePatterns: ['<rootDir>/public/'],
+
+  // désactive les collisions de nom de module
+  haste: { throwOnModuleCollision: false },
+
+  // environnement DOM
+  testEnvironment: 'jest-environment-jsdom',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+
+  // transforme JS/TS via Babel en mode ESM
+transform: {    '^.+\.[jt]sx?$': 'babel-jest'  },
+  // traite ces extensions comme de l’ESM
+  // extensions reconnues
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
+
+  // on ne cherche les tests que dans src/**/*.test.*
+  testMatch: ['<rootDir>/src/**/*.test.[jt]s?(x)'],
+
+  // alias @ → src et stubs d’assets/styles
+  moduleNameMapper: {
+    '^@\\/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    '\\.(png|jpe?g|gif|webp|ico|svg)$': '<rootDir>/__mocks__/fileMock.js'
+  }
+};

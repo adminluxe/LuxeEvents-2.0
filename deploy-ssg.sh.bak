@@ -1,0 +1,641 @@
+#!/usr/bin/env bash
+export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/XXX/YYY/ZZZ"
+set -euo pipefail
+
+# -------------------------------------------------------------------
+# CONFIGURATION
+# -------------------------------------------------------------------
+CI_PROVIDER=${CI_PROVIDER:-vercel}           # "vercel" ou "netlify"
+BUILD_DIR=dist                               # dossier de build Vite-SSG
+SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-""}   # URL du webhook Slack (optionnel)
+PROJECT_NAME="LuxeEvents Front V1"
+
+# -------------------------------------------------------------------
+# Helpers
+# -------------------------------------------------------------------
+function notify_slack() {
+  local status=$1 msg=$2 color=$3
+  [[ -z "$SLACK_WEBHOOK_URL" ]] && return
+  payload=$(jq -n \
+    --arg title "[$PROJECT_NAME] $status" \
+    --arg text "$msg" \
+    --arg color "$color" \
+    '{
+       attachments:[{
+         color: $color,
+         title: $title,
+         text: $text
+       }]
+    }')
+  curl -s -X POST -H 'Content-type: application/json' \
+       --data "$payload" "$SLACK_WEBHOOK_URL" >/dev/null
+}
+
+trap 'notify_slack "❌ ÉCHEC" "Étape en erreur : $BASH_COMMAND" "danger"; exit 1' ERR
+
+# -------------------------------------------------------------------
+# 1. INSTALLATION
+# -------------------------------------------------------------------
+echo -e "\n🛠️  Installation des dépendances"
+npm ci
+
+# -------------------------------------------------------------------
+# 2. LINT & FORMAT
+# -------------------------------------------------------------------
+echo -e "\n📐 Linting (ESLint)"
+npx eslint "src/**/*.{js,jsx,ts,tsx}"
+
+echo -e "\n🎨 Vérification du format (Prettier)"
+npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,md}"
+
+# -------------------------------------------------------------------
+# 3. TESTS
+# -------------------------------------------------------------------
+echo -e "\n✅ Tests unitaires & couverture (Jest)"
+if [[ -f jest.config.js ]]; then
+  npx jest --coverage --passWithNoTests
+else
+  echo "⚠️  Aucun fichier jest.config.js détecté, tests Jest sautés"
+fi
+
+# -------------------------------------------------------------------
+# 4. SEO: sitemap & robots.txt
+# -------------------------------------------------------------------
+echo -e "\n🌐 Génération sitemap.xml"
+if [[ -f scripts/generate-sitemap.js ]]; then
+#!/usr/bin/env bash
+set -euo pipefail
+
+# -------------------------------------------------------------------
+# CONFIGURATION
+# -------------------------------------------------------------------
+CI_PROVIDER=${CI_PROVIDER:-vercel}           # "vercel" ou "netlify"
+BUILD_DIR=dist                               # dossier de build Vite-SSG
+SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-""}   # URL du webhook Slack (optionnel)
+PROJECT_NAME="LuxeEvents Front V1"
+
+# -------------------------------------------------------------------
+# Helpers
+# -------------------------------------------------------------------
+function notify_slack() {
+  local status=$1 msg=$2 color=$3
+  [[ -z "$SLACK_WEBHOOK_URL" ]] && return
+  payload=$(jq -n \
+    --arg title "[$PROJECT_NAME] $status" \
+    --arg text "$msg" \
+    --arg color "$color" \
+    '{
+       attachments:[{
+         color: $color,
+         title: $title,
+         text: $text
+       }]
+    }')
+  curl -s -X POST -H 'Content-type: application/json' \
+       --data "$payload" "$SLACK_WEBHOOK_URL" >/dev/null
+}
+
+trap 'notify_slack "❌ ÉCHEC" "Étape en erreur : $BASH_COMMAND" "danger"; exit 1' ERR
+
+# -------------------------------------------------------------------
+# 1. INSTALLATION
+# -------------------------------------------------------------------
+echo -e "\n🛠️  Installation des dépendances"
+npm ci
+#!/usr/bin/env bash
+set -euo pipefail
+
+# -------------------------------------------------------------------
+# CONFIGURATION
+# -------------------------------------------------------------------
+CI_PROVIDER=${CI_PROVIDER:-vercel}           # "vercel" ou "netlify"
+BUILD_DIR=dist                               # dossier de build Vite-SSG
+SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-""}   # URL du webhook Slack (optionnel)
+PROJECT_NAME="LuxeEvents Front V1"
+
+# -------------------------------------------------------------------
+# Helpers
+# -------------------------------------------------------------------
+function notify_slack() {
+  local status=$1 msg=$2 color=$3
+  [[ -z "$SLACK_WEBHOOK_URL" ]] && return
+  payload=$(jq -n \
+    --arg title "[$PROJECT_NAME] $status" \
+    --arg text "$msg" \
+    --arg color "$color" \
+    '{
+       attachments:[{
+         color: $color,
+         title: $title,
+         text: $text
+       }]
+    }')
+  curl -s -X POST -H 'Content-type: application/json' \
+       --data "$payload" "$SLACK_WEBHOOK_URL" >/dev/null
+}
+
+trap 'notify_slack "❌ ÉCHEC" "Étape en erreur : $BASH_COMMAND" "danger"; exit 1' ERR
+
+# -------------------------------------------------------------------
+# 1. INSTALLATION
+# -------------------------------------------------------------------
+echo -e "\n🛠️  Installation des dépendances"
+npm ci
+
+# -------------------------------------------------------------------
+# 2. LINT & FORMAT
+# -------------------------------------------------------------------
+echo -e "\n📐 Linting (ESLint)"
+npx eslint "src/**/*.{js,jsx,ts,tsx}"
+
+echo -e "\n🎨 Vérification du format (Prettier)"
+npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,md}"
+#!/usr/bin/env bash
+set -euo pipefail
+
+# -------------------------------------------------------------------
+# CONFIGURATION
+# -------------------------------------------------------------------
+CI_PROVIDER=${CI_PROVIDER:-vercel}           # "vercel" ou "netlify"
+BUILD_DIR=dist                               # dossier de build Vite-SSG
+SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-""}   # URL du webhook Slack (optionnel)
+PROJECT_NAME="LuxeEvents Front V1"
+
+# -------------------------------------------------------------------
+# Helpers
+# -------------------------------------------------------------------
+function notify_slack() {
+  local status=$1 msg=$2 color=$3
+  [[ -z "$SLACK_WEBHOOK_URL" ]] && return
+  payload=$(jq -n \
+    --arg title "[$PROJECT_NAME] $status" \
+    --arg text "$msg" \
+    --arg color "$color" \
+    '{
+       attachments:[{
+         color: $color,
+         title: $title,
+         text: $text
+       }]
+    }')
+  curl -s -X POST -H 'Content-type: application/json' \
+       --data "$payload" "$SLACK_WEBHOOK_URL" >/dev/null
+}
+
+trap 'notify_slack "❌ ÉCHEC" "Étape en erreur : $BASH_COMMAND" "danger"; exit 1' ERR
+
+# -------------------------------------------------------------------
+# 1. INSTALLATION
+# -------------------------------------------------------------------
+echo -e "\n🛠️  Installation des dépendances"
+npm ci
+
+# -------------------------------------------------------------------
+# 2. LINT & FORMAT
+# -------------------------------------------------------------------
+echo -e "\n📐 Linting (ESLint)"
+npx eslint "src/**/*.{js,jsx,ts,tsx}"
+
+echo -e "\n🎨 Vérification du format (Prettier)"
+npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,md}"
+
+# -------------------------------------------------------------------
+# 3. TESTS
+# -------------------------------------------------------------------
+echo -e "\n✅ Tests unitaires & couverture (Jest)"
+if [[ -f jest.config.js ]]; then
+  npx jest --coverage --passWithNoTests
+else
+  echo "⚠️  Aucun fichier jest.config.js détecté, tests Jest sautés"
+fi
+
+# -------------------------------------------------------------------
+# 4. SEO: sitemap & robots.txt
+# -------------------------------------------------------------------
+echo -e "\n🌐 Génération sitemap.xml"
+if [[ -f scripts/generate-sitemap.js ]]; then
+  node scripts/generate-sitemap.js
+else
+  echo "⚠️  script ./scripts/generate-sitemap.js introuvable, créer votre propre générateur"
+fi
+
+echo -e "\n🤖 Génération robots.txt"
+if [[ -f scripts/generate-robots.js ]]; then
+  node scripts/generate-robots.js
+else
+  cat > public/robots.txt <<EOF
+User-agent: *
+Allow: /
+Sitemap: https://votre-domaine.com/sitemap.xml
+EOF
+  echo "→ public/robots.txt créé en fallback"
+fi
+
+# -------------------------------------------------------------------
+# 5. AUDIT ACCESSIBILITÉ & PERF
+# -------------------------------------------------------------------
+echo -e "\n🔍 Audit Lighthouse CI"
+if command -v lhci &>/dev/null; then
+  lhci autorun --config=./lighthouserc.js
+else
+  echo "⚠️  lhci non installé globalement, installez le paquet @lhci/cli"
+fi
+
+# -------------------------------------------------------------------
+# 6. BUILD VITE-SSG
+# -------------------------------------------------------------------
+echo -e "\n⚙️  Build production (Vite-SSG)"
+npm run build
+
+# -------------------------------------------------------------------
+# 7. DÉPLOIEMENT
+# -------------------------------------------------------------------
+echo -e "\n🚀 Déploiement sur $CI_PROVIDER"
+if [[ "$CI_PROVIDER" == "vercel" ]]; then
+  vercel --prod --confirm
+elif [[ "$CI_PROVIDER" == "netlify" ]]; then
+  netlify deploy --dir=$BUILD_DIR --prod
+else
+  echo "❌ Fournisseur CI invalide : $CI_PROVIDER"
+  exit 1
+fi
+
+notify_slack "✅ Succès" "La front v1 de LuxeEvents est en ligne !" "good"
+echo -e "\n🎉 Déploiement terminé — en route vers le tapis rouge ! 🎬\n"
+
+Points à vérifier / ajuster
+
+    Permissions
+    Rendre le script exécutable :
+
+chmod +x deploy-ssg.sh
+
+Scripts dans package.json
+Vous pouvez ajouter ces scripts pour simplifier :
+
+{
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,md}'",
+    "test": "jest",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "generate:robots": "node scripts/generate-robots.js",
+    "build": "vite-ssg build"
+  }
+}
+# -------------------------------------------------------------------
+# 3. TESTS
+# -------------------------------------------------------------------
+echo -e "\n✅ Tests unitaires & couverture (Jest)"
+if [[ -f jest.config.js ]]; then
+  npx jest --coverage --passWithNoTests
+else
+  echo "⚠️  Aucun fichier jest.config.js détecté, tests Jest sautés"
+fi
+
+# -------------------------------------------------------------------
+# 4. SEO: sitemap & robots.txt
+# -------------------------------------------------------------------
+echo -e "\n🌐 Génération sitemap.xml"
+if [[ -f scripts/generate-sitemap.js ]]; then
+  node scripts/generate-sitemap.js
+else
+  echo "⚠️  script ./scripts/generate-sitemap.js introuvable, créer votre propre générateur"
+fi
+
+echo -e "\n🤖 Génération robots.txt"
+if [[ -f scripts/generate-robots.js ]]; then
+  node scripts/generate-robots.js
+else
+  cat > public/robots.txt <<EOF
+User-agent: *
+Allow: /
+Sitemap: https://votre-domaine.com/sitemap.xml
+EOF
+  echo "→ public/robots.txt créé en fallback"
+fi
+
+# -------------------------------------------------------------------
+# 5. AUDIT ACCESSIBILITÉ & PERF
+# -------------------------------------------------------------------
+echo -e "\n🔍 Audit Lighthouse CI"
+if command -v lhci &>/dev/null; then
+  lhci autorun --config=./lighthouserc.js
+else
+  echo "⚠️  lhci non installé globalement, installez le paquet @lhci/cli"
+fi
+
+# -------------------------------------------------------------------
+# 6. BUILD VITE-SSG
+# -------------------------------------------------------------------
+echo -e "\n⚙️  Build production (Vite-SSG)"
+npm run build
+
+# -------------------------------------------------------------------
+# 7. DÉPLOIEMENT
+# -------------------------------------------------------------------
+echo -e "\n🚀 Déploiement sur $CI_PROVIDER"
+if [[ "$CI_PROVIDER" == "vercel" ]]; then
+  vercel --prod --confirm
+elif [[ "$CI_PROVIDER" == "netlify" ]]; then
+  netlify deploy --dir=$BUILD_DIR --prod
+else
+  echo "❌ Fournisseur CI invalide : $CI_PROVIDER"
+  exit 1
+fi
+
+notify_slack "✅ Succès" "La front v1 de LuxeEvents est en ligne !" "good"
+echo -e "\n🎉 Déploiement terminé — en route vers le tapis rouge ! 🎬\n"
+
+Points à vérifier / ajuster
+
+    Permissions
+    Rendre le script exécutable :
+
+chmod +x deploy-ssg.sh
+
+Scripts dans package.json
+Vous pouvez ajouter ces scripts pour simplifier :
+
+{
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,md}'",
+    "test": "jest",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "generate:robots": "node scripts/generate-robots.js",
+    "build": "vite-ssg build"
+  }
+}
+# -------------------------------------------------------------------
+# 2. LINT & FORMAT
+# -------------------------------------------------------------------
+echo -e "\n📐 Linting (ESLint)"
+npx eslint "src/**/*.{js,jsx,ts,tsx}"
+
+echo -e "\n🎨 Vérification du format (Prettier)"
+npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,md}"
+
+# -------------------------------------------------------------------
+# 3. TESTS
+# -------------------------------------------------------------------
+echo -e "\n✅ Tests unitaires & couverture (Jest)"
+if [[ -f jest.config.js ]]; then
+  npx jest --coverage --passWithNoTests
+else
+  echo "⚠️  Aucun fichier jest.config.js détecté, tests Jest sautés"
+fi
+
+# -------------------------------------------------------------------
+# 4. SEO: sitemap & robots.txt
+# -------------------------------------------------------------------
+echo -e "\n🌐 Génération sitemap.xml"
+if [[ -f scripts/generate-sitemap.js ]]; then
+  node scripts/generate-sitemap.js
+else
+  echo "⚠️  script ./scripts/generate-sitemap.js introuvable, créer votre propre générateur"
+fi
+
+echo -e "\n🤖 Génération robots.txt"
+if [[ -f scripts/generate-robots.js ]]; then
+  node scripts/generate-robots.js
+else
+  cat > public/robots.txt <<EOF
+User-agent: *
+A#!/usr/bin/env bash
+set -euo pipefail
+
+# -------------------------------------------------------------------
+# CONFIGURATION
+# -------------------------------------------------------------------
+CI_PROVIDER=${CI_PROVIDER:-vercel}           # "vercel" ou "netlify"
+BUILD_DIR=dist                               # dossier de build Vite-SSG
+SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-""}   # URL du webhook Slack (optionnel)
+PROJECT_NAME="LuxeEvents Front V1"
+
+# -------------------------------------------------------------------
+# Helpers
+# -------------------------------------------------------------------
+function notify_slack() {
+  local status=$1 msg=$2 color=$3
+  [[ -z "$SLACK_WEBHOOK_URL" ]] && return
+  payload=$(jq -n \
+    --arg title "[$PROJECT_NAME] $status" \
+    --arg text "$msg" \
+    --arg color "$color" \
+    '{
+       attachments:[{
+         color: $color,
+         title: $title,
+         text: $text
+       }]
+    }')
+  curl -s -X POST -H 'Content-type: application/json' \
+       --data "$payload" "$SLACK_WEBHOOK_URL" >/dev/null
+}
+
+trap 'notify_slack "❌ ÉCHEC" "Étape en erreur : $BASH_COMMAND" "danger"; exit 1' ERR
+
+# -------------------------------------------------------------------
+# 1. INSTALLATION
+# -------------------------------------------------------------------
+echo -e "\n🛠️  Installation des dépendances"
+npm ci
+
+# -------------------------------------------------------------------
+# 2. LINT & FORMAT
+# -------------------------------------------------------------------
+echo -e "\n📐 Linting (ESLint)"
+npx eslint "src/**/*.{js,jsx,ts,tsx}"
+
+echo -e "\n🎨 Vérification du format (Prettier)"
+npx prettier --check "src/**/*.{js,jsx,ts,tsx,css,md}"
+
+# -------------------------------------------------------------------
+# 3. TESTS
+# -------------------------------------------------------------------
+echo -e "\n✅ Tests unitaires & couverture (Jest)"
+if [[ -f jest.config.js ]]; then
+  npx jest --coverage --passWithNoTests
+else
+  echo "⚠️  Aucun fichier jest.config.js détecté, tests Jest sautés"
+fi
+
+# -------------------------------------------------------------------
+# 4. SEO: sitemap & robots.txt
+# -------------------------------------------------------------------
+echo -e "\n🌐 Génération sitemap.xml"
+if [[ -f scripts/generate-sitemap.js ]]; then
+  node scripts/generate-sitemap.js
+else
+  echo "⚠️  script ./scripts/generate-sitemap.js introuvable, créer votre propre générateur"
+fi
+
+echo -e "\n🤖 Génération robots.txt"
+if [[ -f scripts/generate-robots.js ]]; then
+  node scripts/generate-robots.js
+else
+  cat > public/robots.txt <<EOF
+User-agent: *
+Allow: /
+Sitemap: https://votre-domaine.com/sitemap.xml
+EOF
+  echo "→ public/robots.txt créé en fallback"
+fi
+
+# -------------------------------------------------------------------
+# 5. AUDIT ACCESSIBILITÉ & PERF
+# -------------------------------------------------------------------
+echo -e "\n🔍 Audit Lighthouse CI"
+if command -v lhci &>/dev/null; then
+  lhci autorun --config=./lighthouserc.js
+else
+  echo "⚠️  lhci non installé globalement, installez le paquet @lhci/cli"
+fi
+
+# -------------------------------------------------------------------
+# 6. BUILD VITE-SSG
+# -------------------------------------------------------------------
+echo -e "\n⚙️  Build production (Vite-SSG)"
+npm run build
+
+# -------------------------------------------------------------------
+# 7. DÉPLOIEMENT
+# -------------------------------------------------------------------
+echo -e "\n🚀 Déploiement sur $CI_PROVIDER"
+if [[ "$CI_PROVIDER" == "vercel" ]]; then
+  vercel --prod --confirm
+elif [[ "$CI_PROVIDER" == "netlify" ]]; then
+  netlify deploy --dir=$BUILD_DIR --prod
+else
+  echo "❌ Fournisseur CI invalide : $CI_PROVIDER"
+  exit 1
+fi
+
+notify_slack "✅ Succès" "La front v1 de LuxeEvents est en ligne !" "good"
+echo -e "\n🎉 Déploiement terminé — en route vers le tapis rouge ! 🎬\n"
+
+Points à vérifier / ajuster
+
+    Permissions
+    Rendre le script exécutable :
+
+chmod +x deploy-ssg.sh
+
+Scripts dans package.json
+Vous pouvez ajouter ces scripts pour simplifier :
+
+{
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,md}'",
+    "test": "jest",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "generate:robots": "node scripts/generate-robots.js",
+    "build": "vite-ssg build"
+  }
+}llow: /
+Sitemap: https://votre-domaine.com/sitemap.xml
+EOF
+  echo "→ public/robots.txt créé en fallback"
+fi
+
+# -------------------------------------------------------------------
+# 5. AUDIT ACCESSIBILITÉ & PERF
+# -------------------------------------------------------------------
+echo -e "\n🔍 Audit Lighthouse CI"
+if command -v lhci &>/dev/null; then
+  lhci autorun --config=./lighthouserc.js
+else
+  echo "⚠️  lhci non installé globalement, installez le paquet @lhci/cli"
+fi
+
+# -------------------------------------------------------------------
+# 6. BUILD VITE-SSG
+# -------------------------------------------------------------------
+echo -e "\n⚙️  Build production (Vite-SSG)"
+npm run build
+
+# -------------------------------------------------------------------
+# 7. DÉPLOIEMENT
+# -------------------------------------------------------------------
+echo -e "\n🚀 Déploiement sur $CI_PROVIDER"
+if [[ "$CI_PROVIDER" == "vercel" ]]; then
+  vercel --prod --confirm
+elif [[ "$CI_PROVIDER" == "netlify" ]]; then
+  netlify deploy --dir=$BUILD_DIR --prod
+else
+  echo "❌ Fournisseur CI invalide : $CI_PROVIDER"
+  exit 1
+fi
+
+notify_slack "✅ Succès" "La front v1 de LuxeEvents est en ligne !" "good"
+echo -e "\n🎉 Déploiement terminé — en route vers le tapis rouge ! 🎬\n"
+
+Points à vérifier / ajuster
+
+    Permissions
+    Rendre le script exécutable :
+
+chmod +x deploy-ssg.sh
+
+Scripts dans package.json
+Vous pouvez ajouter ces scripts pour simplifier :
+
+{
+  "scripts": {
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,md}'",
+    "test": "jest",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
+    "generate:robots": "node scripts/generate-robots.js",
+    "build": "vite-ssg build"
+  }
+}  node scripts/generate-sitemap.js
+else
+  echo "⚠️  script ./scripts/generate-sitemap.js introuvable, créer votre propre générateur"
+fi
+
+echo -e "\n🤖 Génération robots.txt"
+if [[ -f scripts/generate-robots.js ]]; then
+  node scripts/generate-robots.js
+else
+  cat > public/robots.txt <<EOF
+User-agent: *
+Allow: /
+Sitemap: https://votre-domaine.com/sitemap.xml
+EOF
+  echo "→ public/robots.txt créé en fallback"
+fi
+
+# -------------------------------------------------------------------
+# 5. AUDIT ACCESSIBILITÉ & PERF
+# -------------------------------------------------------------------
+echo -e "\n🔍 Audit Lighthouse CI"
+if command -v lhci &>/dev/null; then
+  lhci autorun --config=./lighthouserc.js
+else
+  echo "⚠️  lhci non installé globalement, installez le paquet @lhci/cli"
+fi
+
+# -------------------------------------------------------------------
+# 6. BUILD VITE-SSG
+# -------------------------------------------------------------------
+echo -e "\n⚙️  Build production (Vite-SSG)"
+npm run build
+
+# -------------------------------------------------------------------
+# 7. DÉPLOIEMENT
+# -------------------------------------------------------------------
+echo -e "\n🚀 Déploiement sur $CI_PROVIDER"
+if [[ "$CI_PROVIDER" == "vercel" ]]; then
+  vercel --prod --confirm
+elif [[ "$CI_PROVIDER" == "netlify" ]]; then
+  netlify deploy --dir=$BUILD_DIR --prod
+else
+  echo "❌ Fournisseur CI invalide : $CI_PROVIDER"
+  exit 1
+fi
+
+notify_slack "✅ Succès" "La front v1 de LuxeEvents est en ligne !" "good"
+echo -e "\n🎉 Déploiement terminé — en route vers le tapis rouge ! 🎬\n"

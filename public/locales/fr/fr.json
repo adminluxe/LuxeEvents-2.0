@@ -1,0 +1,45 @@
+{
+  "home": {
+    "title": "Bienvenue chez LuxeEvents",
+    "intro": "Orchestrez des événements inoubliables, alliant élégance et simplicité.",
+    "services": [
+      "Organisation complète de mariages & réceptions",
+      "Conception de décors sur-mesure",
+      "Coordination & logistique clés en main"
+    ],
+    "mapTitle": "Nos événements",
+    "servicesTitle": "Services",
+    "features": []
+  },
+  "about": {
+    "title": "À propos de LuxeEvents",
+    "intro": "Depuis 2010, nous sublimons vos moments d’exception avec passion et raffinement.",
+    "history": "Née d’une passion pour l’art de recevoir, notre agence s’appuie sur un réseau d’experts triés sur le volet pour transformer vos rêves en réalité."
+  },
+  "gallery": {
+    "title": "Galerie",
+    "intro": "Quelques-unes de nos réalisations pour vous inspirer.",
+    "images": []
+  },
+  "quote": {
+    "title": "Ils nous ont fait confiance",
+    "reviews": [
+      {
+        "author": "Alice & Thomas",
+        "text": "Un mariage de rêve, sans aucun stress !"
+      },
+      {
+        "author": "Marie D.",
+        "text": "Service impeccable et décor somptueux."
+      },
+      {
+        "author": "Julien L.",
+        "text": "Des pros à l’écoute et d’excellentes idées."
+      }
+    ]
+  },
+  "services": {
+    "title": "Nos services",
+    "cta": "Pour un devis personnalisé, contactez-nous sans attendre."
+  }
+}

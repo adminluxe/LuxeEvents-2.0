@@ -1,0 +1,45 @@
+{
+  "home": {
+    "title": "Welcome to LuxeEvents",
+    "intro": "Crafting unforgettable events with elegance and ease.",
+    "services": [
+      "Full wedding & reception planning",
+      "Custom event design",
+      "Turnkey coordination & logistics"
+    ],
+    "mapTitle": "Our Events",
+    "servicesTitle": "Services",
+    "features": []
+  },
+  "about": {
+    "title": "About LuxeEvents",
+    "intro": "Since 2010, we've been creating exceptional moments with passion and style.",
+    "history": "Born from a love of hospitality, our agency leverages a curated network of experts to bring your dreams to life."
+  },
+  "gallery": {
+    "title": "Gallery",
+    "intro": "A showcase of our finest creations.",
+    "images": []
+  },
+  "quote": {
+    "title": "What our clients say",
+    "reviews": [
+      {
+        "author": "Alice & Thomas",
+        "text": "A dream wedding without any stress!"
+      },
+      {
+        "author": "Marie D.",
+        "text": "Impeccable service and stunning decor."
+      },
+      {
+        "author": "Julien L.",
+        "text": "Professionals who really listen and have great ideas."
+      }
+    ]
+  },
+  "services": {
+    "title": "Our Services",
+    "cta": "For a personalized quote, contact us now."
+  }
+}
