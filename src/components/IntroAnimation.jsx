@@ -1,30 +1,35 @@
-import React, { useEffect, useRef } from 'react';
-import lottie from 'lottie-web';
-import animationData from '../../public/assets/luxeevents-intro.json';
+import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import animationData from "@/assets/luxeevents-intro.json";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function IntroAnimation() {
-  const container = useRef(null);
+export default function IntroAnimation({ onFinish }) {
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: container.current,
-      renderer: 'svg',
-      loop: false,
-      autoplay: true,
-      animationData,
-    });
-
     const timer = setTimeout(() => {
-      container.current.style.display = 'none';
-    }, 3000); // cache après 3 secondes
-
-    return () => {
-      anim.destroy();
-      clearTimeout(timer);
-    };
-  }, []);
+      setIsVisible(false);
+      if (onFinish) onFinish();
+    }, 4000); // Durée de l’animation (ajuste si nécessaire)
+    return () => clearTimeout(timer);
+  }, [onFinish]);
 
   return (
-    <div ref={container} className="fixed inset-0 bg-white z-50 flex items-center justify-center" />
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <Lottie
+            animationData={animationData}
+            loop={false}
+            className="w-80 h-80 sm:w-96 sm:h-96"
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

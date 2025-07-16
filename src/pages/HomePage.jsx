@@ -1,12 +1,20 @@
+import ThemeToggle from "@/components/ThemeToggle";
 import React from 'react';
-import HeroSection from '../components/HeroSection';
+import HeroSection from "@/components/HeroSection";
+import NextSection from "@/components/NextSection";
+import SwiperStory from "@/components/SwiperStory";
+import TimelineSection from "@/components/TimelineSection";
+import RevealSection from "@/components/RevealSection";
 import IntroAnimation from '../components/IntroAnimation';
 
 export default function HomePage() {
   return (
-    <>
-      <IntroAnimation />
+    <div className="min-h-screen scroll-snap-y overflow-y-scroll h-screen">
       <HeroSection />
-    </>
+      <NextSection />
+      <SwiperStory />
+      <TimelineSection />
+      <RevealSection />
+    </div>
   );
 }
