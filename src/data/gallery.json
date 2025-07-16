@@ -1,0 +1,15 @@
+[
+  { "type": "image", "src": "/media/event1.jpg" },
+  { "type": "image", "src": "/media/event2.jpg" },
+  { "type": "image", "src": "/media/event3.jpg" },
+  { "type": "image", "src": "/media/media-1.jpg" },
+  { "type": "image", "src": "/media/media-1.png" },
+  { "type": "image", "src": "/media/media-2.jpg" },
+  { "type": "image", "src": "/media/media-2.png" },
+  { "type": "video", "src": "/media/media-3.mp4" },
+  { "type": "image", "src": "/media/media-3.png" },
+  { "type": "image", "src": "/media/media-4.png" },
+  { "type": "image", "src": "/media/media-5.png" },
+  { "type": "image", "src": "/media/media-6.png" },
+  { "type": "image", "src": "/media/media-7.png" }
+]

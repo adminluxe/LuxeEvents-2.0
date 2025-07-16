@@ -1,41 +1,31 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
     es2021: true,
-    node: true
-  },
-  globals: {
-    t: 'readonly'
-  },
-  parserOptions: {
-    ecmaVersion: 12,
-    sourceType: 'module',
-    ecmaFeatures: { jsx: true }
-  },
-  settings: {
-    react: { version: 'detect' }
   },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier'
+    'plugin:prettier/recommended',
   ],
-  plugins: [
-    'react',
-    'react-hooks',
-    'jsx-a11y',
-    'prettier'
-  ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier'],
   rules: {
-    'react/prop-types': 'off',
-    'react/react-in-jsx-scope': 'off',
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^(useTranslation|t)$' }],
-    'react/no-unescaped-entities': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
-    'jsx-a11y/no-static-element-interactions': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    'prettier/prettier': ['error', { endOfLine: 'auto' }]
-  }
+    'react/jsx-no-undef': 'error',
+    'prettier/prettier': 'warn',
+    'react/react-in-jsx-scope': 'off', // utile si tu utilises React 17+
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
 };

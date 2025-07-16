@@ -4,5 +4,5 @@ module.exports = {
   ignoredBuiltDependencies: [],
 
   // On peut définir d'autres hooks ici si besoin
-  hooks: {}
-}
+  hooks: {},
+};

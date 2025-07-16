@@ -18,7 +18,7 @@ export default function CookieBanner() {
   return (
     <div className="fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 p-4 z-50 shadow-md">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-gray-700 text-center sm:text-left">
+        <p className="text-sm text-gray-700 text-center sm:text-center">
           Nous utilisons des cookies pour améliorer votre expérience sur LuxeEvents.
         </p>
         <button

@@ -12,12 +12,15 @@
     "test": "jest"
   },
   "dependencies": {
+    "@headlessui/react": "2.2.4",
+    "embla-carousel-react": "8.6.0",
     "framer-motion": "12.18.1",
     "gsap": "3.13.0",
     "i18next": "25.2.1",
     "leaflet": "1.9.4",
     "lottie-react": "2.4.1",
     "lottie-web": "5.13.0",
+    "lucide-react": "0.525.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "6.1.0",

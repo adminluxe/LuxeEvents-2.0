@@ -16,7 +16,7 @@ module.exports = {
   },
 
   // Extensions qu’on veut tester + importer
-  moduleFileExtensions: ['js','jsx','ts','tsx','json','node'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
 
   // Où chercher les tests
   testMatch: ['<rootDir>/src/**/*.test.[jt]s?(x)'],
@@ -30,4 +30,4 @@ module.exports = {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(png|jpe?g|gif|webp|ico|svg)$': '<rootDir>/__mocks__/fileMock.js',
   },
-}
+};

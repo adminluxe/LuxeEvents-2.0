@@ -79,11 +79,7 @@ button:hover {
 .testimonials {
   background-image:
     url('/media/motif.svg'),
-    linear-gradient(
-      135deg,
-      rgba(230, 193, 126, 0.1) 0%,
-      rgba(230, 193, 126, 0.05) 100%
-    );
+    linear-gradient(135deg, rgba(230, 193, 126, 0.1) 0%, rgba(230, 193, 126, 0.05) 100%);
   background-size:
     cover,
     100% 100%;
