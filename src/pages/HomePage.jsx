@@ -11,7 +11,7 @@ import IntroAnimation from '../components/IntroAnimation';
 export default function HomePage() {
   return (
     <div className="min-h-screen scroll-snap-y overflow-y-scroll h-screen">
-      <HeroSection />
+      <section id="hero"><HeroSection /></section>
       <NextSection />
       <SwiperStory />
       <TimelineSection />
