@@ -1,5 +1,6 @@
 import ThemeToggle from "@/components/ThemeToggle";
 import React from 'react';
+import useIntroSound from "@/hooks/useIntroSound";import MuteToggle from "@/components/MuteToggle";
 import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
 import SwiperStory from "@/components/SwiperStory";
