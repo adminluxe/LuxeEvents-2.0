@@ -4,3 +4,15 @@ body {
   background-color: #ffffff;
   font-family: sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
