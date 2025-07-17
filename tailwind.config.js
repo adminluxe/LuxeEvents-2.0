@@ -21,3 +21,4 @@ export default {
   plugins: [],
 }
 
+  plugins: [require("@tailwindcss/scroll-snap")],
