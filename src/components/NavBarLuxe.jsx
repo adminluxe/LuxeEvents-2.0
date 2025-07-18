@@ -7,11 +7,11 @@ export default function NavBarLuxe() {
       <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         <Link to="/" className="text-xl font-bold tracking-wide text-[#d4af37]">
           LuxeEvents
-        </Link>
+        </a>
         <div className="flex gap-6 text-sm font-medium">
-          <Link to="/media" className="hover:text-[#d4af37]">Galerie</Link>
-          <Link to="/services" className="hover:text-[#d4af37]">Services</Link>
-          <Link to="/quote" className="hover:text-[#d4af37]">Devis</Link>
+          <Link to="/media" className="hover:text-[#d4af37]">Galerie</a>
+          <Link to="/services" className="hover:text-[#d4af37]">Services</a>
+          <Link to="/quote" className="hover:text-[#d4af37]">Devis</a>
         </div>
       </nav>
     </header>
