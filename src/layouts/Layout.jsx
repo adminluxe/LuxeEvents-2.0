@@ -1,5 +1,5 @@
-// src/layouts/Layout.jsx
 import TopBarControls from "@/components/TopBarControls";
+import NavBarLuxe from "@/components/NavBarLuxe";
 
 export default function Layout({ children }) {
   return (
@@ -9,6 +9,7 @@ export default function Layout({ children }) {
     >
       <div className="absolute inset-0 bg-black/60 z-0" />
       <TopBarControls />
+      <NavBarLuxe />
       <main className="relative z-10">{children}</main>
     </div>
   );
