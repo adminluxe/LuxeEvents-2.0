@@ -2,12 +2,12 @@ import React from "react";
 
 export default function GalleryPreview() {
   const images = [
-    "/media/images/demo1.jpg",
-    "/media/images/demo2.jpg",
-    "/media/images/demo3.jpg",
-    "/media/images/demo4.jpg",
-    "/media/images/demo5.jpg",
-    "/media/images/demo6.jpg"
+    "/media/images/gallery-1.webp",
+    "/media/images/gallery-2.webp",
+    "/media/images/gallery-3.webp",
+    "/media/images/gallery-4.webp",
+    "/media/images/gallery-5.webp",
+    "/media/images/gallery-6.webp"
   ];
 
   return (

@@ -1,17 +1,24 @@
 #!/bin/bash
 
-echo "🎨 Application des retouches finales LuxeEvents..."
+echo "🚀 Correction des chemins d'image dans GalleryPreview..."
+sed -i 's/demo1.jpg/gallery-1.webp/' src/components/GalleryPreview.jsx
+sed -i 's/demo2.jpg/gallery-2.webp/' src/components/GalleryPreview.jsx
+sed -i 's/demo3.jpg/gallery-3.webp/' src/components/GalleryPreview.jsx
+sed -i 's/demo4.jpg/gallery-4.webp/' src/components/GalleryPreview.jsx
+sed -i 's/demo5.jpg/gallery-5.webp/' src/components/GalleryPreview.jsx
+sed -i 's/demo6.jpg/gallery-6.webp/' src/components/GalleryPreview.jsx
 
-# 💅 Retarder l'apparition du menu circulaire (scrollY > 200)
-sed -i 's|if (window.scrollY > 100)|if (window.scrollY > 200)|' src/components/CircularMenu.jsx
+echo "🎯 Mise à jour des ancres dans NavBarLuxe..."
+sed -i 's#<Link to="/media">#<a href="#gallery">#' src/components/NavBarLuxe.jsx
+sed -i 's#<Link to="/services">#<a href="#services">#' src/components/NavBarLuxe.jsx
+sed -i 's#<Link to="/quote">#<a href="#quote">#' src/components/NavBarLuxe.jsx
+sed -i 's#</Link>#</a>#g' src/components/NavBarLuxe.jsx
 
-# 🔇 Réduire la profondeur d’arrière-plan du bouton (plus léger)
-sed -i 's|bg-black/70|bg-black/50|' src/components/CircularMenu.jsx
+echo "🧠 Insertion SEO dans HomePage.jsx..."
+grep -q "react-helmet" src/pages/HomePage.jsx || sed -i '1i import { Helmet } from "react-helmet";' src/pages/HomePage.jsx
+sed -i '/<Layout>/i \ \ \ \ <Helmet>\n \ \ \ \ \ \ <title>LuxeEvents – Événements haut de gamme à Bruxelles</title>\n \ \ \ \ \ \ <meta name="description" content="Organisation d’événements élégants à Bruxelles – mariages, soirées, corporate. Devis gratuit." />\n \ \ \ \ \ \ <meta property="og:title" content="LuxeEvents – Le luxe à la portée de tous" />\n \ \ \ \ \ \ <meta property="og:image" content="/media/images/luxeevents-bg-hero.webp" />\n \ \ \ \ </Helmet>' src/pages/HomePage.jsx
 
-# ↕️ Plus d’espace entre les boutons circulaires
-sed -i 's|space-y-3|space-y-4|' src/components/CircularMenu.jsx
+echo "🔗 Ajout du favicon dans index.html..."
+sed -i '/<head>/a\ \ \ \ <link rel="icon" href="/favicon.ico" />' index.html
 
-# 📱 Améliorer la zone tactile sur mobile
-sed -i 's|p-4|p-6|' src/components/CircularMenu.jsx
-
-echo "✅ Retouches appliquées. Relance avec pnpm run build && vercel --prod"
+echo "✅ Terminé. Tu peux maintenant commit + deploy !"
