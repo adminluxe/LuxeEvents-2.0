@@ -1,3 +1,5 @@
+import Layout from "@/layouts/Layout";
+import Layout from "@/layouts/Layout";
 import ThemeToggle from "@/components/ThemeToggle";
 import React from 'react';
 import CircularMenu from "@/components/CircularMenu";
@@ -11,6 +13,8 @@ import IntroAnimation from '../components/IntroAnimation';
 
 export default function HomePage() {
   return (
+    <Layout>
+    <Layout>
     <div className="min-h-screen scroll-snap-y overflow-y-scroll h-screen">
       <section id="hero"><HeroSection /></section>
       <NextSection />
