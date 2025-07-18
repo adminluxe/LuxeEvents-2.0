@@ -1,37 +1,15 @@
 import React from "react";
-import ImageCard from "@/components/ImageCard";
-
-const imagePaths = [
-  "/media/images/photo-001.webp",
-  "/media/images/photo-002.webp",
-  "/media/images/photo-003.webp"
-];
-
-const videoPaths = [
-  "/media/videos/video-001.mp4",
-  "/media/videos/video-002.mp4"
-];
 
 export default function MediaPage() {
   return (
-    <div className="relative min-h-screen p-6 pt-24 text-white">
+    <div className="relative min-h-screen flex flex-col justify-center items-center text-white text-center px-6 pt-32">
       <div className="absolute inset-0 bg-black/40 -z-10" />
-      <h2 className="text-4xl md:text-5xl font-bold text-[#d4af37] mb-8 text-center drop-shadow-lg">
-        Galerie immersive
+      <h2 className="text-4xl md:text-5xl font-bold text-[#d4af37] mb-4 drop-shadow-lg">
+        Bientôt une galerie immersive...
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {imagePaths.map((src, i) => (
-          <ImageCard key={i} src={src} alt={`Photo ${i + 1}`} />
-        ))}
-        {videoPaths.map((src, i) => (
-          <video
-            key={`video-${i}`}
-            src={src}
-            controls
-            className="aspect-[4/3] w-full rounded-2xl shadow-lg border border-[#d4af37] bg-black/20 backdrop-blur-sm object-cover"
-          />
-        ))}
-      </div>
+      <p className="text-white/70 max-w-xl">
+        Des images, des vidéos et des souvenirs inoubliables, soigneusement sélectionnés pour vous plonger dans notre univers.
+      </p>
     </div>
   );
 }
