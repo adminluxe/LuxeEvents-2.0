@@ -1,30 +1,39 @@
 import React from "react";
+import FadeUpWrapper from "@/components/FadeUpWrapper";
 
 const testimonials = [
   {
-    quote: "Une expérience exceptionnelle. L’équipe a sublimé notre mariage au-delà de nos attentes.",
-    name: "Sophie & Julien"
+    name: "Sophie D.",
+    feedback: "Un mariage magique, organisé de main de maître. LuxeEvents, c'est du haut niveau.",
+    location: "Bruxelles",
   },
   {
-    quote: "Professionnalisme, créativité, écoute. LuxeEvents a transformé notre événement corporate en chef-d’œuvre.",
-    name: "Émilie R."
+    name: "Amine B.",
+    feedback: "Anniversaire inoubliable. Équipe sérieuse, déco sublime. Merci !",
+    location: "Etterbeek",
   },
   {
-    quote: "Merci pour cette organisation parfaite. Tout était fluide, beau et élégant.",
-    name: "Karim B."
-  }
+    name: "Léa M.",
+    feedback: "Notre événement pro a bluffé tous les invités. Bravo pour l'élégance.",
+    location: "Uccle",
+  },
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 text-center text-white px-6">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#d4af37] mb-8">Témoignages</h2>
-      <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <section id="testimonials" className="py-16 bg-black/30 backdrop-blur-md text-white text-center">
+      <FadeUpWrapper>
+        <h2 className="text-4xl font-bold text-[#d4af37] mb-8">Témoignages</h2>
+      </FadeUpWrapper>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
         {testimonials.map((t, i) => (
-          <div key={i} className="bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-[#d4af37]">
-            <p className="italic text-white/80 mb-4">“{t.quote}”</p>
-            <p className="font-semibold text-[#d4af37]">{t.name}</p>
-          </div>
+          <FadeUpWrapper delay={i * 0.2} key={i}>
+            <div className="p-6 bg-white/10 border border-[#d4af37] rounded-xl shadow-lg">
+              <p className="italic mb-4">“{t.feedback}”</p>
+              <p className="font-semibold">{t.name}</p>
+              <p className="text-sm text-white/60">{t.location}</p>
+            </div>
+          </FadeUpWrapper>
         ))}
       </div>
     </section>

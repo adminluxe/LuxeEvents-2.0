@@ -1,6 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Layout from "@/layouts/Layout";
+import Testimonials from "@/components/Testimonials";
+import QuoteForm from "@/components/QuoteForm";
+import MapSection from "@/components/MapSection";
+import FooterLuxe from "@/components/FooterLuxe";
 import HeroSection from "@/components/HeroSection";
 import GalleryPreview from "@/components/GalleryPreview";
 import ServicesSection from "@/components/ServicesSection";
@@ -25,6 +29,10 @@ export default function HomePage() {
         <Testimonials />
         <QuoteForm />
         <Footer />
+        <Testimonials />
+        <QuoteForm />
+        <MapSection />
+        <FooterLuxe />
       </Layout>
     </>
   );
