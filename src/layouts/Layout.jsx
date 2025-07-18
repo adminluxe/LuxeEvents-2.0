@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <div className="absolute inset-0 bg-black/60 z-0" />
       <TopBarControls />
       <NavBarLuxe />
-      <main className="relative z-10">{children}</main>
+      <main className="relative z-10 max-w-screen-xl mx-auto px-6">{children}</main>
     </div>
   );
 }
