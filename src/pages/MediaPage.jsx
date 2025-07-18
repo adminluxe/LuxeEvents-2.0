@@ -1,13 +1,16 @@
 import React from "react";
 import ImageCard from "@/components/ImageCard";
 
-const imagePaths = Array.from({ length: 25 }, (_, i) =>
-  `/media/images/photo-${String(i + 1).padStart(3, "0")}.webp`
-);
+const imagePaths = [
+  "/media/images/photo-001.webp",
+  "/media/images/photo-002.webp",
+  "/media/images/photo-003.webp"
+];
 
-const videoPaths = Array.from({ length: 8 }, (_, i) =>
-  `/media/videos/video-${String(i + 1).padStart(3, "0")}.mp4`
-);
+const videoPaths = [
+  "/media/videos/video-001.mp4",
+  "/media/videos/video-002.mp4"
+];
 
 export default function MediaPage() {
   return (
