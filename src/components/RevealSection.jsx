@@ -20,7 +20,7 @@ export default function RevealSection() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        <h2 className="text-3xl font-luxury text-yellow-600 mb-4">Une révélation immersive</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#d4af37] drop-shadow-lg">Une révélation immersive</h2>
         <p className="text-lg text-gray-800">
           Découvrez la magie derrière chaque événement : élégance, lumière, émotion.
           LuxeEvents ne se contente pas d’organiser, il révèle une nouvelle expérience du luxe.
