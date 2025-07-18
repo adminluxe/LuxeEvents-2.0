@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import LottieLoader from "@/components/LottieLoader";
 import { AnimatePresence, motion } from "framer-motion";
 import HomePage from "@/pages/HomePage";
+import LottieLoader from "@/components/LottieLoader";
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const location = useLocation();
 
   if (!loaded) return <LottieLoader onFinish={() => setLoaded(true)} />;
-  const location = useLocation();
 
   return (
     <AnimatePresence mode="wait">
