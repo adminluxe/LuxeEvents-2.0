@@ -1,26 +1,18 @@
 import { motion } from "framer-motion";
 import useIntroSound from "@/hooks/useIntroSound";
+import { useEffect } from "react";
 import MuteToggle from "@/components/MuteToggle";
 
 export default function HeroSection() {
   const { audioRef, muted, toggleMute } = useIntroSound();
-import { useEffect } from "react";
 
-
-
-useEffect(() => {
-
-  const played = sessionStorage.getItem("introPlayed");
-
-  if (!played && audioRef.current) {
-
-    audioRef.current.play().catch(() => {});
-
-    sessionStorage.setItem("introPlayed", "true");
-
-  }
-
-}, []);
+  useEffect(() => {
+    const played = sessionStorage.getItem("introPlayed");
+    if (!played && audioRef.current) {
+      audioRef.current.play().catch(() => {});
+      sessionStorage.setItem("introPlayed", "true");
+    }
+  }, []);
 
   return (
     <section
