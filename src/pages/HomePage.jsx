@@ -1,5 +1,6 @@
 import ThemeToggle from "@/components/ThemeToggle";
 import React from 'react';
+import CircularMenu from "@/components/CircularMenu";
 import useIntroSound from "@/hooks/useIntroSound";import MuteToggle from "@/components/MuteToggle";
 import HeroSection from "@/components/HeroSection";
 import NextSection from "@/components/NextSection";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <SwiperStory />
       <TimelineSection />
       <RevealSection />
+        {/* Menu circulaire */}\n        <CircularMenu />
     </div>
   );
 }

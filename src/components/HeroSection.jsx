@@ -4,11 +4,28 @@ import MuteToggle from "@/components/MuteToggle";
 
 export default function HeroSection() {
   const { audioRef, muted, toggleMute } = useIntroSound();
+import { useEffect } from "react";
+
+
+
+useEffect(() => {
+
+  const played = sessionStorage.getItem("introPlayed");
+
+  if (!played && audioRef.current) {
+
+    audioRef.current.play().catch(() => {});
+
+    sessionStorage.setItem("introPlayed", "true");
+
+  }
+
+}, []);
 
   return (
     <section
       className="h-screen w-full bg-cover bg-center scroll-snap-start relative"
-      style={{ backgroundImage: "url('/images/hero.jpg')" }}
+      style={{ backgroundImage: "url('/media/images/photo-016.webp')" }}
     >
       <audio ref={audioRef} src="/sounds/luxeevents-intro-sound.mp3" preload="auto" />
       <MuteToggle muted={muted} toggle={toggleMute} />

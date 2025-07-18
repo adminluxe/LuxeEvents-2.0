@@ -1,50 +1,33 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-
-const slides = [
-  {
-    title: "Notre genèse",
-    description: "LuxeEvents est né d’un rêve : rendre le luxe accessible sans compromis.",
-    image: "/images/story-1.jpg",
-  },
-  {
-    title: "Une vision élégante",
-    description: "Une nouvelle ère d’événementiel immersive, poétique, raffinée.",
-    image: "/images/story-2.jpg",
-  },
-  {
-    title: "Un futur en mouvement",
-    description: "L’innovation au service de l’émotion, pour chaque instant de vie.",
-    image: "/images/story-3.jpg",
-  },
-];
 
 export default function SwiperStory() {
-  const [emblaRef] = useEmblaCarousel({ loop: true });
+  const slides = [
+    { img: "/media/images/photo-002.webp", txt: "Des souvenirs impérissables…" },
+    { img: "/media/images/photo-004.webp", txt: "L’art de la mise en scène…" },
+    { img: "/media/images/photo-013.webp", txt: "Le raffinement à chaque instant" },
+  ];
+
   return (
-    <section className="h-screen w-full bg-black text-white scroll-snap-start overflow-hidden">
-      <div className="overflow-hidden h-full" ref={emblaRef}>
-        <div className="flex h-full">
-          {slides.map((slide, index) => (
-            <motion.div
-              key={index}
-              className="min-w-full h-full flex flex-col items-center justify-center bg-cover bg-center px-8"
-              style={{ backgroundImage: `url(${slide.image})` }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl sm:text-5xl font-bold text-yellow-400 drop-shadow-md">
-                {slide.title}
-              </h2>
-              <p className="mt-4 max-w-xl text-lg text-ivory backdrop-blur">
-                {slide.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+    <section id="story" className="scroll-snap-start w-full h-screen bg-ivory flex items-center justify-center px-4">
+      <div className="max-w-4xl w-full space-y-12 text-center">
+        {slides.map((s, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <img
+              src={s.img}
+              onError={(e) => (e.currentTarget.src = "/media/images/placeholder.jpg")}
+              alt={`Slide ${i}`}
+              className="mx-auto max-h-[480px] object-cover rounded-xl shadow-lg"
+            />
+            <p className="text-xl text-gold font-medium">{s.txt}</p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
