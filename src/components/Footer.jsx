@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-center text-sm text-gray-600 py-4 mt-8">
-      © 2025 LuxeEvents – Tous droits réservés.
+    <footer className="text-center text-white py-6 bg-black/30 backdrop-blur-sm text-sm">
+      <p>© 2025 LuxeEvents. Tous droits réservés.</p>
+      <p className="mt-2">
+        <a href="/mentions-legales" className="underline text-white/70 hover:text-[#d4af37]">Mentions légales</a> |{" "}
+        <a href="/rgpd" className="underline text-white/70 hover:text-[#d4af37]">Politique de confidentialité</a>
+      </p>
     </footer>
   );
 }
