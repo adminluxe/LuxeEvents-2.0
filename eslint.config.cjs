@@ -1,18 +1,18 @@
-import eslint from 'eslint';
+const eslint = require('eslint');
 const { ESLint } = eslint;
 
-export default [
+module.exports = [
   {
     languageOptions: {
-      parser: '@babel/eslint-parser', // Utilisation du parser pour JSX et TSX
+      parser: '@babel/eslint-parser',
       globals: {
-        window: 'readonly', // Définir  comme global en lecture seule
-        document: 'readonly', // Définir  comme global en lecture seule
+        window: 'readonly',
+        document: 'readonly',
       },
     },
     plugins: {
-      react: require('eslint-plugin-react'),  // Plugin React
-      'jsx-a11y': require('eslint-plugin-jsx-a11y'),  // Plugin JSX-a11y
+      react: require('eslint-plugin-react'),
+      'jsx-a11y': require('eslint-plugin-jsx-a11y'),
     },
     extends: [
       'eslint:recommended',
