@@ -1,0 +1,34 @@
+[🌈] Lancement de la fusion frontend de luxeEvents.me...
+
+[🔁] Fichier .env mis à jour avec l'URL du backend : https://luxeevents-backend-ikburifob-adminluxes-projects.vercel.app
+[🧹] Nettoyage & installation des dépendances...
+
+added 99 packages, and audited 100 packages in 13s
+
+12 packages are looking for funding
+  run `npm fund` for details
+
+2 moderate severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+[🏗️ ] Construction de la symphonie frontend...
+
+> luxeevents-frontend@1.0.0 build
+> vite build
+
+vite v4.5.14 building for production...
+transforming...
+✓ 4 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/index.html                7.66 kB │ gzip: 4.97 kB
+../dist/assets/index-967b5c4b.js  1.55 kB │ gzip: 0.83 kB
+✓ built in 502ms
+[🚀] Déploiement Vercel frontend...
+[✅] Frontend déployé avec succès sur : https://luxeevents-frontend-okdsteev4-adminluxes-projects.vercel.app
+\n🎉 Déploiement complet : frontend en ligne et connecté au backend.\n
+🌐 FRONTEND : https://luxeevents-frontend-okdsteev4-adminluxes-projects.vercel.app
+🧠 BACKEND  : https://luxeevents-backend-ikburifob-adminluxes-projects.vercel.app

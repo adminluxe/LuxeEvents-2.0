@@ -1,0 +1,43 @@
+
+up to date, audited 1371 packages in 13s
+
+277 packages are looking for funding
+  run `npm fund` for details
+
+9 vulnerabilities (3 moderate, 6 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+> luxeevents-frontend@1.0.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  53.17 kB  build/static/js/main.49f98a27.js
+  785 B     build/static/css/main.471cf035.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+[main 9038d01] 🚀 Auto-deploy mer. 18 juin 2025 21:41:11 CEST
+ 2 files changed, 42 insertions(+)
+ create mode 100644 deploy_frontend_2025-06-18_21-39-54.log
+To github.com:adminluxe/luxeevents-frontend.git
+   8b0d546..9038d01  main -> main
+./deploy_frontend_pipeline.sh: line 33: vercel: command not found

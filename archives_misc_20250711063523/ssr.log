@@ -1,0 +1,73 @@
+[vite-plugin-ssr][Warning] The vite-plugin-ssr project has been renamed to Vike, see https://vite-plugin-ssr.com/vike
+11:28:07 [vite-plugin-ssr][Warning] Crawling your user files took an unexpected long time (2145ms). Create a new issue on vite-plugin-ssr's GitHub.
+✅ SSR server running at http://localhost:8000
+11:28:42 [vite] page reload prerender/index.html
+11:28:42 [vite-plugin-ssr][Warning] `pageContextInit.url` has been renamed to `pageContextInit.urlOriginal`: replace `renderPage({ url })` with `renderPage({ urlOriginal })`. (See https://vite-plugin-ssr.com/migration/0.4.23 for more information.)
+    at assertWarning (file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite-plugin-ssr@0.4.142_vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0_/node_modules/vite-plugin-ssr/dist/esm/utils/assert.js:94:21)
+    at assertArguments (file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite-plugin-ssr@0.4.142_vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0_/node_modules/vite-plugin-ssr/dist/esm/node/runtime/renderPage/assertArguments.js:15:9)
+    at renderPage (file:///home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/vite-plugin-ssr@0.4.142_vite@7.0.2_@types+node@24.0.10_jiti@2.4.2_lightningcss@1.30.1_terser@5.43.1_yaml@2.8.0_/node_modules/vite-plugin-ssr/dist/esm/node/runtime/renderPage.js:34:5)
+    at file:///home/tontoncestcarre/luxeevents-frontend/server.js:24:33
+    at Layer.handle [as handle_request] (/home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/router/layer.js:95:5)
+    at /home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/router/index.js:284:15
+    at param (/home/tontoncestcarre/luxeevents-frontend/node_modules/.pnpm/express@4.21.2/node_modules/express/lib/router/index.js:365:14)
+11:28:42 [vite-plugin-ssr][request(1)] HTTP request: /about
+11:28:43 [vite][request(1)] The glob option "as" has been deprecated in favour of "query". Please update `as: 'extractExportNames'` to `query: '?extractExportNames'`.
+11:28:47 [vite-plugin-ssr][request(1)][Warning] No _error.page.js found, we recommend defining an error page, see https://vite-plugin-ssr.com/error-page
+11:28:47 [vite-plugin-ssr][request(1)] URL /about doesn't match the route of any of your pages:
+┌──────────────────────────┬──────────────────┬─────────────────────────────────┐
+│ ROUTE                    │ TYPE             │ DEFINED BY                      │
+├──────────────────────────┼──────────────────┼─────────────────────────────────┤
+│ /renderer/routes         │ Filesystem Route │ /renderer/routes/index.page.*   │
+│ /renderer/routes/about   │ Filesystem Route │ /renderer/routes/about.page.*   │
+│ /renderer/routes/faq     │ Filesystem Route │ /renderer/routes/faq.page.*     │
+│ /renderer/routes/gallery │ Filesystem Route │ /renderer/routes/gallery.page.* │
+│ /renderer/routes/pricing │ Filesystem Route │ /renderer/routes/pricing.page.* │
+└──────────────────────────┴──────────────────┴─────────────────────────────────┘
+See https://vite-plugin-ssr.com/routing for more information about routing.
+11:28:47 [vite-plugin-ssr][request(1)] HTTP response /about ERR
+11:28:49 [vite] page reload prerender/about.html
+11:28:49 [vite-plugin-ssr][request(2)] HTTP request: /pricing
+11:28:49 [vite-plugin-ssr][request(2)] URL /pricing doesn't match the route of any of your pages:
+┌──────────────────────────┬──────────────────┬─────────────────────────────────┐
+│ ROUTE                    │ TYPE             │ DEFINED BY                      │
+├──────────────────────────┼──────────────────┼─────────────────────────────────┤
+│ /renderer/routes         │ Filesystem Route │ /renderer/routes/index.page.*   │
+│ /renderer/routes/about   │ Filesystem Route │ /renderer/routes/about.page.*   │
+│ /renderer/routes/faq     │ Filesystem Route │ /renderer/routes/faq.page.*     │
+│ /renderer/routes/gallery │ Filesystem Route │ /renderer/routes/gallery.page.* │
+│ /renderer/routes/pricing │ Filesystem Route │ /renderer/routes/pricing.page.* │
+└──────────────────────────┴──────────────────┴─────────────────────────────────┘
+See https://vite-plugin-ssr.com/routing for more information about routing.
+11:28:49 [vite-plugin-ssr][request(2)] HTTP response /pricing ERR
+11:28:51 [vite] page reload prerender/pricing.html
+11:28:51 [vite-plugin-ssr][request(3)] HTTP request: /faq
+11:28:51 [vite-plugin-ssr][request(3)] URL /faq doesn't match the route of any of your pages:
+┌──────────────────────────┬──────────────────┬─────────────────────────────────┐
+│ ROUTE                    │ TYPE             │ DEFINED BY                      │
+├──────────────────────────┼──────────────────┼─────────────────────────────────┤
+│ /renderer/routes         │ Filesystem Route │ /renderer/routes/index.page.*   │
+│ /renderer/routes/about   │ Filesystem Route │ /renderer/routes/about.page.*   │
+│ /renderer/routes/faq     │ Filesystem Route │ /renderer/routes/faq.page.*     │
+│ /renderer/routes/gallery │ Filesystem Route │ /renderer/routes/gallery.page.* │
+│ /renderer/routes/pricing │ Filesystem Route │ /renderer/routes/pricing.page.* │
+└──────────────────────────┴──────────────────┴─────────────────────────────────┘
+See https://vite-plugin-ssr.com/routing for more information about routing.
+11:28:51 [vite-plugin-ssr][request(3)] HTTP response /faq ERR
+11:28:52 [vite] page reload prerender/faq.html
+11:28:52 [vite-plugin-ssr][request(4)] HTTP request: /gallery
+11:28:52 [vite-plugin-ssr][request(4)] URL /gallery doesn't match the route of any of your pages:
+┌──────────────────────────┬──────────────────┬─────────────────────────────────┐
+│ ROUTE                    │ TYPE             │ DEFINED BY                      │
+├──────────────────────────┼──────────────────┼─────────────────────────────────┤
+│ /renderer/routes         │ Filesystem Route │ /renderer/routes/index.page.*   │
+│ /renderer/routes/about   │ Filesystem Route │ /renderer/routes/about.page.*   │
+│ /renderer/routes/faq     │ Filesystem Route │ /renderer/routes/faq.page.*     │
+│ /renderer/routes/gallery │ Filesystem Route │ /renderer/routes/gallery.page.* │
+│ /renderer/routes/pricing │ Filesystem Route │ /renderer/routes/pricing.page.* │
+└──────────────────────────┴──────────────────┴─────────────────────────────────┘
+See https://vite-plugin-ssr.com/routing for more information about routing.
+11:28:52 [vite-plugin-ssr][request(4)] HTTP response /gallery ERR
+11:28:53 [vite] page reload prerender/gallery.html

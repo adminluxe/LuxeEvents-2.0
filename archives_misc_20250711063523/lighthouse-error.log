@@ -1,0 +1,304 @@
+Mon, 07 Jul 2025 00:44:31 GMT LH:ChromeLauncher Waiting for browser.
+Mon, 07 Jul 2025 00:44:31 GMT LH:ChromeLauncher Waiting for browser...
+Mon, 07 Jul 2025 00:44:31 GMT LH:ChromeLauncher Waiting for browser.....
+Mon, 07 Jul 2025 00:44:32 GMT LH:ChromeLauncher Waiting for browser.......
+Mon, 07 Jul 2025 00:44:32 GMT LH:ChromeLauncher Waiting for browser.........
+Mon, 07 Jul 2025 00:44:33 GMT LH:ChromeLauncher Waiting for browser...........
+Mon, 07 Jul 2025 00:44:33 GMT LH:ChromeLauncher Waiting for browser.............
+Mon, 07 Jul 2025 00:44:34 GMT LH:ChromeLauncher Waiting for browser...............
+Mon, 07 Jul 2025 00:44:34 GMT LH:ChromeLauncher Waiting for browser...............[32m✓[0m
+Mon, 07 Jul 2025 00:44:36 GMT LH:status Connecting to browser
+Mon, 07 Jul 2025 00:44:36 GMT LH:status Navigating to about:blank
+Mon, 07 Jul 2025 00:44:36 GMT LH:status Benchmarking machine
+Mon, 07 Jul 2025 00:44:37 GMT LH:status Host device pixel ratio
+Mon, 07 Jul 2025 00:44:37 GMT LH:status Preparing target for navigation mode
+Mon, 07 Jul 2025 00:44:37 GMT LH:status Preparing network conditions
+Mon, 07 Jul 2025 00:44:37 GMT LH:status Navigating to http://localhost:8000/gallery.html
+Mon, 07 Jul 2025 00:44:40 GMT LH:status Getting artifact: DevtoolsLog
+Mon, 07 Jul 2025 00:44:40 GMT LH:status Getting artifact: Trace
+Mon, 07 Jul 2025 00:44:40 GMT LH:status Getting artifact: Accessibility
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: AnchorElements
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:method <= browser ERR:error DOM.pushNodeByPathToFrontend 
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: ConsoleMessages
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: CSSUsage
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: Doctype
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: DOMStats
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: FontSize
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: Inputs
+Mon, 07 Jul 2025 00:44:41 GMT LH:status Getting artifact: ImageElements
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: InspectorIssues
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: JsUsage
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: LinkElements
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: MainDocumentContent
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: MetaElements
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: NetworkUserAgent
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: OptimizedImages
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: ResponseCompression
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: RobotsTxt
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: Scripts
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: SourceMaps
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: Stacks
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Collect stacks
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: Stylesheets
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Getting artifact: TraceElements
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Trace Engine total
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Trace Engine parse
+Mon, 07 Jul 2025 00:44:42 GMT LH:status Trace Engine parse:handleEvent
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Meta:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:AnimationFrames:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Animations:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Samples:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:AuctionWorklets:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:NetworkRequests:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Renderer:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Flows:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:AsyncJSCalls:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:DOMStats:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:UserTimings:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:ExtensionTraceData:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:LayerTree:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Frames:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:GPU:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:ImagePainting:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Initiators:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Invalidations:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:PageLoadMetrics:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:LargestImagePaint:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:LargestTextPaint:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Screenshots:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:LayoutShifts:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Memory:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:PageFrames:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Scripts:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:SelectorStats:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:UserInteractions:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Workers:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:Warnings:finalize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine parse:clone
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:CLSCulprits
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:Cache
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:DOMSize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:DocumentLatency
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:DuplicatedJavaScript
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:FontDisplay
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ForcedReflow
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:INPBreakdown
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ImageDelivery
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:LCPBreakdown
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:LCPDiscovery
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:LegacyJavaScript
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ModernHTTP
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:NetworkDependencyTree
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:RenderBlocking
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:SlowCSSSelector
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ThirdParties
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:Viewport
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:createLanternContext
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:CLSCulprits
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:Cache
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:DOMSize
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:DocumentLatency
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:DuplicatedJavaScript
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:FontDisplay
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ForcedReflow
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:INPBreakdown
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ImageDelivery
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:LCPBreakdown
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:LCPDiscovery
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:LegacyJavaScript
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ModernHTTP
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:NetworkDependencyTree
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:RenderBlocking
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:SlowCSSSelector
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:ThirdParties
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Trace Engine insights:Viewport
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Getting artifact: ViewportDimensions
+Mon, 07 Jul 2025 00:44:43 GMT LH:status Getting artifact: FullPageScreenshot
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Getting artifact: BFCacheFailures
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Analyzing and running audits...
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: Uses HTTPS
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: Redirects HTTP traffic to HTTPS
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: Has a `<meta name="viewport">` tag with `width` or `initial-scale`
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: First Contentful Paint
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: Largest Contentful Paint
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: First Meaningful Paint
+Mon, 07 Jul 2025 00:44:45 GMT LH:status Auditing: Speed Index
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Screenshot Thumbnails
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Final Screenshot
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Total Blocking Time
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Max Potential First Input Delay
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Cumulative Layout Shift
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: No browser errors logged to the console
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Initial server response time was short
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Time to Interactive
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: User Timing marks and measures
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoid chaining critical requests
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoid multiple page redirects
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Displays images with correct aspect ratio
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Serves images with appropriate resolution
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoids deprecated APIs
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoids third-party cookies
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Minimizes main-thread work
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: JavaScript execution time
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Preconnect to required origins
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: All text remains visible during webfont loads
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Diagnostics
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Network Requests
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Network Round Trip Times
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Server Backend Latencies
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Tasks
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Metrics
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Resources Summary
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Minimize third-party usage
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Lazy load third-party resources with facades
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Largest Contentful Paint element
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Largest Contentful Paint image was not lazily loaded
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoid large layout shifts
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoid long main-thread tasks
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Avoid non-composited animations
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Image elements have explicit `width` and `height`
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Page has valid source maps
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Preload Largest Contentful Paint image
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Ensure CSP is effective against XSS attacks
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Use a strong HSTS policy
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Ensure proper origin isolation with COOP
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Mitigate clickjacking with XFO or CSP
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Script Treemap Data
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: `[accesskey]` values are unique
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: `[aria-*]` attributes match their roles
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Uses ARIA roles only on compatible elements
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: ARIA attributes are used as specified for the element's role
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Deprecated ARIA roles were not used
+Mon, 07 Jul 2025 00:44:46 GMT LH:status Auditing: Elements with `role="dialog"` or `role="alertdialog"` have accessible names.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[aria-hidden="true"]` is not present on the document `<body>`
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[aria-hidden="true"]` elements do not contain focusable descendents
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA input fields have accessible names
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA `meter` elements have accessible names
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA `progressbar` elements have accessible names
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Elements use only permitted ARIA attributes
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[role]`s have all required `[aria-*]` attributes
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[role]`s are contained by their required parent element
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[role]` values are valid
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA toggle fields have accessible names
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA `tooltip` elements have accessible names
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA `treeitem` elements have accessible names
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[aria-*]` attributes have valid values
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[aria-*]` attributes are valid and not misspelled
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Buttons have an accessible name
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: The page contains a heading, skip link, or landmark region
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Background and foreground colors have a sufficient contrast ratio
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Definition list items are wrapped in `<dl>` elements
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Document has a `<title>` element
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: ARIA IDs are unique
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: All heading elements contain content.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: No form fields have multiple labels
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<frame>` or `<iframe>` elements have a title
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Heading elements appear in a sequentially-descending order
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<html>` element has a `[lang]` attribute
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Identical links have the same purpose.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Image elements have `[alt]` attributes
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Input buttons have discernible text.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<input type="image">` elements have `[alt]` text
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Elements with visible text labels have matching accessible names.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Form elements have associated labels
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Document has a main landmark.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Links have a discernible name
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Links are distinguishable without relying on color.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: The document does not use `<meta http-equiv="refresh">`
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: `<object>` elements have alternate text
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Select elements have associated label elements.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Skip links are focusable.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: No element has a `[tabindex]` value greater than 0
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.
+Mon, 07 Jul 2025 00:44:47 GMT LH:status Auditing: Touch targets have sufficient size and spacing.
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe.
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: `[lang]` attributes have a valid value
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind="captions"]`
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Custom controls have associated labels
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Custom controls have ARIA roles
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: User focus is not accidentally trapped in a region
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Interactive controls are keyboard focusable
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Interactive elements indicate their purpose and state
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: The page has a logical tab order
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: The user's focus is directed to new content added to the page
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Offscreen content is hidden from assistive technology
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: HTML5 landmark elements are used to improve navigation
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Visual order on the page follows DOM order
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Uses efficient cache policy on static assets
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Avoids enormous network payloads
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Defer offscreen images
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Eliminate render-blocking resources
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Minify CSS
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Minify JavaScript
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Reduce unused CSS
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Reduce unused JavaScript
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Serve images in next-gen formats
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Efficiently encode images
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Enable text compression
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Properly size images
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Use video formats for animated content
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Remove duplicate modules in JavaScript bundles
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Avoid serving legacy JavaScript to modern browsers
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Page has the HTML doctype
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Properly defines charset
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Avoids an excessive DOM size
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Avoids requesting the geolocation permission on page load
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: No issues in the `Issues` panel in Chrome Devtools
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Avoids `document.write()`
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Detected JavaScript libraries
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Avoids requesting the notification permission on page load
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Allows users to paste into input fields
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Use HTTP/2
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Uses passive listeners to improve scrolling performance
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Document has a meta description
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Page has successful HTTP status code
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Document uses legible font sizes
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Links have descriptive text
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Links are crawlable
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Page isn’t blocked from indexing
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: robots.txt is valid
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Document has a valid `hreflang`
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Document has a valid `rel=canonical`
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Structured data is valid
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Page didn't prevent back/forward cache restoration
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Use efficient cache lifetimes
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Layout shift culprits
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Document request latency
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Optimize DOM size
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Duplicated JavaScript
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Font display
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Forced reflow
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Improve image delivery
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: INP breakdown
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: LCP breakdown
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: LCP request discovery
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Legacy JavaScript
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Modern HTTP
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Network dependency tree
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Render blocking requests
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: 3rd parties
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Auditing: Optimize viewport for mobile
+Mon, 07 Jul 2025 00:44:48 GMT LH:status Generating results...
+Mon, 07 Jul 2025 00:44:48 GMT LH:ChromeLauncher Killing Chrome instance 3945747
