@@ -1,0 +1,6 @@
+mailcow-dockerized/
+*.zip
+*.sh
+node_modules/
+dist/
+.vite/

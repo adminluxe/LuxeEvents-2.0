@@ -3,3 +3,4 @@ mailcow-dockerized/
 dist/
 .env
 *.log
+.vercel

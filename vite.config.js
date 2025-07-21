@@ -18,7 +18,12 @@ export default defineConfig({
     react(),
     !isBuild &&
       VitePWA({
-        /* ta config PWA ici */
+        // Ta config PWA ici
       }),
   ].filter(Boolean),
+  build: {
+    rollupOptions: {
+      external: ['react-i18next', 'i18next'], // Exclusion de react-i18next et i18next
+    },
+  },
 })

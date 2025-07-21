@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
   import { useTranslation } from "react-i18next";
-  import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
 
 const items = [
   { label: "Accueil", anchor: "#hero" },
@@ -17,12 +14,6 @@ export default function CircularMenu() {
   const [open, setOpen] = useState(false);
   const { i18n } = useTranslation();
   const toggleLanguage = () => i18n.changeLanguage(i18n.language === "fr" ? "en" : "fr");
-  import { useTranslation } from "react-i18next";
-  const { i18n } = useTranslation();
-  const toggleLanguage = () => i18n.changeLanguage(i18n.language === "fr" ? "en" : "fr");
-  import { useTranslation } from "react-i18next";
-
-  return (<><>
       <div className="flex flex-col items-center gap-4">
 
         <Link to="/" className="text-white hover:text-gold transition">🏠 Accueil</Link>
@@ -32,6 +23,7 @@ export default function CircularMenu() {
         <button onClick={toggleLanguage} className="text-white hover:text-gold transition">🌐 Langue</button>
 
       </div>
+  <motion.button whileTap={{ scale: 0.8 }}>
     <div className="fixed top-4 right-4 z-[1000]">
       <motion.button
         whileTap={{ scale: 0.8 }}

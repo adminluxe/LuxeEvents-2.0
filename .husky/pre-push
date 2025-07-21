@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Vérification de la configuration ESLint avant de continuer
+./validate-eslint-config.sh
+
+# Si la validation réussit, exécute ESLint sur tous les fichiers
+if [ $? -eq 0 ]; then
+    echo "Configuration ESLint valide, lancement de la vérification de syntaxe..."
+    npx eslint .
+else
+    echo "Erreur de configuration ESLint. Arrêt du processus de push."
+    exit 1
+fi

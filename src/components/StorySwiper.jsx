@@ -28,7 +28,7 @@ export default function StorySwiper() {
           <SwiperSlide key={index}>
             <img
               src={src}
-              alt={\`story \${index + 1}\`}
+              alt={`story ${index + 1}`}
               className="object-cover w-full h-full"
               loading="lazy"
             />
