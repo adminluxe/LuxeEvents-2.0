@@ -1,18 +1,20 @@
-import { Helmet } from "react-helmet";
-import QuoteForm from "../components/QuoteForm";
-import FadeUpWrapper from "../components/FadeUpWrapper";
+import React from 'react';
+import { Helmet } from 'react-helmet';  // Correct importation de react-helmet
 
-export default function DevisPage() {
+const DevisPage = () => {
   return (
-    <FadeUpWrapper>
+    <div>
       <Helmet>
-        <title>Demande de Devis – LuxeEvents</title>
-        <meta
-          name="description"
-          content="Un événement d'exception commence ici. Contactez-nous pour un devis sur-mesure."
-        />
+        <title>Page de Devis</title>
+        <meta name="description" content="Demande de devis pour LuxeEvents" />
       </Helmet>
-      <QuoteForm />
-    </FadeUpWrapper>
+
+      <h1 className="text-3xl font-semibold text-center text-yellow-600">Demande de Devis</h1>
+      <p className="text-center mt-4 text-gray-700">
+        Merci de remplir ce formulaire pour obtenir un devis personnalisé.
+      </p>
+    </div>
   );
-}
+};
+
+export default DevisPage;

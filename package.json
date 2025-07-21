@@ -5,38 +5,28 @@
     "lint": "eslint --config eslint.config.cjs .",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "prepare": "husky install"
+    "build": "vite build"
   },
-  "type": "module",
   "dependencies": {
-    "lottie-react": "2.4.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "7.7.0",
-    "swiper": "11.2.10"
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^15.5.0",
+    "i18next": "^21.3.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^7.7.0",
+    "swiper": "^11.2.10",
+    "@headlessui/react": "^2.2.4",
+    "gsap": "^3.13.0",
+    "framer-motion": "^12.18.1"
   },
   "devDependencies": {
-    "@babel/core": "7.28.0",
-    "@babel/eslint-parser": "7.28.0",
-    "@babel/preset-env": "7.28.0",
-    "@babel/preset-react": "7.27.1",
-    "@babel/preset-typescript": "7.27.1",
-    "@tailwindcss/postcss": "4.1.11",
-    "@typescript-eslint/eslint-plugin": "8.37.0",
-    "@typescript-eslint/parser": "8.37.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "10.4.21",
-    "babel-eslint": "10.1.0",
-    "eslint": "9.31.0",
-    "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-react": "7.37.5",
-    "husky": "^8.0.0",
-    "postcss": "8.5.6",
-    "prettier": "3.6.2",
-    "tailwindcss": "4.1.11",
-    "vite": "7.0.5",
-    "vite-plugin-pwa": "1.0.1"
+    "@babel/core": "^7.28.0",
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.28.0",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.31.0",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.5"
   }
 }

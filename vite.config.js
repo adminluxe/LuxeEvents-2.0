@@ -7,7 +7,7 @@ const isBuild = process.env.npm_lifecycle_event === 'build';
 export default defineConfig({
   css: {
     url: false,
-    postcss: './postcss.config.js',
+    postcss: './postcss.config.js', // Ta config PostCSS
   },
   server: {
     fs: {
@@ -18,12 +18,16 @@ export default defineConfig({
     react(),
     !isBuild &&
       VitePWA({
-        // Ta config PWA ici
+        // Ta configuration PWA ici
       }),
   ].filter(Boolean),
   build: {
     rollupOptions: {
-      external: ['react-i18next', 'i18next'], // Exclusion de react-i18next et i18next
+      external: [
+        'react-helmet',  // Externalisation de react-helmet pour éviter les problèmes
+        'react-i18next', // Et d'autres modules si nécessaire
+        'i18next'
+      ],
     },
   },
 });
