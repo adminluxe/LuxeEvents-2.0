@@ -4,21 +4,21 @@ const jsxA11y = require('eslint-plugin-jsx-a11y');
 const tsPlugin = require('@typescript-eslint/eslint-plugin');
 const tsParser = require('@typescript-eslint/parser');
 
-// Custom function to handle the parser logic
-const customParser = (filename) => {
+// Function to handle parsing dynamically based on file extension
+const getParser = (filename) => {
   if (filename.endsWith('.ts') || filename.endsWith('.tsx')) {
-    return tsParser; // Use TypeScript parser for .ts/.tsx files
+    return tsParser;  // TypeScript parser
   }
-  return babelParser; // Use Babel parser for .js/.jsx files
+  return babelParser;  // Babel parser for JavaScript and JSX
 };
 
 module.exports = [
   {
     languageOptions: {
-      // Use the custom parser function
-      parser: customParser,
-      ecmaVersion: 2020, // Use a stable version of ECMAScript for compatibility
-      sourceType: 'module', // Enable module syntax
+      // Dynamically choose parser based on the file extension
+      parser: getParser,
+      ecmaVersion: 2020,  // Use stable ECMAScript version
+      sourceType: 'module', // Use module syntax
       globals: {
         window: 'readonly',
         document: 'readonly',
@@ -54,7 +54,7 @@ module.exports = [
     },
     settings: {
       react: {
-        version: 'detect', // Automatically detect the React version
+        version: 'detect',  // Automatically detect the React version
       },
     },
   },
