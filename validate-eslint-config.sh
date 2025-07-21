@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Vérification de la configuration ESLint avant de lancer Husky
+# Vérification de la configuration ESLint
 echo "Validation de la configuration ESLint..."
 
 # Utilisation de ESLint en ligne de commande pour valider la configuration
