@@ -1,0 +1,63 @@
+import React from 'react'
+import { Routes, Route, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+
+// Components
+import LogoAnimated from './components/LogoAnimated.jsx'
+import Hero from './components/Hero.jsx'
+import Card from './components/Card.jsx'
+import Testimonials from './components/Testimonials.jsx'
+
+// Styles parallax (exemple)
+import { useParallax } from './hooks/useParallax'
+
+export default function App() {
+  const { t } = useTranslation()
+  useParallax('.parallax-item', -3)
+
+  return (
+    <div className="app-container">
+      {/* Header avec logo animé et navigation */}
+      <header className="header">
+        <LogoAnimated />
+        <nav className="nav">
+          {['/', '/about', '/events', '/gallery', '/prices', '/services', '/contact'].map((path, i) => (
+            <Link key={i} to={path} className="nav-link">
+              {t(path === '/' ? 'welcome' : path.slice(1))}
+            </Link>
+          ))}
+        </nav>
+      </header>
+
+      {/* Section Hero immersive */}
+      <section className="parallax-item">
+        <Hero />
+      </section>
+
+      {/* Section Piliers */}
+      <section className="features">
+        {[
+          t('organisation'),
+          t('coordination'),
+          t('details'),
+          t('accessibilite')
+        ].map((txt, idx) => (
+          <Card key={idx}>
+            <p>{txt}</p>
+          </Card>
+        ))}
+      </section>
+
+      {/* Section Témoignages */}
+      <section className="testimonials parallax-item">
+        <h2>{t('testimonialsTitle')}</h2>
+        <Testimonials />
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} LuxeEvents — {t('footerText')}</p>
+      </footer>
+    </div>
+  )
+}
