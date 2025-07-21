@@ -2,6 +2,7 @@
   "name": "luxeevents",
   "version": "1.0.0",
   "scripts": {
+    "lint": "eslint --config eslint.config.cjs .",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "vite",
     "build": "vite build",
