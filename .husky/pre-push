@@ -1,5 +1,5 @@
 #!/bin/sh
-. "/usr/bin/_/husky.sh"
+. "$(dirname "$0")/_/husky.sh"
 
 # Vérification de la configuration ESLint avant de continuer
 ./validate-eslint-config.sh
@@ -12,3 +12,4 @@ else
     echo "Erreur de configuration ESLint. Arrêt du processus de push."
     exit 1
 fi
+npx --no-install eslint --fix
