@@ -1,9 +1,9 @@
 module.exports = {
   languageOptions: {
-    parser: '@babel/eslint-parser', // Utilisation du parser pour JSX et TSX
+    parser: '@babel/eslint-parser',  // Utilisation du parser pour JSX et TSX
     globals: {
-      window: 'readonly', // Définir  comme global en lecture seule
-      document: 'readonly', // Définir  comme global en lecture seule
+      window: 'readonly', // Définir `window` comme global en lecture seule
+      document: 'readonly', // Définir `document` comme global en lecture seule
     },
   },
   plugins: {
