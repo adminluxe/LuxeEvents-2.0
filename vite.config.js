@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
-const isBuild = process.env.npm_lifecycle_event === 'build'
+const isBuild = process.env.npm_lifecycle_event === 'build';
 
 export default defineConfig({
   css: {
@@ -26,4 +26,4 @@ export default defineConfig({
       external: ['react-i18next', 'i18next'], // Exclusion de react-i18next et i18next
     },
   },
-})
+});

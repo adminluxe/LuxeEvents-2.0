@@ -42,9 +42,9 @@ export default function CircularNav() {
         <button
           key={s.id}
           onClick={() => scrollTo(s.id)}
-          className={\`w-12 h-12 rounded-full flex items-center justify-center text-sm font-semibold 
-            \${active === s.id ? 'bg-yellow-400 text-white scale-110' : 'bg-white dark:bg-zinc-700 text-zinc-800 dark:text-yellow-100'} 
-            shadow-lg hover:scale-105 transition-transform\`}
+          className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-semibold 
+            ${active === s.id ? 'bg-yellow-400 text-white scale-110' : 'bg-white dark:bg-zinc-700 text-zinc-800 dark:text-yellow-100'} 
+            shadow-lg hover:scale-105 transition-transform`}
         >
           {s.label[0]}
         </button>
