@@ -1,5 +1,6 @@
 {
   "name": "luxeevents",
+"type": "module",
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint --config eslint.config.cjs .",
@@ -13,6 +14,7 @@
     "gsap": "^3.13.0",
     "i18next": "^21.3.0",
     "lottie-react": "2.4.1",
+    "lottie-web": "^5.13.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-helmet": "^6.1.0",
