@@ -1,8 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import Layout from "@/layouts/Layout";
 import React from 'react';
 
 export default function ServicesPage() {
   return (
+<>      <Helmet>        <title:LuxeEvents – Services</title>        <meta name="description" content="Page LuxeEvents – Services – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Services" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
     <Layout>
       <div className="p-8 text-center">
         <h1 className="text-3xl sm:text-4xl font-bold text-center text-yellow-600 hover:scale-105 transition-transform duration-500 shadow-md hover:shadow-yellow-300 font-semibold text-yellow-600">

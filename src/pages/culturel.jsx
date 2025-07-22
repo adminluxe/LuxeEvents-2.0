@@ -1,8 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import { Helmet } from "react-helmet";
 import FadeUpWrapper from "../components/FadeUpWrapper";
 
 export default function CulturelPage() {
   return (
+<>      <Helmet>        <title:LuxeEvents – Culturel</title>        <meta name="description" content="Page LuxeEvents – Culturel – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Culturel" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
     <FadeUpWrapper>
       <Helmet>
         <title>Événements Culturels – LuxeEvents</title>

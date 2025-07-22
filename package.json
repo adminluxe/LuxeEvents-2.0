@@ -1,7 +1,6 @@
 {
   "name": "luxeevents",
-"type": "module",
-"type": "module",
+  "type": "module",
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint --config eslint.config.cjs .",
@@ -15,10 +14,11 @@
     "gsap": "^3.13.0",
     "i18next": "^21.3.0",
     "lottie-react": "2.4.1",
-    "lottie-web": "^5.13.0",
+    "lottie-web": "^5.12.2",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "react-helmet": "^6.1.0",
+    "react-helmet-async": "2.0.5",
     "react-i18next": "^15.5.0",
     "react-router-dom": "^7.7.0",
     "swiper": "^11.2.10"

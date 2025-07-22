@@ -1,13 +1,87 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="luxeevents-dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LuxeEvents</title>
-    <script type="module" crossorigin src="/assets/index-C-bAImWJ.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-C66t53QB.css">
+    <meta charset="utf-8" />
+    <title>LuxeEvents – Sublimez votre événement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Découvrez LuxeEvents, l’expérience événementielle haut de gamme, immersive et inoubliable." />
+    <meta name="theme-color" content="#0e0c0c" />
+    <meta property="og:title" content="LuxeEvents – Événements haut de gamme" />
+    <meta property="og:description" content="Mariage, Corporate, Culturel : vivez le luxe, l’émotion, l’innovation." />
+    <meta property="og:image" content="/og_default.jpg" />
+    <meta property="og:url" content="https://luxeevents.me" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: #0e0c0c;
+        color: #f8e9c8;
+        font-family: 'Playfair Display', serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #fallback-loader {
+        text-align: center;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+      #fallback-loader svg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 12px;
+        animation: rotate 2s linear infinite;
+      }
+      #fallback-loader p {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.92); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
   </head>
+
   <body>
-    <div id="root"></div>
+    <noscript><strong>Activez JavaScript pour vivre l’expérience immersive LuxeEvents.</strong></noscript>
+
+    <div id="root">
+      <div id="fallback-loader">
+        <svg viewBox="0 0 100 100" fill="#f8e9c8">
+          <circle cx="50" cy="50" r="40" stroke="#f8e9c8" stroke-width="4" fill="none"/>
+          <path d="M50 10 A40 40 0 1 1 49.9 10" fill="#f8e9c8"/>
+        </svg>
+        <p>Chargement de l’univers LuxeEvents...</p>
+      </div>
+    </div>
+
+    <!-- Son spatial de fond lancé après DOM ready -->
+    <audio id="ambient-audio" src="/assets/ambiance-luxe.mp3" preload="auto"></audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("ambient-audio");
+        if (audio) {
+          setTimeout(() => {
+            audio.volume = 0.05;
+            audio.play().catch(() => {});
+          }, 1000); // petit délai après chargement
+        }
+      });
+    </script>
   </body>
 </html>

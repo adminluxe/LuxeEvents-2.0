@@ -1,8 +1,10 @@
+import { Helmet } from "react-helmet-async";
 import { Helmet } from "react-helmet";
 import FadeUpWrapper from "../components/FadeUpWrapper";
 
 export default function MariagePage() {
   return (
+<>      <Helmet>        <title:LuxeEvents – Mariage</title>        <meta name="description" content="Page LuxeEvents – Mariage – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Mariage" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
     <FadeUpWrapper>
       <Helmet>
         <title>Mariages d'Exception – LuxeEvents</title>
