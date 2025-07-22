@@ -1,45 +1,27 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AudioAmbient from "./components/AudioAmbient";
-import IntroAnimationLottie from "./components/IntroAnimationLottie";
-import HeroSection from "./components/HeroSection";
-import CircularMenu from "./components/CircularMenu";
-import StorySwiper from "./components/StorySwiper";
-import TimelineMagique from "./components/TimelineMagique";
-import DevisPage from "./pages/devis"; // nouvelle page /devis
-
-function HomePage() {
-  return (
-    <>
-      <HeroSection />
-      <StorySwiper />
-      <TimelineMagique />
-    </>
-  );
-}
+import React from 'react'
+import IntroAnimationLottie from './components/IntroAnimationLottie'
+import AudioAmbient from './components/AudioAmbient'
+import HeroSection from './components/HeroSection'
+import StorySwiper from './components/StorySwiper'
+import TimelineMagique from './components/TimelineMagique'
+import QuoteForm from './components/QuoteForm'
+import FooterLuxe from './components/FooterLuxe'
+import FadeUpWrapper from './components/FadeUpWrapper'
 
 function App() {
-  const [introFinished, setIntroFinished] = useState(
-    sessionStorage.getItem("introPlayed") === "true"
-  );
-
   return (
-    <Router>
-      {!introFinished && (
-        <IntroAnimationLottie onFinish={() => setIntroFinished(true)} />
-      )}
-      {introFinished && (
-        <>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/devis" element={<DevisPage />} />
-          </Routes>
-          <CircularMenu />
-          <AudioAmbient />
-        </>
-      )}
-    </Router>
-  );
+    <>
+      <AudioAmbient />
+      <IntroAnimationLottie />
+      <FadeUpWrapper>
+        <HeroSection />
+        <StorySwiper />
+        <TimelineMagique />
+        <QuoteForm />
+        <FooterLuxe />
+      </FadeUpWrapper>
+    </>
+  )
 }
 
-export default App;
+export default App

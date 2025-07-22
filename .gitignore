@@ -1,6 +1,13 @@
 node_modules
 mailcow-dockerized/
 dist/
+.vite/
 .env
 *.log
 .vercel
+
+node_modules/
+dist/
+.vite/
+public/assets/
+

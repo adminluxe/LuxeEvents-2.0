@@ -1,3 +1,10 @@
+#!/bin/bash
+
+echo "📦 Installation du lecteur Lottie..."
+pnpm add @lottiefiles/react-lottie-player
+
+echo "🧠 Correction du composant IntroAnimationLottie..."
+cat << 'EOL' > src/components/IntroAnimationLottie.jsx
 import React, { useEffect } from 'react'
 import { Player } from '@lottiefiles/react-lottie-player'
 import animationData from '../assets/luxeevents-intro.json'
@@ -23,3 +30,6 @@ const IntroAnimationLottie = ({ onFinish = () => {} }) => {
 }
 
 export default IntroAnimationLottie
+EOL
+
+echo "✅ Patch final appliqué avec succès."

@@ -1,3 +1,8 @@
+#!/bin/bash
+
+echo "📝 Génération du README.md complet pour LuxeEvents..."
+
+cat <<'MDOC' > ./README.md
 # 💎 LuxeEvents – Le luxe à la portée de tous
 
 > Une expérience web immersive, narrative et haut de gamme.
@@ -64,3 +69,6 @@
 ---
 
 > ✨ Le luxe n’est pas un code, c’est une sensation.
+MDOC
+
+echo "✅ README.md généré."
