@@ -1,18 +1,15 @@
-import { Helmet } from "react-helmet-async";
 import { Helmet } from "react-helmet";
 import FadeUpWrapper from "../components/FadeUpWrapper";
 
 export default function CorporatePage() {
   return (
-<>      <Helmet>        <title:LuxeEvents – Corporate</title>        <meta name="description" content="Page LuxeEvents – Corporate – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Corporate" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
-    <FadeUpWrapper>
-      <Helmet>
-        <title>Événements d'Entreprise – LuxeEvents</title>
-        <meta
-          name="description"
-          content="Conférences, lancements de produits, team building... Offrez à vos collaborateurs une expérience élégante et inspirante."
-        />
-      </Helmet>
+  <>
+    <Helmet>
+      <title>LuxeEvents – Événements d’entreprise haut de gamme</title>
+      <meta name="description" content="Séminaires, galas, lancements : impressionnez vos clients avec une organisation irréprochable." />
+      <meta property="og:title" content="LuxeEvents – Événements d’entreprise haut de gamme" />
+      <meta property="og:image" content="/og_default.jpg" />
+    </Helmet>
       <section className="py-24 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
           Événements Corporate
@@ -25,4 +22,5 @@ export default function CorporatePage() {
       </section>
     </FadeUpWrapper>
   );
+  </>
 }

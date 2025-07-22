@@ -1,18 +1,15 @@
-import { Helmet } from "react-helmet-async";
 import { Helmet } from "react-helmet";
 import FadeUpWrapper from "../components/FadeUpWrapper";
 
 export default function CulturelPage() {
   return (
-<>      <Helmet>        <title:LuxeEvents – Culturel</title>        <meta name="description" content="Page LuxeEvents – Culturel – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Culturel" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
-    <FadeUpWrapper>
-      <Helmet>
-        <title>Événements Culturels – LuxeEvents</title>
-        <meta
-          name="description"
-          content="Concerts, expositions, festivals... Une organisation signée LuxeEvents pour un rayonnement artistique unique."
-        />
-      </Helmet>
+  <>
+    <Helmet>
+      <title>LuxeEvents – Événements culturels d’exception</title>
+      <meta name="description" content="Sublimez l’art, la mode ou le patrimoine grâce à une mise en scène innovante et immersive." />
+      <meta property="og:title" content="LuxeEvents – Événements culturels d’exception" />
+      <meta property="og:image" content="/og_default.jpg" />
+    </Helmet>
       <section className="py-24 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
           Événements Culturels
@@ -24,4 +21,5 @@ export default function CulturelPage() {
       </section>
     </FadeUpWrapper>
   );
+  </>
 }

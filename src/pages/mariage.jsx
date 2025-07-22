@@ -1,18 +1,15 @@
-import { Helmet } from "react-helmet-async";
 import { Helmet } from "react-helmet";
 import FadeUpWrapper from "../components/FadeUpWrapper";
 
 export default function MariagePage() {
   return (
-<>      <Helmet>        <title:LuxeEvents – Mariage</title>        <meta name="description" content="Page LuxeEvents – Mariage – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Mariage" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
-    <FadeUpWrapper>
-      <Helmet>
-        <title>Mariages d'Exception – LuxeEvents</title>
-        <meta
-          name="description"
-          content="Célébrez l'amour avec élégance. Organisation de mariages haut de gamme partout en Europe."
-        />
-      </Helmet>
+  <>
+    <Helmet>
+      <title>LuxeEvents – Mariages de Prestige</title>
+      <meta name="description" content="Vivez le mariage de vos rêves avec LuxeEvents, dans un univers de luxe et d’émotion." />
+      <meta property="og:title" content="LuxeEvents – Mariages de Prestige" />
+      <meta property="og:image" content="/og_default.jpg" />
+    </Helmet>
       <section className="py-24 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
           Mariages d'Exception
@@ -25,4 +22,5 @@ export default function MariagePage() {
       </section>
     </FadeUpWrapper>
   );
+  </>
 }

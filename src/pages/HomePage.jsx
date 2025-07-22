@@ -1,5 +1,3 @@
-import { Helmet } from "react-helmet-async";
-import { Helmet } from "react-helmet-async";
 import React from "react";
 import { Helmet } from "react-helmet";
 import Layout from "@/layouts/Layout";
@@ -13,24 +11,15 @@ import FooterLuxe from "@/components/FooterLuxe";
 
 export default function HomePage() {
   return (
-<>      <Helmet>        <title:LuxeEvents – Accueil</title>        <meta name="description" content="Page LuxeEvents – Accueil – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Accueil" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
+  <>
+    <Helmet>
+      <title>LuxeEvents – Sublimez votre événement</title>
+      <meta name="description" content="Page d'accueil immersive de LuxeEvents – Événements haut de gamme." />
+      <meta property="og:title" content="LuxeEvents – Sublimez votre événement" />
+      <meta property="og:image" content="/og_default.jpg" />
+    </Helmet>
     <>\
-      <Helmet>\
-        <title>LuxeEvents – Sublimez votre événement</title>\
-        <meta name="description" content="Page d'accueil immersive de LuxeEvents – Événements haut de gamme." />\
-        <meta property="og:title" content="LuxeEvents – Sublimez votre événement" />\
-        <meta property="og:image" content="/og_default.jpg" />\
-      </Helmet>
     <>
-      <Helmet>
-        <title>LuxeEvents – Événements haut de gamme, le luxe à la portée de tous!</title>
-        <meta
-          name="description"
-          content="Organisation d’événements élégants à Bruxelles – mariages, soirées, corporate. Devis gratuit."
-        />
-        <meta property="og:title" content="LuxeEvents – Le luxe à la portée de tous" />
-        <meta property="og:image" content="/media/images/luxeevents-bg-hero.webp" />
-      </Helmet>
 
       <Layout>
         <HeroSection />
@@ -43,4 +32,5 @@ export default function HomePage() {
       </Layout>
     </>
   );
+  </>
 }

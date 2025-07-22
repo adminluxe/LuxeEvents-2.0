@@ -1,19 +1,13 @@
-import { Helmet } from "react-helmet-async";
 import Layout from "@/layouts/Layout";
 import React from 'react';
 
 export default function ServicesPage() {
   return (
-<>      <Helmet>        <title:LuxeEvents – Services</title>        <meta name="description" content="Page LuxeEvents – Services – LuxeEvents" />        <meta property="og:title" content="LuxeEvents – Services" />        <meta property="og:image" content="/og_default.jpg" />      </Helmet>
-    <Layout>
-      <div className="p-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center text-yellow-600 hover:scale-105 transition-transform duration-500 shadow-md hover:shadow-yellow-300 font-semibold text-yellow-600">
-          Nos Services
-        </h1>
-        <p className="mt-4 text-gray-700">
-          Organisation complète, coordination, décoration, et plus encore.
-        </p>
-      </div>
-    </Layout>
-  );
-}
+  <>
+    <Helmet>
+      <title>LuxeEvents – Nos services d’exception</title>
+      <meta name="description" content="Découvrez nos prestations sur-mesure pour faire de votre événement une réussite." />
+      <meta property="og:title" content="LuxeEvents – Nos services d’exception" />
+      <meta property="og:image" content="/og_default.jpg" />
+  </>
+    </Helmet>
