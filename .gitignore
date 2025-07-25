@@ -12,3 +12,19 @@ dist/
 public/assets/
 
 luxe-v1-prod-ready.zip
+
+# 💣 GROS FICHIERS À NE JAMAIS PUSH
+*.zip
+*.rar
+*.7z
+*.mp4
+*.mov
+*.avi
+*.iso
+
+# Cache et builds
+dist/
+build/
+.vercel/
+.vscode/
+*.log
