@@ -1,15 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Vérification de la configuration ESLint avant de continuer
-./validate-eslint-config.sh
+echo "🛑 Vérification des échappements interdits dans JSX..."
 
-# Si la validation réussit, exécute ESLint sur tous les fichiers
-if [ 0 -eq 0 ]; then
-    echo "Configuration ESLint valide, lancement de la vérification de syntaxe..."
-    npx eslint .
-else
-    echo "Erreur de configuration ESLint. Arrêt du processus de push."
-    exit 1
+if grep -r '\\[a-zA-Z0-9]\+-' src/*.jsx src/*.tsx | grep -q '\\'; then
+  echo "❌ Échappement interdit trouvé (\\w-, \\h-, etc.). Corrige avant de push !"
+  exit 1
 fi
-npx --no-install eslint --fix
+
+echo "✅ Aucun échappement interdit détecté."

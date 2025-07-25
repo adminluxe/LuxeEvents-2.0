@@ -1,16 +1,9 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-
-const slides = [
-  { title: "L'Idée", text: "Rendre le luxe événementiel universel." },
-  { title: "La Vision", text: "Fusionner élégance, tech et émotion." },
-  { title: "La Réalité", text: "LuxeEvents, l’expérience réinventée." }
-];
+import React from 'react';
 
 export default function SwipeStory() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: SwipeStory.jsx</div>
     <section className="bg-white dark:bg-zinc-900 py-20 px-4 scroll-snap-start">
       <div className="max-w-5xl mx-auto text-center">
         <Swiper
@@ -36,6 +29,6 @@ export default function SwipeStory() {
           ))}
         </Swiper>
       </div>
-    </section>
+    </>
   );
 }

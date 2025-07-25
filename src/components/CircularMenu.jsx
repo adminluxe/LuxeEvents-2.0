@@ -1,21 +1,9 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-
-const items = [
-  { label: "Accueil", anchor: "#hero" },
-  { label: "Story", anchor: "#story" },
-  { label: "Services", anchor: "#services" },
-  { label: "Devis", anchor: "#quote" },
-  { label: "Contact", anchor: "#footer" },
-];
+import React from 'react';
 
 export default function CircularMenu() {
-  const [open, setOpen] = useState(false);
-  const { i18n } = useTranslation();
-  const toggleLanguage = () => i18n.changeLanguage(i18n.language === "fr" ? "en" : "fr");
-
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: CircularMenu.jsx</div>
     <div className="flex flex-col items-center gap-4">
       <Link to="/" className="text-white hover:text-gold transition">🏠 Accueil</Link>
       <Link to="/devis" className="text-white hover:text-gold transition">📩 Devis</Link>
@@ -56,7 +44,6 @@ export default function CircularMenu() {
             </motion.ul>
           )}
         </div>
-      </motion.button>
-    </div>
+    </>
   );
 }

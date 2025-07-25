@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import React from 'react';
 
 export default function Footer() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: Footer.jsx</div>
     <footer className="bg-black text-neutral-300 py-10 px-4 text-sm text-center border-t border-neutral-800">
       <div className="max-w-6xl mx-auto space-y-4">
         <p className="text-neutral-400 text-base">
@@ -11,7 +13,6 @@ export default function Footer() {
           <Link to="/mentions-legales" className="hover:text-gold transition">Mentions légales</Link>
           <Link to="/devis" className="hover:text-gold transition">Demande de devis</Link>
         </div>
-      </div>
-    </footer>
+    </>
   );
 }

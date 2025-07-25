@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
+import React from 'react';
 
 export default function RevealSection() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: RevealSection.jsx</div>
     <section className="h-screen snap-start bg-white flex flex-col md:flex-row items-center justify-center p-8">
       {/* Image */}
       <motion.img
@@ -14,7 +16,7 @@ export default function RevealSection() {
       />
 
       {/* Texte */}
-      <motion.div
+      <motion.div style={{ opacity: 1 }}
         className="mt-8 md:mt-0 md:ml-12 max-w-xl text-center md:text-center"
         initial={{ x: 100, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -27,5 +29,8 @@ export default function RevealSection() {
         </p>
       </motion.div>
     </section>
+  );
+}
+    </>
   );
 }

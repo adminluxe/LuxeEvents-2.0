@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
+import React from 'react';
 
 export default function EventsSection() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: EventsSection.jsx</div>
     <section className="min-h-screen py-20 px-4 bg-yellow-50 dark:bg-zinc-900 scroll-snap-start">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
@@ -16,6 +18,6 @@ export default function EventsSection() {
           Mariages, soirées privées, lancements de produits… chaque événement devient un moment inoubliable.
         </p>
       </div>
-    </section>
+    </>
   );
 }

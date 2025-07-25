@@ -1,17 +1,13 @@
-import { motion } from "framer-motion";
+import React from 'react';
 
 export default function SwiperStory() {
-  const slides = [
-    { img: "/media/images/photo-002.webp", txt: "Des souvenirs impérissables…" },
-    { img: "/media/images/photo-004.webp", txt: "L’art de la mise en scène…" },
-    { img: "/media/images/photo-013.webp", txt: "Le raffinement à chaque instant" },
-  ];
-
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: SwiperStory.jsx</div>
     <section id="story" className="scroll-snap-start w-full h-screen bg-ivory flex items-center justify-center px-4">
       <div className="max-w-4xl w-full space-y-12 text-center">
         {slides.map((s, i) => (
-          <motion.div
+          <motion.div style={{ opacity: 1 }}
             key={i}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -29,6 +25,6 @@ export default function SwiperStory() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </>
   );
 }

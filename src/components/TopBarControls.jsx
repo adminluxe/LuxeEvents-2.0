@@ -1,13 +1,9 @@
-// ✅ TopBarControls.jsx
-// Affiche : 🌐 switch de langue, 🌙 toggle DarkMode, 🌀 menu circulaire LuxeEvents
-
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import React from 'react';
 
 export default function TopBarControls() {
-  const [menuOpen, setMenuOpen] = useState(false)
-
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: TopBarControls.jsx</div>
     <div className="fixed top-4 right-4 z-50 flex items-center space-x-3">
       {/* 🌐 Lang switch (FR/EN) */}
       <button
@@ -52,6 +48,6 @@ export default function TopBarControls() {
           )}
         </AnimatePresence>
       </div>
-    </div>
-  )
+    </>
+  );
 }

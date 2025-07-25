@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
+import React from 'react';
 
 export default function NextSection() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: NextSection.jsx</div>
     <section className="h-screen bg-white scroll-snap-start flex flex-col items-center justify-center text-center px-4">
       <motion.h2
         initial={{ y: 40, opacity: 0 }}
@@ -23,5 +25,8 @@ export default function NextSection() {
         Scroll, touchez, plongez dans l’univers LuxeEvents.
       </motion.p>
     </section>
+  );
+}
+    </>
   );
 }

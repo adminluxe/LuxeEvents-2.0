@@ -1,28 +1,9 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import React from 'react';
 
 export default function DarkModeToggle() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedMode === 'true' || (!savedMode && prefersDark)) {
-      setDark(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !dark;
-    setDark(newMode);
-    localStorage.setItem('darkMode', newMode.toString());
-    document.documentElement.classList.toggle('dark', newMode);
-  };
-
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: DarkModeToggle.jsx</div>
     <button
       onClick={toggleDarkMode}
       aria-label="Toggle Dark Mode"
@@ -34,5 +15,8 @@ export default function DarkModeToggle() {
         <Moon className="w-6 h-6 text-gray-900" />
       )}
     </button>
+  );
+}
+    </>
   );
 }

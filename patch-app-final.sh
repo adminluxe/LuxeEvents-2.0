@@ -1,3 +1,8 @@
+#!/bin/bash
+
+echo "🛠 Correction complète de src/App.jsx..."
+
+cat << 'EOL' > src/App.jsx
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
@@ -38,3 +43,6 @@ function App() {
 }
 
 export default App
+EOL
+
+echo "✅ src/App.jsx réparé proprement."

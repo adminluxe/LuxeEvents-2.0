@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default function MapSection() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: MapSection.jsx</div>
     <section className="py-16 bg-black text-white text-center">
       <h2 className="text-4xl font-bold text-[#d4af37] mb-8">Nous trouver</h2>
       <div className="max-w-4xl mx-auto">
@@ -15,6 +17,6 @@ export default function MapSection() {
           loading="lazy"
         ></iframe>
       </div>
-    </section>
+    </>
   );
 }

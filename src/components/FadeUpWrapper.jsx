@@ -1,15 +1,20 @@
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
 
-export default function FadeUpWrapper({ children, className = "" }) {
+export default function FadeUpWrapper({ children }) {
   return (
-    <motion.section
-      className={`snap-start ${className}`}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, amount: 0.5 }}
-    >
-      {children}
-    </motion.section>
+    <>
+      <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">
+        ✅ VISIBLE: FadeUpWrapper.jsx
+      </div>
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true }}
+      >
+        {children}
+      </motion.section>
+    </>
   );
 }

@@ -1,28 +1,21 @@
-import React, { useEffect, useState } from "react";
-import Lottie from "lottie-react";
-import animationData from "@/assets/luxeevents-intro.json"; // Remplace par ton vrai fichier
+import React from 'react';
 
-export default function LottieLoader({ onFinish }) {
-  const [played, setPlayed] = useState(false);
-
-  useEffect(() => {
-    const alreadyPlayed = sessionStorage.getItem("introPlayed");
-    if (!alreadyPlayed) {
-      setPlayed(true);
-      setTimeout(() => {
-        sessionStorage.setItem("introPlayed", "true");
-        onFinish();
-      }, 3000);
-    } else {
-      onFinish();
-    }
-  }, [onFinish]);
-
-  if (!played) return null;
-
+export default function LottieLoader() {
   return (
+    <>
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: LottieLoader.jsx</div>
     <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
       <Lottie animationData={animationData} loop={false} className="w-64 h-64" />
     </div>
+
+
+
+    <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">VISIBLE: LottieLoader.jsx</div>
+    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+      <Lottie animationData={animationData} loop={false} className="w-64 h-64" />
+    </div>
+  );
+}
+    </>
   );
 }

@@ -5,6 +5,8 @@ import { VitePWA } from 'vite-plugin-pwa';
 const isBuild = process.env.npm_lifecycle_event === 'build';
 
 export default defineConfig({
+  resolve: { alias: { '@': require('path').resolve(__dirname, 'src') } },
+  base: '/',
   css: { url: false },
   plugins: [
     react(),
