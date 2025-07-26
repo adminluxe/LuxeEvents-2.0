@@ -20,7 +20,7 @@ export default function TimelineSection() {
               key={index}
               className="p-4 border border-gold rounded shadow hover:scale-105 transition"
             >
-              <span className="text-gold text-xl font-semibold">{index + 1}</span>
+              <span className="text-gold md:text-2xl text-xl font-semibold">{index + 1}</span>
               <p className="text-black dark:text-white mt-2">{step}</p>
             </div>
           ))}

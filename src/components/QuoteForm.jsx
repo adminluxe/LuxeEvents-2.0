@@ -19,7 +19,7 @@ export default function QuoteForm() {
 
   return (
     <>
-      <section className="py-16 px-4 max-w-3xl mx-auto">
+      <section className="py-16 md:px-8 px-4 max-w-3xl mx-auto">
         <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-center text-gold">Demande de devis</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input

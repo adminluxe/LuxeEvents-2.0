@@ -14,7 +14,7 @@ import 'swiper/css';
         {stories.map((s, i) => (
           <SwiperSlide key={i}>
             <div className="p-6 bg-white text-black rounded-xl shadow-md">
-              <h3 className="text-xl font-bold mb-2">{s.title}</h3>
+              <h3 className="md:text-2xl text-xl font-bold mb-2">{s.title}</h3>
               <p>{s.desc}</p>
             </div>
           </SwiperSlide>

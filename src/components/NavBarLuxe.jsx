@@ -4,8 +4,8 @@ export default function NavBarLuxe() {
   return (
     <>
     <header className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md text-white border-b border-white/10">
-      <nav className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="/" className="text-xl font-bold tracking-wide text-[#d4af37]">
+      <nav className="max-w-6xl mx-auto md:px-8 px-4 py-3 flex justify-between items-center">
+        <a href="/" className="md:text-2xl text-xl font-bold tracking-wide text-[#d4af37]">
           LuxeEvents
         </a>
         <div className="flex gap-6 text-sm font-medium">

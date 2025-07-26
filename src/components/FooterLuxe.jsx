@@ -6,7 +6,7 @@ export default function FooterLuxe() {
     <>
       <div className="bg-green-200 text-black p-2 text-xs uppercase tracking-widest border border-green-600 mb-2">
       </div>
-      <footer className="bg-black text-white text-sm py-6 px-4 text-center border-t border-white/10">
+      <footer className="bg-black text-white text-sm py-6 md:px-8 px-4 text-center border-t border-white/10">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <p>&copy; {new Date().getFullYear()} LuxeEvents – Tous droits réservés.</p>
           <div className="flex gap-4">
