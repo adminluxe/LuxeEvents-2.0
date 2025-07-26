@@ -1,3 +1,10 @@
+#!/bin/bash
+
+FILE="src/components/SwipeStory.jsx"
+
+echo "🛠 Correction finale de SwipeStory.jsx"
+
+cat << 'EOL' > "$FILE"
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -23,3 +30,8 @@ export default function SwipeStory() {
     </>
   );
 }
+EOL
+
+echo "✅ SwipeStory réparé et refermé proprement."
+echo "🔁 Rebuild final + déploiement imminent..."
+npm run build && vercel --prod --force --yes

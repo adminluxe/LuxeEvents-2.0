@@ -1,3 +1,11 @@
+#!/bin/bash
+
+FILE="src/components/ServicesSection.jsx"
+
+echo "🧼 Correction finale de ServicesSection.jsx (fragment JSX)"
+
+# Réécriture propre
+cat << 'EOL' > "$FILE"
 import React from 'react';
 
 export default function ServicesSection() {
@@ -23,3 +31,8 @@ export default function ServicesSection() {
     </>
   );
 }
+EOL
+
+echo "✅ ServicesSection réparé."
+echo "🛠 Rebuild final + déploiement..."
+npm run build && vercel --prod --force --yes

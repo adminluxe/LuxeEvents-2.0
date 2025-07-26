@@ -1,3 +1,11 @@
+#!/bin/bash
+
+FILE="src/components/QuoteForm.jsx"
+
+echo "📋 Correction finale de QuoteForm.jsx (fragment JSX)"
+
+# Réécriture complète et propre
+cat << 'EOL' > "$FILE"
 import React, { useState } from 'react';
 
 export default function QuoteForm() {
@@ -60,3 +68,8 @@ export default function QuoteForm() {
     </>
   );
 }
+EOL
+
+echo "✅ QuoteForm réparé."
+echo "🛠 Rebuild final + déploiement imminent..."
+npm run build && vercel --prod --force --yes

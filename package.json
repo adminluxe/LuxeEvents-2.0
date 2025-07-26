@@ -3,10 +3,12 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint --config eslint.config.cjs .",
-    "test": "echo \"No test specified\" && exit 0",
+    "test": "echo \"(no tests yet)\" && exit 0",
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview",
+    "verify-jsx": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint . --ext .js,.jsx"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.4",

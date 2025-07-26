@@ -1,3 +1,10 @@
+#!/bin/bash
+
+FILE="src/components/HeroSection.jsx"
+
+echo "🧼 Reset complet du composant HeroSection.jsx..."
+
+cat << 'EOL' > "$FILE"
 import React, { useState } from 'react';
 
 export default function HeroSection() {
@@ -29,3 +36,8 @@ export default function HeroSection() {
     </>
   );
 }
+EOL
+
+echo "✅ HeroSection réécrit avec succès."
+echo "🚀 Rebuild propre + déploiement Vercel..."
+npm run build && vercel --prod --force --yes

@@ -10,7 +10,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <HelmetProvider>
       <BrowserRouter>
         <div style={{ color: "red", background: "white", padding: "20px" }}>
-          APP LOADED
         </div>
         <App />
       </BrowserRouter>

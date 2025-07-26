@@ -1,3 +1,10 @@
+#!/bin/bash
+
+FILE="src/components/TimelineSection.jsx"
+
+echo "🛠 Correction complète de TimelineSection.jsx"
+
+cat << 'EOL' > "$FILE"
 import React from 'react';
 
 export default function TimelineSection() {
@@ -29,3 +36,8 @@ export default function TimelineSection() {
     </>
   );
 }
+EOL
+
+echo "✅ TimelineSection corrigé."
+echo "🔁 Rebuild final + déploiement..."
+npm run build && vercel --prod --force --yes

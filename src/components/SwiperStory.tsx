@@ -2,7 +2,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
-export default function SwiperStory() {
   const stories = [
     { title: "Une vision", desc: "Créer des événements qui marquent les esprits." },
     { title: "Un savoir-faire", desc: "Allier luxe, accessibilité et innovation." },
