@@ -1,14 +1,14 @@
 // LuxeEvents • ServicesSection — version safe (idx défini, clés stables)
 import React from "react";
-import * as S from "../data/services.luxe.js";
-const services = S.services || S.default || S.luxeServices || S.data || [];
+import servicesDefault, { services as servicesNamed } from "../data/services.luxe.wrap.js";
+const services = servicesNamed || servicesDefault || [];
 
 // Accepte à la fois export default et export nommé { services }
-const SERVICES = Array.isArray(ServicesData?.default)
-  ? ServicesData.default
-  : Array.isArray(ServicesData?.services)
-  ? ServicesData.services
-  : [];
+const SERVICES = Array.isArray(services) ? services : [];
+
+
+
+
 
 export default function ServicesSection() {
   if (!Array.isArray(SERVICES) || SERVICES.length === 0) {
