@@ -1,32 +1,36 @@
-# === deps & build caches ===
+# === node & builds ===
 node_modules/
-.pnpm-store/
-.vite/
-build/
 dist/
+build/
 .next/
+.vite/
 .parcel-cache/
 .turbo/
 .cache/
-.vercel/
+.pnpm-store/
 
-# === env & logs ===
+# === vercel / env ===
+.vercel/
 .env
 *.log
 
-# === backups & dumps (ne jamais suivre) ===
+# === backups & grosses archives ===
 backup*/
 backup_*/
 backup-*/
 _backups/
 *.bak.*
-vercel.json.bak.*
+*.zip
+*.7z
+*.tar
+*.tgz
 .gold_backup/
 .deploy-static-clean/
 luxeevents-next/_backups/
 luxeevents-next/.backup/
+vercel.json.bak.*
 
-# === heavy media (garder hors repo) ===
+# === médias lourds à laisser hors repo ===
 *.mp4
 *.mov
 *.mkv
@@ -35,12 +39,8 @@ luxeevents-next/.backup/
 *.flac
 *.psd
 *.ai
-*.zip
-*.7z
-*.tar
-*.tgz
 
-# === dossiers média publics historiques ===
+# === publics historiques à exclure ===
 public/media/
 public/videos/
 public/audio/
@@ -48,6 +48,6 @@ public/sounds/
 luxeevents-next/public/videos/
 luxeevents-next/public/audio/
 
-# === divers ===
-mailcow-dockerized/
-=
+# === OS junk ===
+.DS_Store
+Thumbs.db
