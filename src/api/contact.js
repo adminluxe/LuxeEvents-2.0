@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import { exec } from 'child_process';
 
 export async function POST(req) {
