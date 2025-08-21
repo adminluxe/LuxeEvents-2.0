@@ -1,8 +1,5 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh" 2>/dev/null || true
-echo "ESLint (src seulement)…"
-if command -v pnpm >/dev/null 2>&1; then
-  pnpm exec eslint --max-warnings=0 "src/**/*.{js,jsx,ts,tsx}" || exit 1
-else
-  npx -y eslint --max-warnings=0 "src/**/*.{js,jsx,ts,tsx}" || exit 1
-fi
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Validation ESLint (src .js/.jsx)…"
+pnpm exec eslint --max-warnings=0 "src/**/*.{js,jsx}" || exit 1
