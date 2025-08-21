@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="antialiased" lang="fr">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -93,7 +93,24 @@
     </script>
 
     <!-- JSON-LD: Organization (Paris & international) -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"LuxeEvents","url":"https://luxeevents.me/","logo":"https://luxeevents.me/logo_gold_black.png","description":"Le Luxe à la portée de tous… Pour des expériences inoubliables !","email":"contact@luxeevents.me","address":{"@type":"PostalAddress","addressLocality":"Paris","addressCountry":"FR"},"areaServed":"Worldwide","sameAs":[]}</script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LuxeEvents",
+        "url": "https://luxeevents.me/",
+        "logo": "https://luxeevents.me/logo_gold_black.png",
+        "description": "Le Luxe à la portée de tous… Pour des expériences inoubliables !",
+        "email": "contact@luxeevents.me",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Paris",
+          "addressCountry": "FR"
+        },
+        "areaServed": "Worldwide",
+        "sameAs": []
+      }
+    </script>
 
     <!-- Fil d’Ariane dynamique /devis -->
     <script>
@@ -133,7 +150,7 @@
   <body>
     <!-- H1 accessible (visually-hidden) -->
     <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-      <h1>Le Luxe à la portée de tous… Pour des expériences inoubliables !</h1>
+      <h1>Le Luxe à la portée de tous — Pour des expériences inoubliables !</h1>
       <p>Luxe, Excellence, Innovation.</p>
     </div>
 
@@ -146,7 +163,7 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          falsenavigator.serviceWorker.registernavigator.serviceWorker.registernavigator.serviceWorker.register("/sw.js").catch(() => {});
+          navigator.serviceWorker.register("/sw.js").catch(() => {});
         });
       }
     </script>
