@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === LuxeEvents Custom Classes === */
+.text-gold {
+  color: #f8e9c8;
+}
+
+/* === Effet Halo Doré Luxe === */
+@keyframes halo {
+  0% {
+    box-shadow: 0 0 0 0 rgba(248, 233, 200, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(248, 233, 200, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(248, 233, 200, 0);
+  }
+}
+
+.animate-halo {
+  animation: halo 2s infinite;
+}
+
+/* ——— Luxe Touch ——— */
+:root{ --luxe-gold:#d4af37; --luxe-gold-2:#f5d76e; --glass-bg:rgba(255,255,255,.08); --glass-stroke:rgba(255,255,255,.15)}
+.halo-gold{ box-shadow:0 0 0 0 rgba(212,175,55,.45); animation:haloPulse 2.8s ease-in-out infinite; }
+@keyframes haloPulse{ 0%{box-shadow:0 0 0 0 rgba(212,175,55,.35)} 70%{box-shadow:0 0 0 22px rgba(212,175,55,0)} 100%{box-shadow:0 0 0 0 rgba(212,175,55,0)} }
+.glass{ background:var(--glass-bg); backdrop-filter:saturate(160%) blur(10px); -webkit-backdrop-filter:saturate(160%) blur(10px); border:1px solid var(--glass-stroke); }
+.hover-gold:hover{ transform:translateY(-1px); box-shadow:0 12px 30px -10px rgba(212,175,55,.45)}
+.ripple{ position:relative; overflow:hidden }
+.ripple:after{ content:; position:absolute; inset:auto; width:0;height:0; border-radius:9999px; background:radial-gradient(circle at center,rgba(245,215,110,.55),rgba(245,215,110,0) 60%); transform:translate(-50%,-50%); pointer-events:none; }
+.ripple:active:after{ width:220px; height:220px; left:var(--x,50%); top:var(--y,50%); transition:width .35s ease, height .35s ease }
+.parallax-hero{ background-attachment:fixed; }
+@media (prefers-reduced-motion:reduce){ .halo-gold{animation:none} .hover-gold{transition:none} .ripple:active:after{width:0;height:0} }
+
+/* ——— Full Luxe Touch v4 ——— */
+:root{ --luxe-gold:#d4af37; --luxe-gold-2:#f5d76e; --glass-bg:rgba(255,255,255,.08); --glass-stroke:rgba(255,255,255,.15)}
+.title-luxe{ letter-spacing:-.01em; text-shadow:0 6px 18px rgba(0,0,0,.45) }
+.btn-luxe{ border:1px solid rgba(212,175,55,.55); background:linear-gradient(135deg,var(--luxe-gold),var(--luxe-gold-2)); color:#0b0b0b;
+  box-shadow:0 12px 30px -10px rgba(212,175,55,.45); transition:transform .18s ease, box-shadow .2s ease }
+.btn-luxe:hover{ transform:translateY(-1px); box-shadow:0 16px 40px -12px rgba(212,175,55,.55) }
+.glass{ background:var(--glass-bg); backdrop-filter:saturate(160%) blur(10px); -webkit-backdrop-filter:saturate(160%) blur(10px); border:1px solid var(--glass-stroke) }
+.halo-gold{ box-shadow:0 0 0 0 rgba(212,175,55,.45); animation:haloPulse 2.8s ease-in-out infinite }
+@keyframes haloPulse{0%{box-shadow:0 0 0 0 rgba(212,175,55,.35)}70%{box-shadow:0 0 0 22px rgba(212,175,55,0)}100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}}
+.ripple{ position:relative; overflow:hidden }
+.ripple:after{ content:; position:absolute; width:0;height:0; border-radius:9999px; background:radial-gradient(circle at center,rgba(245,215,110,.55),rgba(245,215,110,0) 60%); transform:translate(-50%,-50%); pointer-events:none }
+.ripple:active:after{ width:220px; height:220px; left:var(--x,50%); top:var(--y,50%); transition:width .35s ease, height .35s ease }
+.parallax-hero{ background-attachment:fixed }
+@media (prefers-reduced-motion:reduce){ .halo-gold{animation:none} .btn-luxe{transition:none} .ripple:active:after{width:0;height:0} }

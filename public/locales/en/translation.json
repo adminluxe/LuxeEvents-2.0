@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Luxury within reach – An unforgettable experience!",
+    "cta": "Request a quote"
+  },
+  "nav": { "home": "Home", "services": "Services", "devis": "Quote", "legal": "Legal" },
+  "audio": { "sound_on": "Sound on", "sound_off": "Sound off" },
+  "lang": { "fr": "FR", "en": "EN" },
+  "theme": { "light": "Light", "dark": "Dark" }
+}

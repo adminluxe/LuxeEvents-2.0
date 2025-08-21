@@ -1,0 +1,53 @@
+# === deps & build caches ===
+node_modules/
+.pnpm-store/
+.vite/
+build/
+dist/
+.next/
+.parcel-cache/
+.turbo/
+.cache/
+.vercel/
+
+# === env & logs ===
+.env
+*.log
+
+# === backups & dumps (ne jamais suivre) ===
+backup*/
+backup_*/
+backup-*/
+_backups/
+*.bak.*
+vercel.json.bak.*
+.gold_backup/
+.deploy-static-clean/
+luxeevents-next/_backups/
+luxeevents-next/.backup/
+
+# === heavy media (garder hors repo) ===
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.wav
+*.flac
+*.psd
+*.ai
+*.zip
+*.7z
+*.tar
+*.tgz
+
+# === dossiers média publics historiques ===
+public/media/
+public/videos/
+public/audio/
+public/sounds/
+luxeevents-next/public/videos/
+luxeevents-next/public/audio/
+
+# === divers ===
+mailcow-dockerized/
+=

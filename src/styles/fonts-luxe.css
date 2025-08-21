@@ -1,0 +1,11 @@
+/* Google Fonts (dev) – remplaçable par self-host plus tard */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --font-serif-luxe:"Playfair Display", ui-serif, Georgia, serif;
+  --font-sans-luxe:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+.font-serif-luxe{ font-family: var(--font-serif-luxe); }
+.font-sans-luxe{ font-family: var(--font-sans-luxe); }
+h1,h2,h3,.section-title{ font-family: var(--font-serif-luxe); }
+body, p, li, small{ font-family: var(--font-sans-luxe); }

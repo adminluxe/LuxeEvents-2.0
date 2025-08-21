@@ -1,0 +1,15 @@
+{
+  "short_name": "LuxeEvents",
+  "name": "LuxeEvents – Luxe, Excellence, Innovation",
+  "description": "Événements haut de gamme par Purple Orchid Group.",
+  "icons": [
+    { "src": "/favicon_32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/favicon_64x64.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "/logo192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logo512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0b0b0b",
+  "background_color": "#000000"
+}

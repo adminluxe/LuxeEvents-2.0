@@ -1,0 +1,8 @@
+@media (prefers-reduced-motion: reduce){
+  .reveal-on-scroll, [data-reveal], .parallax, [data-parallax]{
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}

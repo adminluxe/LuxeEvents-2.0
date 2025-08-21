@@ -1,0 +1,57 @@
+import TestimonialsCarousel from "./components/TestimonialsCarousel";
+import CookieBanner from "./components/CookieBanner.jsx";
+import "./styles/luxe-wow.css";
+import NavBar from "./components/NavBar";
+import AudioAmbient from "./components/AudioAmbient";
+import ThemeToggle from "./components/ThemeToggle";
+import LangToggle from "./components/LangToggle";
+import HeroSection from "./components/HeroSection";
+import ServicesSection from "./components/ServicesSection";
+import CircularMenu from "./components/CircularMenu";
+import DevisLanding from "./components/DevisLanding";
+
+export default function App() {
+  const isDevis = typeof window !== "undefined" && window.location.pathname === "/devis";
+
+  return (
+    <>
+      {/* Outils (langue + thème) */}
+      <div className="fixed top-4 right-4 z-50 flex gap-2">
+        <LangToggle />
+        <ThemeToggle />
+      </div>
+
+      {/* Header + Nav */}
+      <header className="w-full sticky top-0 z-40 backdrop-blur-md bg-black/10 dark:bg-black/30 transition-colors text-white">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="font-semibold tracking-wide">LuxeEvents</div>
+          <NavBar />
+        </div>
+      </header>
+
+      {/* Contenu */}
+      <main className="pt-16 md:pt-20 min-h-[60vh]">
+        {isDevis ? (
+          <DevisLanding />
+        ) : (
+          <>
+            <HeroSection />
+            <section id="services" className="mt-12">
+              <ServicesSection />
+        <TestimonialsCarousel />
+            </section>
+          </>
+        )}
+      </main>
+    <CookieBanner />
+
+      {/* Menu circulaire global */}
+      <div className="fixed bottom-24 right-6 z-40 pointer-events-auto">
+        <CircularMenu />
+      </div>
+
+      {/* Ambiance audio */}
+      <AudioAmbient />
+    </>
+  );
+}

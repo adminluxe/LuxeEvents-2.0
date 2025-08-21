@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Le luxe à la portée de tous – Une expérience inoubliable!",
+    "cta": "Demander un devis"
+  },
+  "nav": { "home": "Accueil", "services": "Services", "devis": "Devis", "legal": "Mentions légales" },
+  "audio": { "sound_on": "Son activé", "sound_off": "Son coupé" },
+  "lang": { "fr": "FR", "en": "EN" },
+  "theme": { "light": "Clair", "dark": "Sombre" }
+}

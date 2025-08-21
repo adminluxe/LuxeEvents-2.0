@@ -1,0 +1,5 @@
+html::before, html::after,
+body::before, body::after { content: none; }
+/* CTA spacing sans toucher au JSX */
+.cta-link { display: inline-block; margin-right: 1rem; }
+.cta-link:last-child { margin-right: 0; }

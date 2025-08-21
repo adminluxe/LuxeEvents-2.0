@@ -1,0 +1,39 @@
+:root{
+  --gold: #D4AF37;
+  --ivory:#F3EFE6;
+  --ink:  #1A1A1A;
+}
+html.dark{
+  --gold: #D4AF37;
+  --ivory:#F0ECE2;
+  --ink:  #0E0E0E;
+}
+
+/* —— Finition header : hover or discret —— */
+header nav a, .navbar a{
+  transition: color .15s ease, text-underline-offset .15s ease, text-decoration-color .15s ease;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: transparent;
+}
+header nav a:hover, .navbar a:hover{
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--gold) 80%, transparent);
+  text-underline-offset: 4px;
+}
+
+/* — Hover or uniquement si l'appareil supporte le survol — */
+@media (hover: hover) and (pointer: fine){
+  header nav a:hover, .navbar a:hover{
+    color: var(--gold);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--gold) 80%, transparent);
+    text-underline-offset: 4px;
+  }
+}
+@media (hover: none){
+  header nav a, .navbar a{
+    text-decoration: none !important;
+  }
+}

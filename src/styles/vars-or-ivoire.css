@@ -1,0 +1,60 @@
+:root{
+  --gold: #D4AF37;
+  --ivory:#F3EFE6;
+  --ink:  #1A1A1A;
+}
+html.dark{
+  --gold: #D4AF37;
+  --ivory:#F0ECE2;
+  --ink:  #0E0E0E;
+}
+
+/* —— Finition header : hover or discret —— */
+header nav a, .navbar a{
+  transition: color .15s ease, text-underline-offset .15s ease, text-decoration-color .15s ease;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: transparent;
+}
+header nav a:hover, .navbar a:hover{
+  color: var(--gold);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--gold) 80%, transparent);
+  text-underline-offset: 4px;
+}
+
+/* — Hover or uniquement si l'appareil supporte le survol — */
+@media (hover: hover) and (pointer: fine){
+  header nav a:hover, .navbar a:hover{
+    color: var(--gold);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in oklab, var(--gold) 80%, transparent);
+    text-underline-offset: 4px;
+  }
+}
+@media (hover: none){
+  header nav a, .navbar a{
+    text-decoration: none !important;
+  }
+}
+
+/* — Filet or sous le H1 (thème clair seulement) — */
+:root:not(.dark) .hero-title{
+  position: relative;
+}
+:root:not(.dark) .hero-title::after{
+  /* content:""; */
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-0.5rem; width:min(160px, 40%); height:1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--gold) 80%, transparent), transparent);
+  opacity:.9;
+}
+
+/* — Finish Lane: variables de détail — */
+:root{
+  --ring-gold: color-mix(in oklab, var(--gold) 55%, transparent);
+  --glow-gold: 0 0 .28rem var(--gold), 0 0 .8rem color-mix(in oklab, var(--gold) 60%, transparent);
+}
+:root.dark{
+  --ring-gold: color-mix(in oklab, var(--gold) 70%, transparent);
+}

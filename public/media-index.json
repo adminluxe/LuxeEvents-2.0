@@ -1,0 +1,164 @@
+[
+  {
+    "type": "video",
+    "file": "videos/video-1.mp4"
+  },
+  {
+    "type": "image",
+    "role": "hero",
+    "file": "images/hero/hero-1.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-1.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-2.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-3.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-4.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-5.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-6.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-7.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-8.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-9.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-10.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-11.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-12.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-13.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-14.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-15.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-16.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-17.webp"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-2.mp4"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-3.mp4"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-4.mp4"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-5.mp4"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-6.mp4"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-7.mp4"
+  },
+  {
+    "type": "video",
+    "file": "videos/video-8.mp4"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-18.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-19.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-20.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-21.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-22.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-23.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-24.webp"
+  },
+  {
+    "type": "image",
+    "role": "story",
+    "file": "images/story/story-25.webp"
+  }
+]

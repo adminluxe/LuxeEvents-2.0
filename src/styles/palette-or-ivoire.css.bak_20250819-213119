@@ -1,0 +1,69 @@
+/* === Tokens === */
+:root{
+  --gold:#D4AF37;         /* Or */
+  --gold-50:#e1c77c;      /* Or clair pour hover */
+  --ivory:#F3EFE6;        /* Ivoire (texte clair) */
+  --ink:#0B0B0B;          /* Noir profond */
+  --smoke:#161616;        /* Gris fumé */
+  --muted:#B8B8B8;        /* Gris texte secondaire */
+  --card:#0E0E0E;         /* Fond carte soft */
+  --ring:rgba(255,255,255,.12);
+}
+html.dark{
+  --bg:var(--ink);
+  --fg:var(--ivory);
+}
+html:not(.dark){
+  --bg:#FAF9F5;
+  --fg:#171717;
+  --card:#FFFFFF;
+  --ring:rgba(17,17,17,.12);
+}
+
+/* === Base === */
+html,body{ background:var(--bg); color:var(--fg); }
+h1,h2,h3{ letter-spacing:.2px; }
+a{ color:var(--fg); text-decoration:underline dotted transparent; text-underline-offset:3px; }
+a:hover{ text-decoration-color:var(--gold); }
+
+/* === Hero CTA spacing (déjà ajouté côté classe .cta-link) === */
+a.cta-link{ display:inline-block; margin-right:1rem; }
+a.cta-link:last-child{ margin-right:0; }
+
+/* === Services === */
+section#services h2{ color:var(--fg); }
+section#services p{ color:color-mix(in oklab, var(--fg) 78%, #000 22%); }
+section#services article{
+  border:1px solid var(--ring);
+  background:linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.55));
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+section#services .badge{
+  background:rgba(255,255,255,.08);
+  border:1px solid var(--ring);
+  color:var(--ivory);
+  padding:.32rem .56rem;
+  border-radius:999px;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* === Testimonials === */
+section#trust article{
+  border:1px solid var(--ring);
+  background:linear-gradient(to bottom, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  backdrop-filter: blur(2px);
+}
+section#trust h2{ color:var(--fg); }
+
+/* === Accents or — subtils (pas criards) === */
+.gold, em.gold{ color:var(--gold); font-style:normal; }
+.btn-gold{
+  display:inline-block; padding:.6rem 1rem; border-radius:.8rem;
+  background:var(--gold); color:#111; border:1px solid #0000;
+}
+.btn-gold:hover{ background:var(--gold-50); }
+
+/* Nettoyage pseudo-éléments globaux (on évite les guillemets parasites) */
+html::before,html::after,body::before,body::after{ content:none !important; }

@@ -1,0 +1,2 @@
+import React from 'react';
+export default function Mentions(){ return (<main className="p-8"><h2 className="text-3xl font-bold mb-4">Mentions légales</h2><p>Informations légales.</p></main>); }

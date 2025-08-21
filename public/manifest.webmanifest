@@ -1,0 +1,20 @@
+{
+  "name": "LuxeEvents – Le luxe à la portée de tous",
+  "short_name": "LuxeEvents",
+  "description": "Événements haut de gamme, expérience web immersive.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0b0b",
+  "theme_color": "#0b0b0b",
+  "icons": [
+    { "src": "/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Services", "short_name": "Services", "url": "/services" },
+    { "name": "Devis instantané", "short_name": "Devis", "url": "/devis" }
+  ]
+}

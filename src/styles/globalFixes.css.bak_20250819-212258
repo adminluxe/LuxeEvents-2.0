@@ -1,0 +1,9 @@
+/* Espace entre liens du header si le composant n'a pas de gap Tailwind */
+header nav, .nav-spaced { display:flex; align-items:center; gap:.9rem; }
+header nav a { letter-spacing:.02em; }
+
+/* Base page */
+html, body { background: #0a0a0a; }
+
+/* Sections spacing */
+section { scroll-margin-top: 80px; }

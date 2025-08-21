@@ -1,0 +1,58 @@
+:root{
+  --gold-300:#f5d76e; --gold-400:#f1cf5c; --gold-500:#d4af37; --gold-600:#b6922a;
+  --ink-dark:#0b0b0b; --ink-light:#f8f5ec; --ink-mid:#1a1a1a;
+  --muted-dark:rgba(255,255,255,.74); --muted-light:rgba(0,0,0,.70);
+}
+html.dark,[data-theme="dark"]{
+  --ink:var(--ink-light); --muted:var(--muted-dark); --cta-ink:#0b0b0b;
+  --cta-glow:rgba(245,215,110,.35); --cta-glow-2:rgba(245,215,110,.18);
+}
+html:not(.dark),[data-theme="light"]{
+  --ink:var(--ink-mid); --muted:var(--muted-light); --cta-ink:#0b0b0b;
+  --cta-glow:rgba(212,175,55,.25); --cta-glow-2:rgba(212,175,55,.12);
+}
+.text-contrast{ color:var(--ink) !important; }
+.muted-contrast{ color:var(--muted) !important; }
+.section-title{
+  color:var(--ink) !important; letter-spacing:.2px; text-shadow:0 1px 0 rgba(0,0,0,.18)
+}
+html.dark .section-title,[data-theme="dark"] .section-title{
+  text-shadow:0 1px 1px rgba(0,0,0,.45),0 0 14px rgba(248,233,200,.20)
+}
+.hero-tagline{ color:var(--muted) !important; }
+
+/* CTA primaire vers /devis + classe .cta-luxe */
+a[href*="/devis"],a[href^="/devis"],.cta-luxe{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.85rem 1.2rem; border-radius:9999px;
+  background:linear-gradient(180deg,var(--gold-300),var(--gold-500));
+  color:var(--cta-ink)!important; font-weight:600; line-height:1.1;
+  box-shadow:0 6px 18px var(--cta-glow),0 2px 6px var(--cta-glow-2);
+  border:1px solid rgba(214,176,78,.55); text-decoration:none!important;
+  transition:transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+a[href*="/devis"]:hover,a[href^="/devis"]:hover,.cta-luxe:hover{
+  transform:translateY(-1px); filter:saturate(1.05);
+  box-shadow:0 8px 24px var(--cta-glow),0 3px 8px var(--cta-glow-2);
+}
+
+/* CTA secondaire (ghost) pour /realisations + classe .cta-ghost */
+a[href*="/realisations"],a[href^="/realisations"],.cta-ghost{
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.78rem 1.15rem; border-radius:9999px; text-decoration:none!important;
+  border:1px solid color-mix(in oklab,var(--ink) 22%, transparent);
+  color:var(--ink)!important; background:transparent;
+  transition:transform .15s ease, background .2s ease, border-color .2s ease;
+}
+a[href*="/realisations"]:hover,a[href^="/realisations"]:hover,.cta-ghost:hover{
+  transform:translateY(-1px);
+  background:color-mix(in oklab,var(--ink) 8%, transparent);
+}
+
+/* Sections titrées */
+section#services h2, section#trust h2, section#temoignages h2{ color:var(--ink)!important }
+/* Cartes plus lisibles */
+.wow-grid > *{
+  background:color-mix(in oklab,var(--ink) 5%, transparent);
+  border:1px solid color-mix(in oklab,var(--ink) 12%, transparent);
+}

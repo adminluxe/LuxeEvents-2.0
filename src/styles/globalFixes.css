@@ -1,0 +1,20 @@
+/* Espace entre liens du header si le composant n'a pas de gap Tailwind */
+header nav, .nav-spaced { display:flex; align-items:center; gap:.9rem; }
+header nav a { letter-spacing:.02em; }
+
+/* Base page */
+html, body { background: #0a0a0a; }
+
+/* Sections spacing */
+section { scroll-margin-top: 80px; }
+
+/* ---- V2.2 contrast micro-boost (safe) ---- */
+:root{ --cta-ghost-border: rgba(255,255,255,.35); --cta-ghost-hover: rgba(255,255,255,.6) }
+@media (prefers-color-scheme: light){
+  :root{ --cta-ghost-border: rgba(0,0,0,.35); --cta-ghost-hover: rgba(0,0,0,.6) }
+}
+a.cta-ghost{
+  display:inline-block; padding:.625rem .875rem; border-radius:.75rem;
+  border:1px solid var(--cta-ghost-border); text-underline-offset:4px;
+}
+a.cta-ghost:hover{ border-color: var(--cta-ghost-hover); text-decoration: underline; }

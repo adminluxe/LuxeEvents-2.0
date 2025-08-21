@@ -1,0 +1,60 @@
+:root { --gold:#D4AF37; --ink:#E7E7E7; --muted:#B8B8B8; }
+section#services h2 { color: var(--ink); letter-spacing:.3px; }
+section#services p { color: rgba(231,231,231,.8); }
+section#services .badge { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); padding:.28rem .5rem; border-radius:999px; font-size:.72rem; letter-spacing:.08em; }
+section#services article { border:1px solid rgba(255,255,255,.08); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+section#trust h2 { color: var(--ink); }
+section#trust article { border:1px solid rgba(255,255,255,.10); }
+a.cta-link { display:inline-block; margin-right:1rem; }
+a.cta-link:last-child { margin-right:0; }
+/* Or léger pour titres internes */
+section#services h3 { color: var(--ink); }
+section#services h3 em, .gold { color: var(--gold); font-style: normal; }
+
+/* Finish Lane */
+.hero-title{
+  text-wrap: balance;
+  letter-spacing:.01em;
+}
+
+/* Glow or au survol (desktop seulement) */
+@media (hover:hover) and (pointer:fine){
+  .hero-title:hover{ text-shadow: var(--glow-gold); }
+}
+
+/* Filet or sous le H1 en clair (on a déjà la version sombre côté glow) */
+:root:not(.dark) .hero-title{
+  position: relative;
+}
+:root:not(.dark) .hero-title::after{
+  /* content:""; */
+  position:absolute; left:50%; transform:translateX(-50%);
+  bottom:-0.55rem; width:min(160px,40%); height:1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--gold) 80%, transparent), transparent);
+  opacity:.9;
+}
+
+/* Limitation hover aux devices avec survol (propreté mobile) */
+@media (hover:none){
+  .hero-title:hover{ text-shadow:none; }
+}
+
+/* Focus visibles harmonisés (AA) sans ruiner l’esthétique */
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible{
+  outline:0; box-shadow:0 0 0 .18rem var(--ring-gold);
+  border-radius:.3rem;
+}
+
+/* Sélection élégante */
+::selection{
+  background: color-mix(in oklab, var(--gold) 28%, black);
+  color: var(--ivory);
+}
+
+/* Masque le CTA héro #services (doublon avec le menu) sans supprimer l’ancre */
+.hero-ctas a[href="#services"]{ display:none !important; }
+
+/* Respect des préférences "réduction de mouvement" */
+@media (prefers-reduced-motion: reduce){
+  .reveal-on-scroll, .parallax { animation:none !important; transform:none !important; transition:none !important; }
+}

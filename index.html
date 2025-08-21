@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+
+    <!-- Fade-in léger au boot -->
+    <style id="preload-hide">
+      html.is-loading body{opacity:0;transition:opacity .12s ease}
+    </style>
+    <script>
+      document.documentElement.classList.add("is-loading");
+    </script>
+
+    <!-- Perf: preconnect/dns-prefetch fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+
+    <!-- Perf: preload visuel héros -->
+    <link
+      rel="preload"
+      as="image"
+      href="/luxeevents-bg-hero.webp"
+      imagesizes="100vw"
+    />
+
+    <!-- Canonical + theming -->
+    <link rel="canonical" href="https://luxeevents.me/" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="msapplication-TileColor" content="#0b0b0b" />
+
+    <!-- Favicon & PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Twitter (défaut site) -->
+    <meta property="og:site_name" content="LuxeEvents" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://luxeevents.me/" />
+    <meta
+      property="og:title"
+      content="LuxeEvents – Le Luxe à la portée de tous"
+    />
+    <meta
+      property="og:description"
+      content="Le Luxe à la portée de tous… Pour des expériences inoubliables !"
+    />
+    <meta property="og:image" content="/bg-luxeevents.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="LuxeEvents – Le Luxe à la portée de tous"
+    />
+    <meta
+      name="twitter:description"
+      content="Le Luxe à la portée de tous… Pour des expériences inoubliables !"
+    />
+    <meta name="twitter:image" content="https://luxeevents.me/bg-luxeevents.png" />
+
+    <!-- SEO base -->
+    <title>LuxeEvents — Le Luxe à la portée de tous</title>
+    <meta
+      name="description"
+      content="Événements haut de gamme à Paris et à l’international. Conception sur-mesure, accompagnement serein et expériences inoubliables."
+    />
+
+    <!-- Hreflang (si une seule langue, on garde fr + x-default) -->
+    <link rel="alternate" href="https://luxeevents.me/" hreflang="fr" />
+    <link rel="alternate" href="https://luxeevents.me/" hreflang="x-default" />
+
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "LuxeEvents",
+        "url": "https://luxeevents.me/",
+        "inLanguage": "fr-FR",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://luxeevents.me/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
+    <!-- JSON-LD: Organization (Paris & international) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "LuxeEvents",
+        "url": "https://luxeevents.me/",
+        "logo": "https://luxeevents.me/logo_gold_black.png",
+        "description": "Le Luxe à la portée de tous… Pour des expériences inoubliables !",
+        "email": "contact@luxeevents.me",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Paris",
+          "addressCountry": "FR"
+        },
+        "areaServed": "Worldwide",
+        "sameAs": []
+      }
+    </script>
+
+    <!-- Fil d’Ariane dynamique /devis -->
+    <script>
+      (function () {
+        try {
+          if (location && location.pathname === "/devis") {
+            var s = document.createElement("script");
+            s.type = "application/ld+json";
+            s.text = JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Accueil",
+                  "item": "https://luxeevents.me/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Devis",
+                  "item": "https://luxeevents.me/devis"
+                }
+              ]
+            });
+            document.head.appendChild(s);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Thème & boot -->
+    <script src="/theme-init.js"></script>
+  </head>
+
+  <body>
+    <!-- H1 accessible (visually-hidden) -->
+    <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
+      <h1>Le Luxe à la portée de tous — Pour des expériences inoubliables !</h1>
+      <p>Luxe, Excellence, Innovation.</p>
+    </div>
+
+    <div id="root"></div>
+
+    <!-- App -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- SW (optionnel) -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(() => {});
+        });
+      }
+    </script>
+
+    <script src="/anti-bave.js" defer></script>
+  </body>
+</html>
