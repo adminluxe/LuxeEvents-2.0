@@ -1,6 +1,7 @@
 // LuxeEvents • ServicesSection — version safe (idx défini, clés stables)
 import React from "react";
-import * as ServicesData from "../data/services.luxe.js";
+import * as S from "../data/services.luxe.js";
+const services = S.services || S.default || S.luxeServices || S.data || [];
 
 // Accepte à la fois export default et export nommé { services }
 const SERVICES = Array.isArray(ServicesData?.default)
