@@ -114,11 +114,14 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.register.serviceWorker.registernavigator.serviceWorker.register("/sw.js").catch(() => {});
+          navigator.serviceWorker.register.registernavigator.serviceWorker.register("/sw.js").catch(() => {});
         });
       }
     </script>    <script src="/anti-bave.js" defer></script>
     <script>/* SW guard */
+  (function(){try{if("serviceWorker" in navigator){fetch("/sw.js",{method:"HEAD"}).then(r=>{if(r.ok){navigator.serviceWorker.register("/sw.js").catch(()=>{});}});}}catch(e){}})();
+  </script>
+  <script>/* SW guard */
   (function(){try{if("serviceWorker" in navigator){fetch("/sw.js",{method:"HEAD"}).then(r=>{if(r.ok){navigator.serviceWorker.register("/sw.js").catch(()=>{});}});}}catch(e){}})();
   </script>
 </body>
