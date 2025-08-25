@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="antialiased" lang="fr">
+<html lang="fr" class="antialiased" lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -128,7 +128,20 @@
 
     <!-- Thème & boot -->
     <script src="/theme-init.js"></script>
-  </head>
+    <link rel="preload" as="image" href="/bg-luxeevents.png" fetchpriority="high"/>
+  <link rel="canonical" href="https://www.luxeevents.me/"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#0b0b0b"/>
+  <meta name="description" content="Organisation d’événements haut de gamme à Bruxelles — mariages, corporate, soirées prestige. Devis gratuit."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta property="og:title" content="LuxeEvents — Événements haut de gamme à Bruxelles"/>
+  <meta property="og:description" content="Mariages d’exception, corporate raffiné, soirées privées — Luxe, Excellence, Innovation."/>
+  <meta property="og:url" content="https://www.luxeevents.me/"/>
+  <meta property="og:image" content="https://www.luxeevents.me/bg-luxeevents.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+</head>
 
   <body>
     <!-- H1 accessible (visually-hidden) -->
@@ -146,11 +159,23 @@
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
-          navigator.serviceWorker.registernavigator.serviceWorker.registernavigator.serviceWorker.register("/sw.js").catch(() => {});
+          navigator.serviceWorker.register.registernavigator.serviceWorker.register("/sw.js").catch(() => {});
         });
       }
     </script>
 
     <script src="/anti-bave.js" defer></script>
-  </body>
+    <script>/* SW guard */(function(){try{if("serviceWorker" in navigator){fetch("/sw.js",{method:"HEAD"}).then(r=>{if(r.ok){navigator.serviceWorker.register("/sw.js").catch(()=>{});}});}}catch(e){}})();</script>
+  <script>/* SW guard */
+  (function(){
+    try{
+      if("serviceWorker" in navigator){
+        fetch("/sw.js",{method:"HEAD"}).then(function(r){
+          if(r.ok){ navigator.serviceWorker.register("/sw.js").catch(function(){}); }
+        });
+      }
+    }catch(e){}
+  })();
+  </script>
+</body>
 </html>
