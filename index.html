@@ -124,5 +124,8 @@
   <script>/* SW guard */
   (function(){try{if("serviceWorker" in navigator){fetch("/sw.js",{method:"HEAD"}).then(r=>{if(r.ok){navigator.serviceWorker.register("/sw.js").catch(()=>{});}});}}catch(e){}})();
   </script>
+  <script>/* SW guard */
+  (function(){try{if("serviceWorker" in navigator){fetch("/sw.js",{method:"HEAD"}).then(r=>{if(r.ok){navigator.serviceWorker.register("/sw.js").catch(()=>{});}});}}catch(e){}})();
+  </script>
 </body>
 </html>
