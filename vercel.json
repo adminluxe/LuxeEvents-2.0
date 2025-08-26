@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/devis", "destination": "/" },
+    { "source": "/realisations", "destination": "/" },
+    { "source": "/mentions-legales", "destination": "/" },
+    { "source": "/faq", "destination": "/" }
+  ]
+}

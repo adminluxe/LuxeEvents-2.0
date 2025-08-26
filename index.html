@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="antialiased" lang="fr">
-  <head>
+  <head><link rel="canonical" href="https://www.luxeevents.me/">
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -122,30 +122,3 @@
     <!-- Thème & boot -->
     <script src="/theme-init.js"></script>
   </head>
-
-  <body>
-  <div id="lang-switcher-root" class="fixed top-4 right-4 z-50"></div>
-    <!-- H1 accessible (visually-hidden) -->
-    <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-      <h1>Le Luxe à la portée de tous… Pour des expériences inoubliables !</h1>
-      <p>Luxe, Excellence, Innovation.</p>
-    </div>
-
-    <div id="root">
-  <div id="gallery-root" class="mt-16"></div></div>
-
-    <!-- App -->
-    <script type="module" src="/src/main.jsx"></script>
-
-    <!-- SW (optionnel) -->
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-        });
-      }
-    </script>
-
-    <script>try{if("serviceWorker"in navigator){fetch("/sw.js",{method:"HEAD"}).then(r=>{if(r.ok)navigator.serviceWorker.register("/sw.js")}).catch(()=>{})}}catch(e){}</script>
-  <div id="footer-root" class="mt-24"></div>
-</body>
-</html>

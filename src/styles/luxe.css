@@ -1,27 +1,5 @@
-:root{--gold:#C5A36A;--ink:#0c0b0b;--fog:#f7f5f2}
-html[data-theme="dark"]{--ink:#f2f2f2;--fog:#0c0b0b}
-body{background:var(--fog);color:var(--ink)}
-.lx-wrap{max-width:1080px;margin:0 auto;padding:clamp(12px,3vw,28px)}
-.lx-grid{display:grid;gap:clamp(12px,2.5vw,24px)}
-@media(min-width:900px){.lx-grid-2{grid-template-columns:1fr 1fr}}
-h2.lx-title{font-family:Playfair Display,serif;font-weight:600;letter-spacing:.3px;margin:0 0 .6em}
-.lx-muted{color:#555}
-.lx-card{background:#fff;border:1px solid #eee;border-radius:16px;box-shadow:0 6px 22px rgba(12,11,11,.06);overflow:hidden}
-.lx-pad{padding:clamp(12px,2.5vw,20px)}
-.lx-btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--gold);color:var(--ink);padding:.55rem .9rem;border-radius:999px;text-decoration:none;background:transparent;cursor:pointer}
-.lx-btn:hover{background:var(--gold);color:#fff;transition:all .2s}
-.lx-sec{margin:clamp(18px,5vw,48px) 0}
-.lx-sec hr{border:0;height:1px;background:#eee;margin:24px 0}
-.lx-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(min-width:680px){.lx-gallery{grid-template-columns:repeat(4,1fr)}}
-.lx-gallery img{width:100%;height:auto;border-radius:12px;display:block}
-.lx-services li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid #efefef}
-.lx-services strong{color:var(--ink)}
-.lx-footer{background:#111;color:#ddd;padding:32px 0;margin-top:40px}
-.lx-footer a{color:#ddd;text-decoration:none}
-.lx-footer a:hover{color:#fff}
-.lx-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-.lx-badge{background:var(--gold);color:#fff;border-radius:999px;padding:.15rem .55rem;font-size:.86rem}
-.lx-topbar{position:sticky;top:0;background:rgba(255,255,255,.75);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid #eee;z-index:20}
-html[data-theme="dark"] .lx-card{background:#1a1a1a;border-color:#333}
-html[data-theme="dark"] .lx-footer{background:#0c0c0c}
+:root { --bg: #fff; --fg: #0a0a0a; }
+.dark { --bg: #0a0a0a; --fg: #f2f2f2; }
+html, body { background: var(--bg); color: var(--fg); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.container { width: min(1100px, 92%); }
+a { text-underline-offset: 3px; }

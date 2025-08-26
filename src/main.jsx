@@ -1,21 +1,20 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import Gallery from './components/Gallery.jsx';
-import Footer from './components/Footer.jsx';
-import LanguageSwitcher from './components/LanguageSwitcher.jsx';
-const el = document.getElementById("root");
-createRoot(el).render(<App />);
+import "./styles/luxe.css";
+import { LangProvider } from "./i18n/LangContext.jsx";
 
-// extra roots mounting (idempotent)
-function mountExtraRoot(id, node){
-  const el = document.getElementById(id);
-  if(!el) return;
-  import('react-dom/client').then(({createRoot})=>{
-    const root = createRoot(el);
-    root.render(<React.StrictMode>{node}</React.StrictMode>);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <LangProvider>
+      <App />
+    </LangProvider>
+  </React.StrictMode>
+);
+
+// SW registration guard (no more .register.serviceWorker nonsense)
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
   });
 }
-mountExtraRoot('lang-switcher-root', <LanguageSwitcher />);
-mountExtraRoot('gallery-root', <Gallery />);
-mountExtraRoot('footer-root', <Footer />);
