@@ -1,41 +1,21 @@
-import "./styles/vars-or-ivoire.css";
-import "./styles/motion-guard.css";
-import "./styles/hero-or-ivoire.css";
-import "./styles/palette-or-ivoire.css";
-import "./styles/luxe-polish.css";
-import "./styles/anti-bave.css";
-import "./styles/hero-hotfix.css";
-import "./styles/typography-fixes.css";
-import "./i18n";
-import "./styles/globalFixes.css";
-import ThemeProvider from "./theme/ThemeProvider";
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App.jsx'
-import './index.css'
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import Gallery from './components/Gallery.jsx';
+import Footer from './components/Footer.jsx';
+import LanguageSwitcher from './components/LanguageSwitcher.jsx';
+const el = document.getElementById("root");
+createRoot(el).render(<App />);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider><App /></ThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>
-)
-
-/* Luxe ripple coordinates */
-document.addEventListener("click",(e)=>{
-  const el = e.target.closest?.(".ripple"); if(!el) return;
-  const r = el.getBoundingClientRect();
-  el.style.setProperty("--x", (e.clientX - r.left) + "px");
-  el.style.setProperty("--y", (e.clientY - r.top) + "px");
-});
-
-// === Hydration mask: remove after first frame ===
-try {
-  queueMicrotask(() => {
-    document.documentElement.classList.remove('is-loading');
-    const s = document.getElementById('preload-hide');
-    if (s) s.remove();
+// extra roots mounting (idempotent)
+function mountExtraRoot(id, node){
+  const el = document.getElementById(id);
+  if(!el) return;
+  import('react-dom/client').then(({createRoot})=>{
+    const root = createRoot(el);
+    root.render(<React.StrictMode>{node}</React.StrictMode>);
   });
-} catch (e) {}
+}
+mountExtraRoot('lang-switcher-root', <LanguageSwitcher />);
+mountExtraRoot('gallery-root', <Gallery />);
+mountExtraRoot('footer-root', <Footer />);

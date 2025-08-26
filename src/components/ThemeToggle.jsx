@@ -1,15 +1,16 @@
-import React from "react";
-import { ThemeContext } from "../theme/ThemeProvider";
-export default function ThemeToggle() {
-  const { theme, setTheme } = React.useContext(ThemeContext);
-  const next = theme==="dark" ? "light" : "dark";
-  return (
-    <button
-      aria-label="Toggle theme"
-      className="px-3 py-2 rounded-lg ring-1 ring-white/20 bg-white/10 text-white text-sm"
-      onClick={() => setTheme(next)}
-    >
-      {theme==="dark" ? "☀️" : "🌙"}
-    </button>
-  );
+import React, {useEffect, useState} from "react";
+export default function ThemeToggle(){
+  const [theme, setTheme] = useState("light");
+  useEffect(()=>{
+    const saved = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark":"light");
+    setTheme(saved);
+    document.documentElement.setAttribute("data-theme", saved);
+  },[]);
+  const toggle = ()=>{
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("theme", next);
+    document.documentElement.setAttribute("data-theme", next);
+  };
+  return <button className="lx-btn" onClick={toggle} aria-label="Toggle theme">{theme === "dark" ? "☀️" : "🌙"} Theme</button>;
 }

@@ -1,13 +1,14 @@
 import React from "react";
 export default function Footer(){
   return (
-    <footer className="mt-16 border-t border-white/10 py-10 text-sm text-white/70">
-      <div className="container mx-auto px-4 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-between">
-        <div>© LuxeEvents · {new Date().getFullYear()}</div>
+    <footer className="mt-20 border-t border-zinc-200 dark:border-zinc-800 py-8 text-sm">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+        <p>© {new Date().getFullYear()} LuxeEvents — Luxe • Excellence • Innovation</p>
         <nav className="flex gap-4">
-          <a href="/a-propos" className="hover:underline">Qui sommes-nous</a>
-          <a href="/mentions-legales" className="hover:underline">Mentions légales</a>
-          <a href="/politique-confidentialite" className="hover:underline">Politique de confidentialité</a>
+          <a href="/mentions-legales">Mentions légales</a>
+          <a href="/politique-confidentialite">Politique de confidentialité</a>
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
         </nav>
       </div>
     </footer>

@@ -1,22 +1,43 @@
-"use client";
+import React, {useState} from "react";
+import {useLang} from "../i18n/LangContext.jsx";
 
-import { motion } from 'framer-motion';
+const BACKEND_FALLBACK = "https://luxeevents-backend-ddcezxmch-adminluxes-projects.vercel.app";
 
-export default function ContactSection() {
+export default function ContactSection(){
+  const {t} = useLang();
+  const [state, setState] = useState({ name:"", email:"", message:"" });
+  const [ok, setOk] = useState(null);
+
+  const submit = async (e)=>{
+    e.preventDefault();
+    const url = (import.meta.env.VITE_BACKEND_URL || BACKEND_FALLBACK) + "/contact";
+    try{
+      const r = await fetch(url, {
+        method:"POST",
+        headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify({ ...state })
+      });
+      setOk(r.ok);
+    }catch(_){
+      setOk(false);
+    }
+  };
+
   return (
-    <section className="min-h-screen py-20 px-4 bg-zinc-100 dark:bg-zinc-950 scroll-snap-start">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-bold text-zinc-900 dark:text-yellow-100 mb-4"
-        >
-          Contact
-        </motion.h2>
-        <p className="text-zinc-700 dark:text-zinc-300 text-lg">
-          Une idée, un projet, une envie ? Parlons-en et créons ensemble l’événement parfait.
-        </p>
+    <section className="lx-sec" id="contact">
+      <div className="lx-wrap lx-card">
+        <div className="lx-pad">
+          <h2 className="lx-title">{t("contactTitle")}</h2>
+          <p className="lx-muted">{t("contactIntro")}</p>
+          <form onSubmit={submit} className="lx-grid" style={{gridTemplateColumns:"1fr", maxWidth:640}}>
+            <label><div>{t("name")}</div><input required value={state.name} onChange={e=>setState(s=>({...s, name:e.target.value}))} style={{width:"100%", padding:"10px", border:"1px solid #ddd", borderRadius:8}} /></label>
+            <label><div>{t("email")}</div><input type="email" required value={state.email} onChange={e=>setState(s=>({...s, email:e.target.value}))} style={{width:"100%", padding:"10px", border:"1px solid #ddd", borderRadius:8}} /></label>
+            <label><div>{t("message")}</div><textarea required rows={5} value={state.message} onChange={e=>setState(s=>({...s, message:e.target.value}))} style={{width:"100%", padding:"10px", border:"1px solid #ddd", borderRadius:8}} /></label>
+            <div><button className="lx-btn" type="submit">{t("send")}</button></div>
+            {ok === true && <div className="lx-badge" role="status">{t("sentOk")}</div>}
+            {ok === false && <div style={{color:"#b00020"}} role="status">{t("sentKo")}</div>}
+          </form>
+        </div>
       </div>
     </section>
   );

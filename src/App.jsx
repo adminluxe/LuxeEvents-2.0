@@ -1,61 +1,46 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-
-import ThemeProvider from "./theme/ThemeProvider.jsx";
-import SeoHead from "./components/SeoHead.jsx";
-import NavBar from "./components/NavBar.jsx";
-import HeroSection from "./components/HeroSection.jsx";
+import "./styles/luxe.css";
+import {LangProvider, useLang} from "./i18n/LangContext.jsx";
+import ThemeToggle from "./components/ThemeToggle.jsx";
+import LangSwitch from "./components/LangSwitch.jsx";
 import ServicesSection from "./components/ServicesSection.jsx";
-import TestimonialsCarousel from "./components/TestimonialsCarousel.jsx";
-import TrustBadges from "./components/TrustBadges.jsx";
-import DevisLanding from "./components/DevisLanding.jsx";
-import APropos from "./pages/APropos.jsx";
-import MentionsLegales from "./pages/MentionsLegales.jsx";
-import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite.jsx";
-import Realisations from "./pages/Realisations.jsx";
-import FAQ from "./pages/FAQ.jsx";
+import GallerySection from "./components/GallerySection.jsx";
+import ContactSection from "./components/ContactSection.jsx";
+import Footer from "./components/Footer.jsx";
 
-import { SchemaHome } from "./components/SchemaSite.jsx";
-
-function HomePage() {
+function Topbar(){
+  const {t} = useLang();
   return (
-    <main className="min-h-screen bg-[#0b0b0b] text-white">
-      <SeoHead
-        title="LuxeEvents – Événements & mariages haut de gamme"
-        description="LuxeEvents orchestre vos événements privés et corporate avec luxe, innovation et élégance. Basés à Paris, nous intervenons en France et à l’international."
-        canonical="https://luxeevents.me/"
-      />
-      <SchemaHome />
-      <HeroSection />
-      <section id="services"><ServicesSection /></section>
-      <section id="temoignages"><TestimonialsCarousel /></section>
-      <section id="confiance"><TrustBadges /></section>
-    </main>
+    <div className="lx-topbar">
+      <div className="lx-wrap lx-row" style={{padding:"10px 0"}}>
+        <div className="lx-badge">{t("badge")}</div>
+        <div className="lx-row" style={{gap:"10px"}}>
+          <LangSwitch />
+          <ThemeToggle />
+        </div>
+      </div>
+    </div>
   );
 }
 
-const Shell = ({ children }) => (
-  <>
-    <NavBar />
-    {children}
-  </>
-);
-
-export default function App() {
+function Shell(){
   return (
-    <ThemeProvider>
-      <Shell>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/devis" element={<DevisLanding />} />
-          <Route path="/realisations" element={<Realisations />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/a-propos" element={<APropos />} />
-          <Route path="/mentions-legales" element={<MentionsLegales />} />
-          <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </Shell>
-    </ThemeProvider>
+    <>
+      <Topbar />
+      <main>
+        <ServicesSection />
+        <GallerySection />
+        <ContactSection />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default function App(){
+  return (
+    <LangProvider>
+      <Shell />
+    </LangProvider>
   );
 }

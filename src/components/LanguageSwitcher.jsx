@@ -1,19 +1,19 @@
 import React from "react";
-import i18n from "../i18n";
-export default function LanguageSwitcher() {
-  const [lng,setLng] = React.useState(i18n.language || "fr");
-  const toggle = () => {
-    const next = lng==="fr" ? "en" : "fr";
-    i18n.changeLanguage(next);
-    localStorage.setItem("lang", next);
-    setLng(next);
-  };
+const setLang = (lang) => {
+  try {
+    document.documentElement.lang = lang;
+    document.documentElement.setAttribute('data-locale', lang);
+    localStorage.setItem('lang', lang);
+    window.dispatchEvent(new Event('langchange'));
+  } catch {}
+};
+export default function LanguageSwitcher(){
+  const [lang,setState] = React.useState(localStorage.getItem('lang')||'fr');
+  const click = (l)=>()=>{ setState(l); setLang(l); };
   return (
-    <button
-      className="px-3 py-2 rounded-lg ring-1 ring-white/20 bg-white/10 text-white text-sm"
-      onClick={toggle}
-    >
-      {lng.toUpperCase()}
-    </button>
+    <div className="inline-flex rounded-full shadow bg-white/90 dark:bg-zinc-900/80 backdrop-blur border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+      <button onClick={click('fr')} className={`px-3 py-1 ${lang==='fr'?'font-semibold':''}`}>FR</button>
+      <button onClick={click('en')} className={`px-3 py-1 ${lang==='en'?'font-semibold':''}`}>EN</button>
+    </div>
   );
 }
