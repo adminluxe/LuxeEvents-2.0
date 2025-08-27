@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const milestones = [
   {
@@ -24,7 +22,7 @@ export default function TimelineSection() {
   return (
     <section className="bg-white text-black py-24 px-6 scroll-snap-start">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#d4af37] drop-shadow-lg">
+        <h2 className="text-3xl sm:text-5xl font-bold text-center text-yellow-600 mb-16">
           Notre Timeline
         </h2>
         <div className="space-y-12">

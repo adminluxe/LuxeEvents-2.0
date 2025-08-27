@@ -1,16 +1,10 @@
-"use client";
-
-import React from "react";
-
+import React from 'react';
 export default function MediaPage() {
   return (
-    <div className="relative min-h-screen flex flex-col justify-center items-center text-white text-center px-6 pt-32">
-      <div className="absolute inset-0 bg-black/40 -z-10" />
-      <h2 className="text-4xl md:text-5xl font-bold text-[#d4af37] mb-4 drop-shadow-lg">
-        Bientôt une galerie immersive...
-      </h2>
-      <p className="text-white/70 max-w-xl">
-        Des images, des vidéos et des souvenirs inoubliables, soigneusement sélectionnés pour vous plonger dans notre univers.
+    <div className="p-8 text-center">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center text-yellow-600 hover:scale-105 transition-transform duration-500 shadow-md hover:shadow-yellow-300 font-semibold text-yellow-600">Nos Médias</h1>
+      <p className="mt-4 text-gray-700">
+        Bientôt disponible : photos, vidéos, témoignages de clients...
       </p>
     </div>
   );

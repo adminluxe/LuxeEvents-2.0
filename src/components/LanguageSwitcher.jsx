@@ -1,19 +1,6 @@
-import React from "react";
-import i18n from "../i18n";
-export default function LanguageSwitcher() {
-  const [lng,setLng] = React.useState(i18n.language || "fr");
-  const toggle = () => {
-    const next = lng==="fr" ? "en" : "fr";
-    i18n.changeLanguage(next);
-    localStorage.setItem("lang", next);
-    setLng(next);
-  };
-  return (
-    <button
-      className="px-3 py-2 rounded-lg ring-1 ring-white/20 bg-white/10 text-white text-sm"
-      onClick={toggle}
-    >
-      {lng.toUpperCase()}
-    </button>
-  );
+import { useTranslation } from "react-i18next";
+export default function LanguageSwitcher(){
+  const { i18n } = useTranslation();
+  const toggle = () => { const next = i18n.language === "fr" ? "en" : "fr"; i18n.changeLanguage(next); try{localStorage.setItem("lang",next);}catch{} };
+  return <button aria-label="Change language" className="px-3 py-1 rounded-full border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black transition" onClick={toggle}>{i18n.language?.toUpperCase()||"FR"}</button>;
 }

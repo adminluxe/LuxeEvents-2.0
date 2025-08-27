@@ -1,0 +1,18 @@
+{
+  "home": {
+    "subtitle": "Élégance, excellence et innovation au service de vos moments.",
+    "cta": "Découvrir nos services",
+    "servicesTitle": "Nos services",
+    "mapTitle": "Événements à venir",
+    "features": [
+      { "title": "Excellence", "desc": "Des prestations haut de gamme, sans compromis." },
+      { "title": "Créativité", "desc": "Des concepts uniques, signés Tonton." },
+      { "title": "Sérénité", "desc": "Une équipe qui pense à tout pour vous." }
+    ],
+    "services": [
+      { "title": "Mariages", "desc": "Cérémonies et réceptions d’exception." },
+      { "title": "Corporate", "desc": "Séminaires, lancements, expériences clients." },
+      { "title": "Privés", "desc": "Anniversaires, soirées, événements sur-mesure." }
+    ]
+  }
+}

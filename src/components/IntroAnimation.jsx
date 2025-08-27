@@ -1,9 +1,7 @@
-"use client";
-
-import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
 import animationData from "@/assets/luxeevents-intro.json";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function IntroAnimation({ onFinish }) {
   const [isVisible, setIsVisible] = useState(true);
