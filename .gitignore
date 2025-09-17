@@ -50,3 +50,6 @@ vite.log
 .DS_Store
 coverage/
 *.map
+
+# local backups
+.backup/
