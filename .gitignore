@@ -1,53 +1,55 @@
-# === node & builds ===
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+luxeevents-frontend-backup-*.tar.gz
+.vercel
+*.tar.gz
+/deploy/
+*.sh
+# —— LuxeEvents safe ignores ——
 node_modules/
 dist/
-build/
-.next/
-.vite/
-.parcel-cache/
-.turbo/
-.cache/
-.pnpm-store/
-
-# === vercel / env ===
-.vercel/
-.env
+.vercel/output/
+.vscode/
 *.log
-
-# === backups & grosses archives ===
-backup*/
-backup_*/
-backup-*/
-_backups/
-*.bak.*
-*.zip
-*.7z
-*.tar
-*.tgz
-.gold_backup/
-.deploy-static-clean/
-luxeevents-next/_backups/
-luxeevents-next/.backup/
-vercel.json.bak.*
-
-# === médias lourds à laisser hors repo ===
-*.mp4
-*.mov
-*.mkv
-*.webm
-*.wav
-*.flac
-*.psd
-*.ai
-
-# === publics historiques à exclure ===
-public/media/
-public/videos/
-public/audio/
-public/sounds/
-luxeevents-next/public/videos/
-luxeevents-next/public/audio/
-
-# === OS junk ===
+vite.log
+.env
+.env.*
 .DS_Store
-Thumbs.db
+coverage/
+*.map
+# —— LuxeEvents safe ignores ——
+node_modules/
+dist/
+.vercel/output/
+.vscode/
+*.log
+vite.log
+.env
+.env.*
+.DS_Store
+coverage/
+*.map
+
+# local backups
+.backup/
