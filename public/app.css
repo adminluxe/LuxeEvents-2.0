@@ -1,0 +1,186 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+:root{
+  --text:#e8e8ea; --muted:#b8b8c2; --bg:#0b0b0d; --card:#111115;
+  --border: color-mix(in oklab, #ffffff 18%, transparent);
+  --accent:#c5a46d;
+  --radius:16px; --radius-pill:999px;
+  --gap: clamp(1.2rem, 3vw, 2rem);
+}
+html[data-theme="light"]{
+  --text:#101014; --muted:#55586a; --bg:#ffffff; --card:#f8f9fb;
+  --border: color-mix(in oklab, #000 16%, transparent);
+}
+
+body{
+  color:var(--text);
+  background: var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+
+/* Fond image + lueurs (DERIÈRE tout) */
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 15% -20%, rgba(212,175,55,.09), transparent 70%),
+    radial-gradient(900px 600px at 110% 120%, rgba(212,175,55,.06), transparent 70%),
+    url('/bg-luxeevents.png') center / cover no-repeat fixed;
+  filter: saturate(1.02) contrast(1.02) brightness(.98);
+}
+
+/* Étoiles (au-dessus du fond, sous le contenu) */
+#luxe-stars{ position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.9 }
+
+/* Containers */
+.container{ max-width:1200px; margin:0 auto; padding: 18px; }
+main > * + *{ margin-block-start: clamp(1.4rem, 3.6vw, 2.6rem); }
+section{ padding-block: clamp(2.0rem, 4.2vw, 3.2rem); }
+section + section{ border-top:1px solid var(--border); }
+
+/* Typo scale */
+h1{ font: 800 clamp(2.2rem, 4.2vw, 3.2rem)/1.1 "Playfair Display", serif; margin:0 0 .6rem 0;
+  background: linear-gradient(180deg, #fff, #d6d6d6 60%, var(--accent) 130%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+h2{ font: 700 clamp(1.4rem, 2.2vw, 1.9rem)/1.2 Inter, sans-serif; margin:0 0 .4rem 0; }
+p{ margin:0 0 .9rem 0; opacity:.92 }
+
+/* Boutons */
+.btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1rem;
+  border:1px solid var(--border); border-radius:var(--radius-pill); text-decoration:none; color:inherit; }
+.btn:hover{ background: color-mix(in oklab, var(--card) 40%, transparent); }
+.btn.primary{ border-color: color-mix(in oklab, var(--accent) 55%, transparent); box-shadow: 0 10px 24px rgba(212,175,55,.20); }
+
+/* Cartes */
+.grid{ display:grid; gap:var(--gap); }
+.grid.auto{ grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); }
+.card{ border:1px solid var(--border); border-radius:16px; padding:1rem;
+  background: color-mix(in oklab, var(--card) 88%, transparent); }
+
+/* Form */
+label{ display:block; margin-bottom:.35rem; color:var(--muted); }
+.input, .textarea{
+  width:100%; color:inherit; background:transparent; border:1px solid var(--border);
+  border-radius:12px; padding:.65rem .8rem; outline:none;
+}
+.input:focus,.textarea:focus{ box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 24%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 44%, var(--border)); }
+.textarea{ min-height:120px; resize:vertical }
+
+/* Header sticky + footer */
+[data-luxe-header]{ position:sticky; top:0; z-index:10; backdrop-filter: blur(8px);
+  background: color-mix(in oklab, var(--bg) 70%, transparent); border-bottom:1px solid var(--border); }
+footer{ border-top:1px solid var(--border); padding:12px 18px; font-size:.9rem; color:var(--muted); }
+
+/* Révélations sur scroll */
+.reveal-up{ opacity:0; transform: translateY(14px); }
+.reveal-up.in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
+
+/* Réduire motion */
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}
+
+/* ── Luxe layering : toujours au-dessus du fond et du canvas ─────────────── */
+#root, header, main, footer { position: relative; z-index: 2; }
+
+/* ───────────────── Emergency Visibility (LuxeEvents) ───────────────── */
+:root{ --veil: rgba(0,0,0,.55); } /* voile un peu plus fort pour contraster le texte */
+
+/* Le contenu doit TOUJOURS flotter au-dessus du fond + canvas étoiles */
+#root, header, main, footer, .page, .section, .container { position: relative; z-index: 3; }
+
+/* Sécurité anti-animations bloquées : tout est visible par défaut */
+html:not(.js) .fade, html:not(.js) .fade-up, html:not(.js) [data-animate] {
+  opacity: 1 !important; transform: none !important; filter: none !important;
+}
+
+/* Couleurs par défaut lisibles sur photo */
+body { color: #fff; }
+h1,h2,h3,h4,h5,h6 { color:#fff; text-shadow: 0 2px 10px rgba(0,0,0,.35); }
+p,li,small { color:#f6f6f6; text-shadow: 0 1px 6px rgba(0,0,0,.25); }
+a { color:#e9d27a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header & nav au-dessus de tout */
+header[role="banner"], .site-header {
+  position: sticky; top: 0; z-index: 4;
+  backdrop-filter: blur(4px);
+}
+
+/* Sections : marges respirables (évite l’effet “collé”) */
+.section, section { padding: min(6vh,64px) min(4vw,48px); }
+.section + .section { margin-top: min(6vh,64px); }
+
+/* Ancrages : scroll correct même avec header sticky */
+[id] { scroll-margin-top: 96px; }
+
+/* Canvas étoiles déjà derrière (au cas où) */
+canvas#stars { z-index: 1; }
+
+/* Cookie banner (si présent) ne doit pas masquer définitivement le contenu */
+.cookie, .cookie-banner { z-index: 9999; }
+
+/* Boutons ronds (theme/langue) restent cliquables par-dessus */
+.fab, .toggle, .theme-toggle, .lang-toggle { position: relative; z-index: 5; }
+
+/* Footer lisible */
+footer a { color:#e9d27a; }
+
+/* ───────── LuxeEvents – Responsive background & layout rescue ───────── */
+html{scroll-behavior:smooth}
+html,body,#root{min-height:100%}
+
+/* Fond : cover + no 'fixed' sur mobile (jank/occlusion) */
+body::before{
+  content:""; position:fixed; inset:0;
+  background:url("/bg-luxeevents.png") center 25% / cover no-repeat;
+  z-index:-2; filter:saturate(1.05) contrast(1.05) brightness(.95);
+  pointer-events:none;
+}
+@media (max-width: 1024px){
+  body::before{ position:absolute; background-attachment:scroll; background-position:center top; }
+}
+
+/* Voile pour lisibilité */
+:root{ --veil: rgba(0,0,0,.55); }
+body::after{ content:""; position:fixed; inset:0; background:var(--veil); z-index:-1; pointer-events:none; }
+
+/* Contenu toujours au-dessus */
+#root, header, main, footer, .section, .container{ position:relative; z-index:3; }
+
+/* Grille fluide */
+.container{ max-width:1200px; margin-inline:auto; padding-inline:16px; }
+
+/* Sections & ancrages */
+section{ padding: min(8vh,80px) 0; }
+[id]{ scroll-margin-top: 96px; }
+
+/* Hero */
+.hero{ min-height:70vh; display:grid; place-items:center; text-align:center; }
+.hero h1{ font-family:"Playfair Display",serif; font-size: clamp(28px,5vw,48px); margin:0 0 8px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,.35); }
+.hero p{ max-width:780px; margin:0 auto 20px; color:#f5f5f5; }
+
+/* Cards Services */
+.cards{ display:grid; gap:16px; grid-template-columns: repeat(12,1fr); }
+.card{ grid-column: span 12; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; backdrop-filter: blur(4px); }
+@media (min-width:700px){ .card{ grid-column: span 6; } }
+@media (min-width:1000px){ .card{ grid-column: span 3; } }
+.card h3{ margin:0 0 6px; color:#fff }
+.card p{ margin:0; color:#eaeaea }
+
+/* Boutons élégants */
+.btn{ display:inline-block; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.2); text-decoration:none; }
+.btn-primary{ background:linear-gradient(135deg,#f4d774,#caa84e); color:#241a00; font-weight:600; border:none; }
+.btn-ghost{ color:#e9d27a; }
+
+/* Header sticky simplifié */
+.site-header{ position:sticky; top:0; z-index:4; backdrop-filter: blur(8px); }
+.site-header .nav{ display:flex; align-items:center; gap:16px; padding:14px 0; }
+.site-header nav a{ margin-right:14px; color:#e9d27a; text-decoration:none; }
+.site-header nav a:hover{ text-decoration:underline; }
+.toggles button{ margin-left:8px; }
+
+/* Canvas étoiles derrière (si présent) */
+canvas#stars{ position:fixed; inset:0; pointer-events:none; z-index:1; }

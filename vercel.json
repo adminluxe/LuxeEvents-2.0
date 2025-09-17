@@ -1,7 +1,13 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    { "source": "/app.css", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] },
+    { "source": "/(manifest\\.webmanifest|sw\\.js|workbox-.*\\.js)", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
+  ],
   "rewrites": [
-    { "source": "/luxeevents-bg-hero.webp", "destination": "/bg-luxeevents.png" },
-    { "source": "/logo_gold_black.png",     "destination": "/apple-touch-icon.png" },
-    { "source": "/images/gallery/:name.webp","destination": "/images/gallery/:name.png" }
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(favicon\\.ico|logo\\d+\\.png|manifest\\.webmanifest|robots\\.txt|sitemap\\.xml|assets/.*|merci|thanks)", "destination": "/$1" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
