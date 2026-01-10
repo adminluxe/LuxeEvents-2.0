@@ -1,33 +1,96 @@
 import React from "react";
-import RevealOnScroll from "./RevealOnScroll.jsx";
-import LuxeParallax from "./LuxeParallax.jsx";
-import HaloButton from "./HaloButton.jsx";/**
- * HeroSection — version clean & compilable
- * - Parallax doux autour de la section
- * - Reveal subtil sur le H1
- * - CTA Halo
- * - Aucun tag mal fermé
- */
+
 export default function HeroSection() {
   return (
-    <LuxeParallax strength={0.18} className="hero-bg hero-bg relative">
-      <section className="hero-bg hero-bg min-h-[80vh] grid place-items-center text-center px-6 py-20 bg-gradient-to-b from-black via-black/80 to-black text-neutral-100">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <RevealOnScroll>
-            <h1 className="mt-4 text-white/80">
-              Le Luxe à la portée de tous... Pour des expériences inoubliables!
+    <section
+      id="top"
+      className="relative isolate overflow-hidden min-h-[92vh] flex items-center"
+    >
+      {/* Background image */}
+      <div
+        className="absolute inset-0 -z-20 bg-center bg-cover"
+        style={{ backgroundImage: "url(/luxeevents-bg-hero.webp)" }}
+        aria-hidden="true"
+      />
+
+      {/* Dark + luxe gradient overlay */}
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/55 to-black/85"
+        aria-hidden="true"
+      />
+
+      {/* Soft gold glow */}
+      <div
+        className="absolute -z-10 inset-0 opacity-70"
+        aria-hidden="true"
+      >
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.28),transparent_60%)]" />
+        <div className="absolute bottom-[-420px] right-[-220px] w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]" />
+      </div>
+
+      <div className="w-full px-5 sm:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-3xl">
+            {/* Kicker */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[12px] sm:text-[13px] tracking-wide text-white/85 backdrop-blur">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+              Événements haut de gamme • Belgique & Europe
+            </div>
+
+            {/* Headline (lisible + net) */}
+            <h1 className="mt-6 font-[500] leading-[1.05] text-white drop-shadow-[0_6px_22px_rgba(0,0,0,0.65)] text-4xl sm:text-5xl md:text-6xl">
+              Le luxe à la portée de tous
+              <span className="block mt-3 text-white/90 text-2xl sm:text-3xl md:text-4xl">
+                Une expérience inoubliable.
+              </span>
             </h1>
-          </RevealOnScroll>          <p className="text-base md:text-lg text-neutral-300">
-            Événements haut de gamme, élégants et mémorables. Luxe, Excellence, Innovation.
-          </p>          <div className="flex items-center justify-center gap-3">
-            <div className="mt-6 flex flex-wrap items-center gap-3"><HaloButton as="a" href="/devis" className="px-5 py-3 rounded-lg font-semibold text-black bg-yellow-400">Demander un devis</HaloButton>
-  <a href="/realisations" className="cta-ghost ml-3">Voir nos réalisations</a></div>
-            <a href="#services" className="sr-only text-sm text-neutral-300 hover:text-yellow-300 underline underline-offset-4">
-              Découvrir nos services
-            </a>
+
+            <p className="mt-5 text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl">
+              Scénographie, coordination, prestataires premium, ambiance & détails
+              millimétrés — on transforme ton événement en moment signature.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <a
+                href="/devis"
+                className="group relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm sm:text-base font-medium text-black bg-[#D4AF37] shadow-[0_18px_60px_rgba(212,175,55,0.25)] hover:shadow-[0_22px_80px_rgba(212,175,55,0.35)] transition"
+              >
+                Demander un devis
+                <span className="ml-2 opacity-80 group-hover:opacity-100 transition">→</span>
+                <span className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-black/10" />
+              </a>
+
+              <a
+                href="#services"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm sm:text-base font-medium text-white border border-white/18 bg-white/5 hover:bg-white/10 backdrop-blur transition"
+              >
+                Découvrir nos services
+              </a>
+            </div>
+
+            {/* Proof chips */}
+            <div className="mt-10 flex flex-wrap gap-2">
+              {[
+                "Coordination Jour J",
+                "Scénographie & design",
+                "DJ / Live / Photo / Traiteur",
+                "Expérience fluide & premium",
+              ].map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-white/12 bg-black/20 px-3 py-1.5 text-[12px] text-white/75 backdrop-blur"
+                >
+                  ✦ {t}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </section>
-    </LuxeParallax>
+      </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/90 to-transparent -z-10" />
+    </section>
   );
 }

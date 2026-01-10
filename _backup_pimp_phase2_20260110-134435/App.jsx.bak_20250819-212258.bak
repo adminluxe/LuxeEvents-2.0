@@ -9,8 +9,6 @@ import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import CircularMenu from "./components/CircularMenu";
 import DevisLanding from "./components/DevisLanding";
-import TrustSection from "../components/TrustSection.jsx";
-import GallerySection from "../components/GallerySection.jsx";
 
 export default function App() {
   const isDevis = typeof window !== "undefined" && window.location.pathname === "/devis";
@@ -40,10 +38,7 @@ export default function App() {
             <HeroSection />
             <section id="services" className="mt-12">
               <ServicesSection />
-        
-      <TrustSection />
-      <GallerySection />
-<TestimonialsCarousel />
+        <TestimonialsCarousel />
             </section>
           </>
         )}

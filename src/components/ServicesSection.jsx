@@ -1,85 +1,96 @@
-// LuxeEvents • ServicesSection — version safe (idx défini, clés stables)
 import React from "react";
 import servicesDefault, { services as servicesNamed } from "../data/services.luxe.js";
-const services = servicesNamed || servicesDefault || [];
-
-// Accepte à la fois export default et export nommé { services }
-const SERVICES = Array.isArray(services) ? services : [];
-
-
-
-
 
 export default function ServicesSection() {
-  if (!Array.isArray(SERVICES) || SERVICES.length === 0) {
-    return (
-      <section id="services" className="py-16 md:py-24 bg-[#0b0b0b] text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 section-title text-contrast">
-            Nos Services
-          </h2>
-          <p className="text-white/70">
-            Les services seront bientôt affichés. (Aucun élément dans
-            <code className="ml-2">services.luxe.js</code>.)
-          </p>
-        </div>
-      </section>
-    );
-  }
+  const services = (servicesNamed && servicesNamed.length ? servicesNamed : servicesDefault) || [];
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-[#0b0b0b] text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-10 section-title text-contrast">
-          Nos Services
-        </h2>
+    <section id="services" className="relative py-20 sm:py-24">
+      {/* Section backdrop */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/0 via-black/10 to-black/0" aria-hidden="true" />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 wow-grid">
-          {SERVICES.map((svc, idx) => {
-            const key =
-              svc?.id ??
-              `${idx}-${(svc?.title || svc?.name || "service").toString()}`;
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[12px] tracking-wide text-white/80 backdrop-blur">
+              <span className="text-[#D4AF37]">✦</span> Nos Services
+            </div>
+            <h2 className="mt-5 text-3xl sm:text-4xl font-[500] text-white">
+              Une exécution premium, une signature LuxeEvents.
+            </h2>
+            <p className="mt-3 text-white/70 max-w-2xl">
+              De la conception à la coordination, chaque détail est pensé pour un rendu
+              élégant, fluide et mémorable.
+            </p>
+          </div>
 
-            const title = svc?.title || svc?.name || `Service ${idx + 1}`;
-            const description = svc?.description || svc?.desc || "";
-            const image = svc?.image || svc?.img || null;
-            const Icon = svc?.icon || null; // si c'est un composant React
+          <a
+            href="/devis"
+            className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-black bg-[#D4AF37] hover:opacity-95 transition"
+          >
+            Devis rapide →
+          </a>
+        </div>
 
-            return (
-              <article
-                key={key}
-                className="group rounded-2xl p-6 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/7 shimmer"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  {Icon && typeof Icon === "function" ? (
-                    <Icon className="w-6 h-6" aria-hidden />
-                  ) : (
-                    <span className="text-2xl" aria-hidden>
-                      {svc?.emoji || "✨"}
-                    </span>
-                  )}
-                  <h3 className="text-xl font-semibold">{title}</h3>
-                </div>
+        {/* Grid */}
+        <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => (
+            <article
+              key={s.id || s.title}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-6 hover:bg-white/[0.06] transition"
+            >
+              {/* top glow line */}
+              <div
+                className="absolute inset-x-0 top-0 h-[2px] opacity-70 group-hover:opacity-100 transition"
+                style={{
+                  background:
+                    "linear-gradient(90deg, rgba(212,175,55,0.0), rgba(212,175,55,0.9), rgba(212,175,55,0.0))",
+                }}
+                aria-hidden="true"
+              />
 
-                {image && (
-                  <div className="rounded-xl overflow-hidden mb-4">
-                    <img
-                      src={image}
-                      alt={title}
-                      loading="lazy"
-                      className="w-full h-40 object-cover"
-                    />
-                  </div>
-                )}
+              {/* subtle corner glow */}
+              <div
+                className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full blur-3xl opacity-0 group-hover:opacity-70 transition"
+                style={{
+                  background:
+                    "radial-gradient(circle at center, rgba(212,175,55,0.25), transparent 60%)",
+                }}
+                aria-hidden="true"
+              />
 
-                {description && (
-                  <p className="text-white/80 text-sm leading-relaxed">
-                    {description}
-                  </p>
-                )}
-              </article>
-            );
-          })}
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="text-lg font-[500] text-white">
+                  <span className="text-[#D4AF37] mr-1">✦</span>
+                  {s.title}
+                </h3>
+                {s.badge ? (
+                  <span className="shrink-0 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[11px] text-white/75">
+                    {s.badge}
+                  </span>
+                ) : null}
+              </div>
+
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                {s.description}
+              </p>
+
+              <div className="mt-5 flex items-center justify-between text-xs text-white/45">
+                <span className="opacity-70">Service premium</span>
+                <span className="opacity-0 group-hover:opacity-100 transition">→</span>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Mobile CTA */}
+        <div className="mt-10 sm:hidden">
+          <a
+            href="/devis"
+            className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-black bg-[#D4AF37]"
+          >
+            Demander un devis →
+          </a>
         </div>
       </div>
     </section>
