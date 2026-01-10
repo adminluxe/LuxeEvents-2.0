@@ -1,6 +1,6 @@
 // LuxeEvents • ServicesSection — version safe (idx défini, clés stables)
 import React from "react";
-import servicesDefault, { services as servicesNamed } from "../data/services.luxe.wrap.js";
+import servicesDefault, { services as servicesNamed } from "../data/services.luxe.js";
 const services = servicesNamed || servicesDefault || [];
 
 // Accepte à la fois export default et export nommé { services }

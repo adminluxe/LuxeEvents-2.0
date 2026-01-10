@@ -1,32 +1,65 @@
-export const LUXE_SERVICES = [
+/**
+ * Source unique de vérité des services LuxeEvents.
+ * - Export named: services
+ * - Export default: services
+ */
+export const services = [
   {
     id: "wedding",
-    img: "/mariage.svg",
-    titleFR: "Mariage d’exception",
-    titleEN: "Exceptional Wedding",
-    subFR: "Cérémonies sur-mesure, lieux iconiques, direction artistique signature.",
-    subEN: "Bespoke ceremonies, iconic venues, signature art direction.",
-    kwFR: ["Éclat","Harmonie","Éternité"],
-    kwEN: ["Radiance","Harmony","Forever"]
-  },
-  {
-    id: "private",
-    img: "/private.svg",
-    titleFR: "Événements privés",
-    titleEN: "Private Events",
-    subFR: "Anniversaires, dîners, célébrations intimistes — élégance et discrétion.",
-    subEN: "Birthdays, dinners, intimate celebrations — elegance & discretion.",
-    kwFR: ["Intimité","Raffinement","Discrétion"],
-    kwEN: ["Intimacy","Refinement","Discretion"]
+    title: "Mariages d’exception",
+    description:
+      "Scénographie, coordination et orchestration complète pour une journée fluide, élégante et inoubliable.",
+    badge: "Signature",
   },
   {
     id: "corporate",
-    img: "/corporate.svg",
-    titleFR: "Corporate & gala",
-    titleEN: "Corporate & Gala",
-    subFR: "Lancements, galas, séminaires — précision logistique & scénographie.",
-    subEN: "Launches, galas, seminars — precise logistics & scenography.",
-    kwFR: ["Précision","Scénographie","Rayonnement"],
-    kwEN: ["Precision","Scenography","Impact"]
-  }
+    title: "Événements corporate premium",
+    description:
+      "Lancements, galas, soirées d’entreprise : une exécution millimétrée et une image haut de gamme.",
+    badge: "Pro",
+  },
+  {
+    id: "birthday",
+    title: "Anniversaires & célébrations",
+    description:
+      "Ambiance, déco, animation : on transforme ta fête en expérience immersive, du brief au final.",
+    badge: "Sur-mesure",
+  },
+  {
+    id: "design",
+    title: "Décoration & scénographie",
+    description:
+      "Univers visuel cohérent : palettes, fleurs, lumière, matières — l’effet “wow” dès l’entrée.",
+    badge: "Design",
+  },
+  {
+    id: "music",
+    title: "DJ, live & animation",
+    description:
+      "Sélection musicale et moments forts (entrées, surprises, climax) pour une énergie maîtrisée.",
+    badge: "Ambiance",
+  },
+  {
+    id: "photo",
+    title: "Photo & vidéo",
+    description:
+      "Captation premium + montage : des souvenirs cinématiques qui valorisent l’instant et le détail.",
+    badge: "Souvenirs",
+  },
+  {
+    id: "catering",
+    title: "Traiteur & expériences culinaires",
+    description:
+      "Cocktails, buffets, dégustations : une expérience gourmande alignée avec ton thème et ton standing.",
+    badge: "Gastronomie",
+  },
+  {
+    id: "coordination",
+    title: "Coordination Jour J",
+    description:
+      "Gestion planning, prestataires, imprévus : tu profites, on pilote. Zéro stress, zéro friction.",
+    badge: "Sérénité",
+  },
 ];
+
+export default services;
