@@ -1,5 +1,15 @@
-import * as S from './services.luxe.js';
+/**
+ * Wrapper tolérant : évite les warnings Rollup "is not exported".
+ * On importe tout le module puis on choisit la meilleure source dispo.
+ */
+import * as mod from "./services.luxe.js";
+
 const services =
-  (S && (S.services || S.default || S.luxeServices || S.data)) || [];
+  mod.services ??
+  mod.luxeServices ??
+  mod.data ??
+  mod.default ??
+  [];
+
 export { services };
 export default services;

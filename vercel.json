@@ -1,7 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/luxeevents-bg-hero.webp", "destination": "/bg-luxeevents.png" },
-    { "source": "/logo_gold_black.png",     "destination": "/apple-touch-icon.png" },
-    { "source": "/images/gallery/:name.webp","destination": "/images/gallery/:name.png" }
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

@@ -13,7 +13,6 @@ build/
 .vercel/
 .env
 *.log
-
 # === backups & grosses archives ===
 backup*/
 backup_*/
@@ -29,7 +28,6 @@ _backups/
 luxeevents-next/_backups/
 luxeevents-next/.backup/
 vercel.json.bak.*
-
 # === médias lourds à laisser hors repo ===
 *.mp4
 *.mov
@@ -39,7 +37,6 @@ vercel.json.bak.*
 *.flac
 *.psd
 *.ai
-
 # === publics historiques à exclure ===
 public/media/
 public/videos/
@@ -47,7 +44,9 @@ public/audio/
 public/sounds/
 luxeevents-next/public/videos/
 luxeevents-next/public/audio/
-
 # === OS junk ===
 .DS_Store
 Thumbs.db
+.vercel
+.env*.local
+.env.local
