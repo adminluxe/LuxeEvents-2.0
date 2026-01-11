@@ -67,3 +67,7 @@ _backup_*
 *.swp
 *.tmp
 src/components/_archive/
+# --- TONTON LOCK: backups/artifacts ---
+**/*.bak*
+src/components/_archive/**
+src/**/._*

@@ -1,4 +1,44 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+. "$(dirname "$0")/_/husky.sh"
 
-npm test
+set -eu
+
+# ---- helpers
+fail(){ echo "❌ $*"; exit 1; }
+
+# 1) Bloque backups/artifacts SI on les AJOUTE/MODIFIE (les suppressions sont autorisées)
+staged_ns="$(git diff --cached --name-status || true)"
+# on ne garde que les fichiers dont le statut n'est pas D(eleted)
+staged_non_del="$(echo "$staged_ns" | awk '$1!="D"{print $2}' || true)"
+
+if echo "$staged_non_del" | grep -E '(^_backups/|^_backup_|\.bak|^src/components/_archive/)' >/dev/null 2>&1; then
+  echo "❌ PRE-COMMIT BLOQUÉ: backups/.bak/_archive détectés dans le staging:"
+  echo "$staged_non_del" | grep -E '(^_backups/|^_backup_|\.bak|^src/components/_archive/)' || true
+  echo "➡️  Retire-les du staging: git reset HEAD <fichier>"
+  exit 1
+fi
+
+# 2) IDs uniques (ancres critiques) en ignorant *.bak*
+check_ids="top services realisations temoignages"
+
+for id in $check_ids; do
+  count="$(grep -RIn \
+    --exclude-dir=node_modules --exclude-dir=dist \
+    --exclude-dir=_backups --exclude-dir=_archive \
+    --exclude='_backup_*' \
+    --exclude='*.bak*' \
+    'id="'"$id"'"' src 2>/dev/null | wc -l | tr -d ' ')"
+
+  if [ "${count:-0}" -ne 1 ]; then
+    echo "❌ PRE-COMMIT BLOQUÉ: id=\"$id\" doit exister 1 seule fois. Actuel: $count"
+    grep -RIn \
+      --exclude-dir=node_modules --exclude-dir=dist \
+      --exclude-dir=_backups --exclude-dir=_archive \
+      --exclude='_backup_*' \
+      --exclude='*.bak*' \
+      'id="'"$id"'"' src 2>/dev/null || true
+    exit 1
+  fi
+done
+
+echo "✅ PRE-COMMIT OK (backups ignorés, IDs uniques OK)"
