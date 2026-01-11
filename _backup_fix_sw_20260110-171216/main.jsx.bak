@@ -1,0 +1,26 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import "./index.css";
+
+import App from "./App.jsx";
+import NavBarLuxe from "./components/NavBarLuxe.jsx";
+import HashScroller from "./components/HashScroller.jsx";
+
+// (Optionnel) SW géré dans le code (PAS dans index.html)
+import { registerSW } from "./registerSW.js";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <HashScroller offset={96} />
+      <NavBarLuxe />
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
+
+// En dev: no-op (registerSW check import.meta.env.PROD)
+// En prod: register SW si dispo
+registerSW();

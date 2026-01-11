@@ -1,17 +1,5 @@
-import CookieConsent from "./components/CookieConsent";
-import TestimonialsCarousel from "./components/TestimonialsCarousel";
 "use client";
 
-import React from "react";
-import { Helmet } from "react-helmet";
-import Layout from "@/layouts/Layout";
-import HeroSection from "@/components/HeroSection";
-import GalleryPreview from "@/components/GalleryPreview";
-import Testimonials from "@/components/Testimonials";
-import QuoteForm from "@/components/QuoteForm";
-import MapSection from "@/components/MapSection";
-import FooterLuxe from "@/components/FooterLuxe";
-import ForceHeroH1 from "@/components/ForceHeroH1";
 
 export default function HomePage() {
   return (
@@ -27,9 +15,10 @@ export default function HomePage() {
       </Helmet>
 
       <Layout>
-        <HeroSection />
+      <HeroSection />
         <GalleryPreview />
-        <Testimonials />
+      <RealisationsSection />
+      <Testimonials />
         <QuoteForm />
         <MapSection />
         <FooterLuxe />

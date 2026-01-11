@@ -1,0 +1,54 @@
+{
+  "name": "luxeevents",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint src --ext .js,.jsx",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "husky install || true",
+    "deploy:og": "scripts/deploy/post-deploy-smoke.sh luxeevents.me",
+    "postbuild": "bash scripts/deploy/prebuilt-sync-mp3.sh"
+  },
+  "type": "module",
+  "dependencies": {
+    "framer-motion": "12.23.11",
+    "i18next": "25.3.2",
+    "lottie-react": "2.4.1",
+    "lucide-react": "0.532.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "6.1.0",
+    "react-i18next": "15.6.1",
+    "react-router-dom": "7.7.0",
+    "swiper": "11.2.10"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.0",
+    "@babel/eslint-parser": "7.28.0",
+    "@babel/preset-env": "7.28.0",
+    "@babel/preset-react": "7.27.1",
+    "@babel/preset-typescript": "7.27.1",
+    "@tailwindcss/postcss": "4.1.11",
+    "@types/i18next": "13.0.0",
+    "@typescript-eslint/eslint-plugin": "8.37.0",
+    "@typescript-eslint/parser": "8.37.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "10.4.21",
+    "babel-eslint": "10.1.0",
+    "eslint": "9.31.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "eslint-plugin-react": "7.37.5",
+    "husky": "^8.0.0",
+    "postcss": "8.5.6",
+    "prettier": "3.6.2",
+    "tailwindcss": "4.1.11",
+    "vite": "7.0.5",
+    "vite-plugin-pwa": "0.20.5"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "engines": {
+    "node": ">=18.18"
+  }
+}

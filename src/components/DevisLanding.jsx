@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(v || "").trim());
 
 export default function DevisLanding() {
   const [step, setStep] = useState(1);
@@ -9,18 +13,70 @@ export default function DevisLanding() {
     message: "",
     hp: "", // honeypot
   });
-  const [sending, setSending] = useState(false);
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const next = () => setStep((s) => Math.min(3, s + 1));
-  const prev = () => setStep((s) => Math.max(1, s - 1));
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  const steps = useMemo(
+    () => [
+      { id: 1, label: "Identité" },
+      { id: 2, label: "Détails" },
+      { id: 3, label: "Vérif" },
+    ],
+    []
+  );
+
+  const progress = useMemo(() => (step / 3) * 100, [step]);
+
+  const onChange = (e) => {
+    setError("");
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validateStep = (s) => {
+    if (s === 1) {
+      if (!form.name.trim()) return "Ton nom est requis pour démarrer.";
+      if (!emailOk(form.email)) return "Ton email semble incomplet (ex: vous@exemple.com).";
+    }
+    if (s === 2) {
+      // Détails volontairement souples (UX premium = pas bloquant)
+      // mais on peut guider : si message vide, pas d'erreur.
+    }
+    return "";
+  };
+
+  const next = () => {
+    const msg = validateStep(step);
+    if (msg) return setError(msg);
+    setStep((s) => Math.min(3, s + 1));
+  };
+
+  const prev = () => {
+    setError("");
+    setStep((s) => Math.max(1, s - 1));
+  };
+
+  const resetAll = () => {
+    setForm({ name: "", email: "", phone: "", message: "", hp: "" });
+    setError("");
+    setSuccess(false);
+    setStep(1);
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setError("");
     if (form.hp) return; // bot détecté
 
+    const msg = validateStep(1);
+    if (msg) {
+      setStep(1);
+      return setError(msg);
+    }
+
     const base = (import.meta.env.VITE_BACKEND_URL || "").replace(/\/$/, "");
-    const endpoint = `${base}/api/contact`; // adapte si nécessaire
+    const endpoint = `${base}/api/contact`;
 
     try {
       setSending(true);
@@ -35,134 +91,279 @@ export default function DevisLanding() {
           source: "devis-landing",
         }),
       });
+
       if (!res.ok) {
         const txt = await res.text().catch(() => "");
         throw new Error(`HTTP ${res.status} – ${txt}`);
       }
-      alert("Votre demande de devis a été envoyée. Merci !");
-      setForm({ name: "", email: "", phone: "", message: "", hp: "" });
-      setStep(1);
+
+      setSuccess(true);
     } catch (err) {
       console.error(err);
-      alert("Envoi impossible pour le moment. Réessayez plus tard.");
+      setError("Envoi impossible pour le moment. Réessaie dans un instant.");
     } finally {
       setSending(false);
     }
   };
 
-  return (
-    <section className="w-full max-w-2xl mx-auto p-6">
-      <h2 className="text-2xl font-semibold mb-4">Demande de devis</h2>
-      <form onSubmit={onSubmit} className="grid gap-6">
-        {/* Honeypot anti-bot — toujours présent, invisible */}
-        <input
-          type="text"
-          name="hp"
-          value={form.hp}
-          onChange={onChange}
-          autoComplete="off"
-          tabIndex={-1}
-          className="hidden absolute opacity-0 pointer-events-none -z-10"
-          aria-hidden="true"
-        />
+  const panelVariants = {
+    initial: { opacity: 0, y: 10, filter: "blur(6px)" },
+    animate: { opacity: 1, y: 0, filter: "blur(0px)" },
+    exit: { opacity: 0, y: -8, filter: "blur(6px)" },
+  };
 
-        {step === 1 && (
-          <div className="grid gap-4">
-            <label className="grid gap-1">
-              <span className="text-sm">Votre nom *</span>
-              <input
-                name="name"
-                type="text"
-                required
-                value={form.name}
-                onChange={onChange}
-                className="w-full rounded-lg border border-neutral-300 bg-white/5 p-3 outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Ex: Marie Dupont"
-              />
-            </label>
-            <label className="grid gap-1">
-              <span className="text-sm">Email *</span>
-              <input
-                name="email"
-                type="email"
-                required
-                value={form.email}
-                onChange={onChange}
-                className="w-full rounded-lg border border-neutral-300 bg-white/5 p-3 outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="vous@exemple.com"
-              />
-            </label>
-          </div>
-        )}
-
-        {step === 2 && (
-          <div className="grid gap-4">
-            <label className="grid gap-1">
-              <span className="text-sm">Téléphone</span>
-              <input
-                name="phone"
-                type="tel"
-                value={form.phone}
-                onChange={onChange}
-                className="w-full rounded-lg border border-neutral-300 bg-white/5 p-3 outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="+32 …"
-              />
-            </label>
-            <label className="grid gap-1">
-              <span className="text-sm">Votre message</span>
-              <textarea
-                name="message"
-                rows={5}
-                value={form.message}
-                onChange={onChange}
-                className="w-full rounded-lg border border-neutral-300 bg-white/5 p-3 outline-none focus:ring-2 focus:ring-yellow-400"
-                placeholder="Décrivez votre événement, la date, le lieu, le nombre d'invités, etc."
-              />
-            </label>
-          </div>
-        )}
-
-        {step === 3 && (
-          <div className="grid gap-2">
-            <p className="font-semibold">Récapitulatif</p>
-            <ul className="text-sm leading-6">
-              <li><strong>Nom:</strong> {form.name || "—"}</li>
-              <li><strong>Email:</strong> {form.email || "—"}</li>
-              <li><strong>Téléphone:</strong> {form.phone || "—"}</li>
-            </ul>
-          </div>
-        )}
-
-        <div className="flex items-center justify-between gap-3 pt-2">
-          <button
-            type="button"
-            onClick={prev}
-            disabled={step === 1 || sending}
-            className="rounded-lg border px-4 py-2 disabled:opacity-40"
+  if (success) {
+    return (
+      <section className="relative isolate py-14 px-4">
+        <div className="mx-auto w-full max-w-3xl luxe-card luxe-card-pad">
+          <motion.div
+            initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="grid gap-6"
           >
-            Précédent
-          </button>
+            <div>
+              <p className="luxe-kicker">Message reçu ✨</p>
+              <h1 className="luxe-title mt-2">Demande envoyée</h1>
+              <p className="luxe-subtitle">
+                Merci. On revient vers toi rapidement avec une proposition claire.
+              </p>
+            </div>
 
-          {step < 3 ? (
+            <div className="luxe-inline-success">
+              Petit tip : si tu ajoutes une date / un lieu / un nombre d’invités, on peut répondre encore plus vite.
+            </div>
+
+            <div className="luxe-cta-row">
+              <Link
+                to="/"
+                className="luxe-btn-ghost text-center"
+              >
+                Retour à l’accueil
+              </Link>
+
+              <button
+                type="button"
+                onClick={resetAll}
+                className="luxe-btn"
+              >
+                Faire une autre demande
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="relative isolate py-14 px-4">
+      <div className="mx-auto w-full max-w-3xl luxe-card luxe-card-pad">
+        <header className="mb-8">
+          <p className="luxe-kicker">Réponse rapide. Ambiance premium. Zéro friction.</p>
+          <h1 className="luxe-title mt-2">Demande de devis</h1>
+          <p className="luxe-subtitle">Quelques infos et on te répond vite avec une proposition claire.</p>
+
+          <div className="mt-6 grid gap-4">
+            <div className="luxe-progress" aria-hidden="true">
+              <div className="luxe-progress-bar" style={{ width: `${progress}%` }} />
+            </div>
+
+            <div className="flex items-center gap-3">
+              {steps.map((s) => {
+                const active = s.id === step;
+                const done = s.id < step;
+                return (
+                  <div key={s.id} className="flex items-center gap-2">
+                    <motion.span
+                      className={[
+                        "luxe-step-dot",
+                        active ? "luxe-step-dot-active" : "",
+                      ].join(" ")}
+                      animate={{
+                        scale: active ? 1.08 : done ? 1.02 : 1,
+                        opacity: active ? 1 : done ? 0.9 : 0.55,
+                      }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      aria-hidden="true"
+                    />
+                    <span className={active ? "text-white text-sm" : "text-white/50 text-sm"}>
+                      {s.label}
+                    </span>
+                    {s.id !== steps.length && <span className="text-white/20">—</span>}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </header>
+
+        <form onSubmit={onSubmit} className="grid gap-6">
+          {/* Honeypot anti-bot — toujours présent, invisible */}
+          <input
+            type="text"
+            name="hp"
+            value={form.hp}
+            onChange={onChange}
+            autoComplete="off"
+            tabIndex={-1}
+            className="hidden"
+            aria-hidden="true"
+          />
+
+          <AnimatePresence mode="wait">
+            {step === 1 && (
+              <motion.div
+                key="step-1"
+                variants={panelVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="grid gap-5"
+              >
+                <label className="grid gap-2">
+                  <span className="luxe-label">Votre nom *</span>
+                  <input
+                    name="name"
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={onChange}
+                    className="luxe-input"
+                    placeholder="Ex: Marie Dupont"
+                  />
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="luxe-label">Email *</span>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={onChange}
+                    className="luxe-input"
+                    placeholder="vous@exemple.com"
+                  />
+                </label>
+              </motion.div>
+            )}
+
+            {step === 2 && (
+              <motion.div
+                key="step-2"
+                variants={panelVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="grid gap-5"
+              >
+                <label className="grid gap-2">
+                  <span className="luxe-label">Téléphone</span>
+                  <input
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={onChange}
+                    className="luxe-input"
+                    placeholder="+32 …"
+                  />
+                </label>
+
+                <label className="grid gap-2">
+                  <span className="luxe-label">Votre message</span>
+                  <span className="luxe-hint">Dites-nous l’essentiel pour commencer…</span>
+                  <textarea
+                    name="message"
+                    rows={6}
+                    value={form.message}
+                    onChange={onChange}
+                    className="luxe-textarea"
+                    placeholder="Date, lieu, invités, ambiance, prestations souhaitées…"
+                  />
+                </label>
+              </motion.div>
+            )}
+
+            {step === 3 && (
+              <motion.div
+                key="step-3"
+                variants={panelVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="grid gap-5"
+              >
+                <div className="grid gap-3">
+                  <p className="text-white font-semibold">Récapitulatif</p>
+                  <div className="rounded-2xl border border-white/10 bg-black/25 p-4 text-white/80">
+                    <ul className="text-sm leading-7">
+                      <li>
+                        <span className="text-white/60">Nom :</span>{" "}
+                        <span className="text-white">{form.name || "—"}</span>
+                      </li>
+                      <li>
+                        <span className="text-white/60">Email :</span>{" "}
+                        <span className="text-white">{form.email || "—"}</span>
+                      </li>
+                      <li>
+                        <span className="text-white/60">Téléphone :</span>{" "}
+                        <span className="text-white">{form.phone || "—"}</span>
+                      </li>
+                      <li className="mt-2">
+                        <span className="text-white/60">Message :</span>{" "}
+                        <span className="text-white">{form.message?.trim() ? "✅" : "—"}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="luxe-divider" />
+
+                  <p className="text-white/60 text-sm">
+                    En cliquant sur <span className="text-white">Envoyer</span>, ta demande part directement à l’équipe.
+                  </p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          {error && (
+            <motion.div
+              role="alert"
+              className="luxe-inline-error"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.22, ease: "easeOut" }}
+            >
+              {error}
+            </motion.div>
+          )}
+
+          <div className="flex items-center justify-between gap-3 pt-2">
             <button
               type="button"
-              onClick={next}
-              disabled={sending}
-              className="rounded-lg bg-yellow-500 text-black px-4 py-2 hover:bg-yellow-400 disabled:opacity-50"
+              onClick={prev}
+              disabled={step === 1 || sending}
+              className="luxe-btn-ghost"
             >
-              Suivant
+              Précédent
             </button>
-          ) : (
-            <button
-              type="submit"
-              disabled={sending}
-              className="rounded-lg bg-yellow-500 text-black px-4 py-2 hover:bg-yellow-400 disabled:opacity-50"
-            >
-              {sending ? "Envoi..." : "Envoyer"}
-            </button>
-          )}
-        </div>
-      </form>
+
+            {step < 3 ? (
+              <button type="button" onClick={next} disabled={sending} className="luxe-btn">
+                Suivant
+              </button>
+            ) : (
+              <button type="submit" disabled={sending} className="luxe-btn">
+                {sending ? "Envoi..." : "Envoyer"}
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
     </section>
   );
 }

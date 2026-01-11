@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @import "./styles/skeleton.css";
 @import "./styles/cta-contrast.css";
 @import "./styles/fonts-luxe.css";
@@ -12,9 +13,8 @@
 @import "./styles/typography-fixes.css";
 @import "./styles/globalFixes.css";
 @import "./styles/luxe-wow.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@source "./**/*.{js,jsx,ts,tsx}";
+
 
 
 
@@ -28,4 +28,162 @@
 @media (prefers-reduced-motion: no-preference) {
   .animate-pulse { animation: pulse 1.2s ease-in-out infinite; }
   @keyframes pulse { 0%, 100% { opacity: .6 } 50% { opacity: .9 } }
+}
+
+/* LUXE_SCROLL_TWEAKS */
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 96px; }
+/* END LUXE_SCROLL_TWEAKS */
+
+/* ────────────────────────────────────────────────────────────────
+   LUXEEVENTS — DEVIS SCOPE (NO @APPLY, Tailwind v4 safe)
+   Applied on pages /devis via .devis-scope wrapper
+   END DEVIS SCOPE
+──────────────────────────────────────────────────────────────── */
+
+.devis-scope :is(input, select, textarea) {
+  width: 100%;
+  border-radius: 16px;
+  background: rgba(0,0,0,0.30);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.devis-scope :is(input, select, textarea)::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.devis-scope :is(input, select, textarea):focus {
+  border-color: rgba(212,175,55,0.65);
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.18);
+}
+
+.devis-scope label {
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.devis-scope :is(button, [role="button"], input[type="submit"]) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  color: #111;
+  background: linear-gradient(90deg, #f6d365, #fda085, #f6d365);
+  border: none;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.18);
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease, opacity 180ms ease;
+}
+
+.devis-scope :is(button, [role="button"], input[type="submit"]):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(212,175,55,0.25);
+  filter: saturate(1.05);
+}
+
+.devis-scope :is(button, [role="button"], input[type="submit"]):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.22), 0 14px 30px rgba(212,175,55,0.25);
+}
+
+.devis-scope :is(button, [role="button"], input[type="submit"])[disabled],
+.devis-scope :is(button, [role="button"], input[type="submit"]):disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 10px 24px rgba(212,175,55,0.10);
+}
+
+.devis-scope .actions,
+.devis-scope .buttons,
+.devis-scope .cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+html, body, #root { height: 100%; }
+
+@layer components {
+  .luxe-card {
+    @apply rounded-3xl border border-white/10 bg-black/40 backdrop-blur-xl shadow-2xl shadow-black/40;
+  }
+  .luxe-card-pad {
+    @apply p-6 md:p-10;
+  }
+  .luxe-kicker {
+    @apply text-sm text-white/70;
+  }
+  .luxe-title {
+    @apply text-3xl md:text-4xl font-semibold tracking-tight text-white;
+  }
+  .luxe-subtitle {
+    @apply mt-2 text-white/70;
+  }
+  .luxe-label {
+    @apply text-sm text-white/80;
+  }
+  .luxe-input {
+    @apply w-full rounded-2xl bg-black/35 border border-white/10 text-white placeholder-white/40 px-4 py-3 outline-none
+           focus:border-yellow-400/50 focus:ring-2 focus:ring-yellow-400/20 transition;
+  }
+  .luxe-textarea {
+    @apply w-full rounded-2xl bg-black/35 border border-white/10 text-white placeholder-white/40 px-4 py-3 outline-none
+           focus:border-yellow-400/50 focus:ring-2 focus:ring-yellow-400/20 transition;
+  }
+  .luxe-btn {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-black
+           bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300
+           shadow-lg shadow-yellow-400/20 hover:shadow-yellow-400/30 hover:-translate-y-[1px]
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/60
+           disabled:opacity-50 disabled:cursor-not-allowed transition;
+  }
+  .luxe-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold text-white
+           bg-white/10 border border-white/15 hover:bg-white/15 hover:-translate-y-[1px]
+           focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400/40
+           disabled:opacity-50 disabled:cursor-not-allowed transition;
+  }
+  .luxe-step-dot {
+    @apply w-2.5 h-2.5 rounded-full bg-white/25;
+  }
+  .luxe-step-dot-active {
+    @apply bg-yellow-400 shadow-[0_0_0_6px_rgba(250,204,21,0.15)];
+  }
+}
+
+/* LUXE_DEVIS_MOTION_UX */
+@layer components {
+  .luxe-inline-error {
+    @apply rounded-2xl border border-red-400/20 bg-red-500/10 text-red-100 px-4 py-3 text-sm;
+  }
+  .luxe-inline-success {
+    @apply rounded-2xl border border-yellow-400/20 bg-yellow-400/10 text-yellow-50 px-4 py-3 text-sm;
+  }
+  .luxe-hint {
+    @apply text-xs text-white/55 italic;
+  }
+  .luxe-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+  .luxe-progress {
+    @apply h-1.5 rounded-full bg-white/10 overflow-hidden;
+  }
+  .luxe-progress-bar {
+    @apply h-full rounded-full bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300;
+  }
+  .luxe-cta-row {
+    @apply flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between;
+  }
 }

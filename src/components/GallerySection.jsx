@@ -1,4 +1,6 @@
 import React from "react";
+import PrimaryCTA, { DEVIS_ROUTE } from "./PrimaryCTA";
+
 
 const items = [
   { title: "Mariage chic", subtitle: "Scénographie • Coordination • Détails" },
@@ -11,7 +13,7 @@ const items = [
 
 export default function GallerySection() {
   return (
-    <section id="realisations" className="relative py-20 sm:py-24">
+    <section id="gallery" className="relative py-20 sm:py-24">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/0 via-black/10 to-black/0" aria-hidden="true" />
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -30,7 +32,7 @@ export default function GallerySection() {
           </div>
 
           <a
-            href="/devis"
+            href={DEVIS_ROUTE}
             className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white border border-white/15 bg-white/5 hover:bg-white/10 backdrop-blur transition"
           >
             Parler de ton événement →
@@ -69,7 +71,7 @@ export default function GallerySection() {
 
         <div className="mt-10 sm:hidden">
           <a
-            href="/devis"
+            href={DEVIS_ROUTE}
             className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-black bg-[#D4AF37]"
           >
             Demander un devis →

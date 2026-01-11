@@ -1,6 +1,3 @@
-import "./styles/vars-or-ivoire.css";
-import "./styles/motion-guard.css";
-import "./styles/hero-or-ivoire.css";
 import "./styles/palette-or-ivoire.css";
 import "./styles/luxe-polish.css";
 import "./styles/anti-bave.css";
@@ -12,12 +9,14 @@ import ThemeProvider from "./theme/ThemeProvider";
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import HashScroller from "./components/HashScroller";
 import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+      <HashScroller offset={120} />
       <ThemeProvider><App /></ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
@@ -30,12 +29,3 @@ document.addEventListener("click",(e)=>{
   el.style.setProperty("--x", (e.clientX - r.left) + "px");
   el.style.setProperty("--y", (e.clientY - r.top) + "px");
 });
-
-// === Hydration mask: remove after first frame ===
-try {
-  queueMicrotask(() => {
-    document.documentElement.classList.remove('is-loading');
-    const s = document.getElementById('preload-hide');
-    if (s) s.remove();
-  });
-} catch (e) {}

@@ -1,9 +1,9 @@
+import HashScroller from "./components/HashScroller";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import ThemeProvider from "./theme/ThemeProvider.jsx";
 import SeoHead from "./components/SeoHead.jsx";
-import NavBar from "./components/NavBar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import ServicesSection from "./components/ServicesSection.jsx";
 import TestimonialsCarousel from "./components/TestimonialsCarousel.jsx";
@@ -27,8 +27,8 @@ function HomePage() {
       />
       <SchemaHome />
       <HeroSection />
-      <section id="services"><ServicesSection /></section>
-      <section id="temoignages"><TestimonialsCarousel /></section>
+      <section><ServicesSection /></section>
+      <section><TestimonialsCarousel /></section>
       <section id="confiance"><TrustBadges /></section>
     </main>
   );
@@ -36,8 +36,7 @@ function HomePage() {
 
 const Shell = ({ children }) => (
   <>
-    <NavBar />
-    {children}
+{children}
   </>
 );
 

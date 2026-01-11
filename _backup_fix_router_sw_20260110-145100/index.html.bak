@@ -1,0 +1,13 @@
+<!doctype html>
+<html class="antialiased" lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />    <!-- Fade-in léger au boot -->
+    <style id="preload-hide">
+      html.is-loading body{opacity:0;transition:opacity .12s ease}
+    </style>
+    </body>
+</html>

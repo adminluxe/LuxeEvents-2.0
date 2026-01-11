@@ -1,4 +1,6 @@
 import React from "react";
+import PrimaryCTA, { DEVIS_ROUTE } from "./PrimaryCTA";
+
 
 export default function HeroSection() {
   return (
@@ -20,10 +22,7 @@ export default function HeroSection() {
       />
 
       {/* Soft gold glow */}
-      <div
-        className="absolute -z-10 inset-0 opacity-70"
-        aria-hidden="true"
-      >
+      <div className="absolute -z-10 inset-0 opacity-70" aria-hidden="true">
         <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.28),transparent_60%)]" />
         <div className="absolute bottom-[-420px] right-[-220px] w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]" />
       </div>
@@ -37,7 +36,7 @@ export default function HeroSection() {
               Événements haut de gamme • Belgique & Europe
             </div>
 
-            {/* Headline (lisible + net) */}
+            {/* Headline */}
             <h1 className="mt-6 font-[500] leading-[1.05] text-white drop-shadow-[0_6px_22px_rgba(0,0,0,0.65)] text-4xl sm:text-5xl md:text-6xl">
               Le luxe à la portée de tous
               <span className="block mt-3 text-white/90 text-2xl sm:text-3xl md:text-4xl">
@@ -52,14 +51,7 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <a
-                href="/devis"
-                className="group relative inline-flex items-center justify-center rounded-full px-6 py-3 text-sm sm:text-base font-medium text-black bg-[#D4AF37] shadow-[0_18px_60px_rgba(212,175,55,0.25)] hover:shadow-[0_22px_80px_rgba(212,175,55,0.35)] transition"
-              >
-                Demander un devis
-                <span className="ml-2 opacity-80 group-hover:opacity-100 transition">→</span>
-                <span className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-black/10" />
-              </a>
+              <PrimaryCTA to={DEVIS_ROUTE} label="Demander un devis" variant="hero" />
 
               <a
                 href="#services"

@@ -1,5 +1,7 @@
 import React from "react";
 import servicesDefault, { services as servicesNamed } from "../data/services.luxe.js";
+import PrimaryCTA, { DEVIS_ROUTE } from "./PrimaryCTA";
+
 
 export default function ServicesSection() {
   const services = (servicesNamed && servicesNamed.length ? servicesNamed : servicesDefault) || [];
@@ -7,7 +9,10 @@ export default function ServicesSection() {
   return (
     <section id="services" className="relative py-20 sm:py-24">
       {/* Section backdrop */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/0 via-black/10 to-black/0" aria-hidden="true" />
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/0 via-black/10 to-black/0"
+        aria-hidden="true"
+      />
 
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex items-end justify-between gap-6">
@@ -23,13 +28,6 @@ export default function ServicesSection() {
               élégant, fluide et mémorable.
             </p>
           </div>
-
-          <a
-            href="/devis"
-            className="hidden sm:inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-black bg-[#D4AF37] hover:opacity-95 transition"
-          >
-            Devis rapide →
-          </a>
         </div>
 
         {/* Grid */}
@@ -83,14 +81,9 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Mobile CTA */}
+        {/* Mobile CTA (single source of truth) */}
         <div className="mt-10 sm:hidden">
-          <a
-            href="/devis"
-            className="inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-black bg-[#D4AF37]"
-          >
-            Demander un devis →
-          </a>
+          <PrimaryCTA to={DEVIS_ROUTE} label="Demander un devis" variant="mobile" />
         </div>
       </div>
     </section>
