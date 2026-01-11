@@ -1,5 +1,0 @@
-:root { --ux-blur: 12px; }
-.ux-glass { backdrop-filter: blur(var(--ux-blur)); -webkit-backdrop-filter: blur(var(--ux-blur)); }
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-}

@@ -55,3 +55,15 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+# --- TONTON: artifacts / backups (auto) ---
+_backup_*/
+_backup_*/**
+_backup_*
+*.bak
+*.bak_*
+*.backup
+*.backup_*
+*.orig
+*.swp
+*.tmp
+src/components/_archive/

@@ -1,3 +1,0 @@
-/* Kill-switch des guillemets injectés par ::before/::after uniquement sur la tagline du Hero */
-.hero-tagline::before,
-.hero-tagline::after { content: none !important; }
