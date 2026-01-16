@@ -8,27 +8,30 @@ export default function HeroSection() {
       id="top"
       className="relative isolate overflow-hidden min-h-[92vh] flex items-center"
     >
+
       {/* Background image */}
+      
       <div
         className="absolute inset-0 -z-20 bg-center bg-cover"
-        style={{ backgroundImage: "url(/luxeevents-bg-hero.webp)" }}
+        style={{ backgroundImage: "url(/images/hero/hero-bg.webp)" }}
         aria-hidden="true"
       />
-
-      {/* Dark + luxe gradient overlay */}
-      <div
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/55 to-black/85"
-        aria-hidden="true"
-      />
+      {/* Luxe overlays (clean, single pass) */}
+      <div className="absolute inset-0 -z-10 bg-black/55" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-black/55 to-black/75" aria-hidden="true" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.18),transparent_55%)]" aria-hidden="true" />
 
       {/* Soft gold glow */}
-      <div className="absolute -z-10 inset-0 opacity-70" aria-hidden="true">
-        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.28),transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-80" aria-hidden="true">
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.26),transparent_60%)]" />
         <div className="absolute bottom-[-420px] right-[-220px] w-[900px] h-[900px] rounded-full blur-3xl bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)]" />
       </div>
 
+
+
       <div className="w-full px-5 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        
+<div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             {/* Kicker */}
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[12px] sm:text-[13px] tracking-wide text-white/85 backdrop-blur">
