@@ -1,0 +1,13 @@
+{
+  "name": "Purple Events",
+  "short_name": "Purple Events",
+  "description": "Direction créative, coordination et production événementielle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09070b",
+  "theme_color": "#09070b",
+  "icons": [
+    { "src": "/images/purple-events-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/images/purple-events-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

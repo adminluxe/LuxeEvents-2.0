@@ -3,38 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>LuxeEvents — Événements haut de gamme</title>
-    <meta
-      name="description"
-      content="LuxeEvents : scénographie, coordination, prestataires premium. Le luxe à la portée de tous — une expérience inoubliable."
-    />
-
-    <!-- Assets -->
-    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#09070b" />
+    <meta name="color-scheme" content="dark" />
+    <meta id="seo-description" name="description" content="Purple Events imagine, coordonne et produit des événements privés, professionnels et de marque, de l’intention créative à l’orchestration du jour J." />
+    <meta id="seo-robots" name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Purple Events" />
+    <meta id="seo-og-title" property="og:title" content="Purple Events | Création & production événementielle" />
+    <meta id="seo-og-description" property="og:description" content="Purple Events imagine, coordonne et produit des événements privés, professionnels et de marque, de l’intention créative à l’orchestration du jour J." />
+    <meta id="seo-og-url" property="og:url" content="https://purpleevents.fun/" />
+    <meta id="seo-og-image" property="og:image" content="https://purpleevents.fun/images/purple-events-hero-v1.webp" />
+    <meta property="og:image:width" content="1672" />
+    <meta property="og:image:height" content="941" />
+    <meta id="seo-og-image-alt" property="og:image:alt" content="Purple Events — direction créative et production événementielle" />
+    <meta id="seo-og-locale" property="og:locale" content="fr_BE" />
+    <meta id="seo-og-locale-alternate" property="og:locale:alternate" content="en_GB" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta id="seo-twitter-title" name="twitter:title" content="Purple Events | Création & production événementielle" />
+    <meta id="seo-twitter-description" name="twitter:description" content="Purple Events imagine, coordonne et produit des événements privés, professionnels et de marque, de l’intention créative à l’orchestration du jour J." />
+    <meta id="seo-twitter-image" name="twitter:image" content="https://purpleevents.fun/images/purple-events-hero-v1.webp" />
+    <meta id="seo-twitter-image-alt" name="twitter:image:alt" content="Purple Events — direction créative et production événementielle" />
+    <link id="seo-canonical" rel="canonical" href="https://purpleevents.fun/" />
+    <link id="seo-alt-fr" rel="alternate" hreflang="fr" href="https://purpleevents.fun/" />
+    <link id="seo-alt-en" rel="alternate" hreflang="en" href="https://purpleevents.fun/en/" />
+    <link id="seo-alt-default" rel="alternate" hreflang="x-default" href="https://purpleevents.fun/" />
+    <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/images/favicon-64.png" sizes="64x64" type="image/png" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest" href="/manifest.webmanifest" />
-
-    <!-- Thème -->
-    <script src="/theme-init.js"></script>
+    <link id="seo-hero-preload" rel="preload" as="image" href="/images/purple-events-hero-v1.webp" fetchpriority="high" />
+    <title id="seo-title">Purple Events | Création & production événementielle</title>
+    <script id="seo-structured-data" type="application/ld+json">
+      {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://purpleevents.fun/#organization","name":"Purple Events","url":"https://purpleevents.fun/","logo":"https://purpleevents.fun/images/purple-orchid-emblem-v1.webp","parentOrganization":{"@type":"Organization","name":"Purple Orchid Group"}},{"@type":"WebPage","@id":"https://purpleevents.fun/#webpage","url":"https://purpleevents.fun/","name":"Purple Events | Création & production événementielle","description":"Purple Events imagine, coordonne et produit des événements privés, professionnels et de marque, de l’intention créative à l’orchestration du jour J.","inLanguage":"fr","isPartOf":{"@type":"WebSite","@id":"https://purpleevents.fun/#website","name":"Purple Events","url":"https://purpleevents.fun/"},"about":{"@id":"https://purpleevents.fun/#organization"}}]}
+    </script>
   </head>
-
   <body>
-    <!-- H1 SEO/Access (hors écran) + style explicit pour calmer MDN -->
-    <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">
-      <h1 style="font-size:48px;margin:0">
-        Le luxe à la portée de tous — Une expérience inoubliable.
-      </h1>
-      <p style="margin:0">Luxe, Excellence, Innovation.</p>
-    </div>
-
     <div id="root"></div>
-
-    <!-- App -->
+    <noscript><h1>Purple Events</h1><p>Direction créative, coordination et production d’événements privés, professionnels et de marque.</p><p>JavaScript est nécessaire pour utiliser le brief interactif.</p></noscript>
     <script type="module" src="/src/main.jsx"></script>
-
-    <!-- Anti-bave (ok en defer) -->
-    <script src="/anti-bave.js" defer></script>
-
-    <!-- IMPORTANT : aucun script SW inline ici -->
   </body>
 </html>
