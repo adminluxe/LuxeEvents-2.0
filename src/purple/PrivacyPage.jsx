@@ -28,7 +28,7 @@ export default function PrivacyPage({ language }) {
       <section className="legal-section"><h2>{page.sections.legalBasis}</h2><p>{page.legalBasisText}</p></section>
       <section className="legal-section"><h2>{page.sections.recipients}</h2><p>{page.recipientsText}</p></section>
       <section className="legal-section"><h2>{page.sections.retention}</h2><p>{retentionText}</p></section>
-      <section className="legal-section"><h2>{page.sections.rights}</h2><p>{page.rightsText} <a href="https://www.autoriteprotectiondonnees.be/" rel="noreferrer">autoriteprotectiondonnees.be</a></p></section>
+      <section className="legal-section"><h2>{page.sections.rights}</h2><p>{page.rightsText} <a href="https://cnpd.public.lu/" rel="noreferrer">cnpd.public.lu</a></p></section>
     </LegalShell>
   );
 }

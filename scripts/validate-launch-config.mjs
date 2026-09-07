@@ -22,8 +22,9 @@ const values = {
 
 const required = [
   "VITE_LEGAL_NAME",
+  "VITE_LEGAL_FORM",
   "VITE_LEGAL_ADDRESS",
-  "VITE_LEGAL_ENTERPRISE_NUMBER",
+  "VITE_LEGAL_REGISTRATION",
   "VITE_LEGAL_EMAIL",
   "VITE_LEGAL_PHONE",
   "VITE_CONTACT_RETENTION_MONTHS",
@@ -35,6 +36,13 @@ const privacyEmail = String(values.VITE_PRIVACY_EMAIL || values.VITE_LEGAL_EMAIL
 const contactEmail = String(values.VITE_CONTACT_EMAIL || "").trim();
 const contactEndpoint = String(values.VITE_CONTACT_ENDPOINT || "").trim();
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const unresolvedPattern = /(?:à compléter|a completer|en cours(?: de constitution| d.attribution)?|pending|to be assigned|tbc|placeholder)/i;
+
+for (const key of ["VITE_LEGAL_NAME", "VITE_LEGAL_FORM", "VITE_LEGAL_ADDRESS", "VITE_LEGAL_REGISTRATION"]) {
+  if (!missing.has(key) && unresolvedPattern.test(String(values[key] || ""))) {
+    failures.push(`${key} still contains provisional wording`);
+  }
+}
 
 if (!missing.has("VITE_LEGAL_EMAIL") && !emailPattern.test(String(values.VITE_LEGAL_EMAIL || ""))) failures.push("VITE_LEGAL_EMAIL is invalid");
 if (!missing.has("VITE_LEGAL_EMAIL") && !emailPattern.test(privacyEmail)) failures.push("VITE_PRIVACY_EMAIL or VITE_LEGAL_EMAIL must provide a valid privacy contact");

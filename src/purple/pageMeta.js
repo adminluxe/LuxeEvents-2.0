@@ -11,7 +11,7 @@ const alternates = {
 export const pageMeta = {
   homeFr: {
     lang: "fr",
-    locale: "fr_BE",
+    locale: "fr_LU",
     alternateLocale: "en_GB",
     socialImage,
     socialImageAlt: "Purple Events — direction créative et production événementielle",
@@ -25,7 +25,7 @@ export const pageMeta = {
   homeEn: {
     lang: "en",
     locale: "en_GB",
-    alternateLocale: "fr_BE",
+    alternateLocale: "fr_LU",
     socialImage,
     socialImageAlt: "Purple Events — creative direction and event production",
     title: "Purple Events | Creative direction & event production",
@@ -37,7 +37,7 @@ export const pageMeta = {
   },
   privacyFr: {
     lang: "fr",
-    locale: "fr_BE",
+    locale: "fr_LU",
     alternateLocale: "en_GB",
     socialImage,
     socialImageAlt: "Purple Events — direction créative et production événementielle",
@@ -51,7 +51,7 @@ export const pageMeta = {
   privacyEn: {
     lang: "en",
     locale: "en_GB",
-    alternateLocale: "fr_BE",
+    alternateLocale: "fr_LU",
     socialImage,
     socialImageAlt: "Purple Events — creative direction and event production",
     title: "Privacy policy | Purple Events",
@@ -63,7 +63,7 @@ export const pageMeta = {
   },
   cookiesFr: {
     lang: "fr",
-    locale: "fr_BE",
+    locale: "fr_LU",
     alternateLocale: "en_GB",
     socialImage,
     socialImageAlt: "Purple Events — direction créative et production événementielle",
@@ -77,7 +77,7 @@ export const pageMeta = {
   cookiesEn: {
     lang: "en",
     locale: "en_GB",
-    alternateLocale: "fr_BE",
+    alternateLocale: "fr_LU",
     socialImage,
     socialImageAlt: "Purple Events — creative direction and event production",
     title: "Cookie policy | Purple Events",
@@ -89,7 +89,7 @@ export const pageMeta = {
   },
   legalFr: {
     lang: "fr",
-    locale: "fr_BE",
+    locale: "fr_LU",
     alternateLocale: "en_GB",
     socialImage,
     socialImageAlt: "Purple Events — direction créative et production événementielle",
@@ -103,7 +103,7 @@ export const pageMeta = {
   legalEn: {
     lang: "en",
     locale: "en_GB",
-    alternateLocale: "fr_BE",
+    alternateLocale: "fr_LU",
     socialImage,
     socialImageAlt: "Purple Events — creative direction and event production",
     title: "Legal notice | Purple Events",

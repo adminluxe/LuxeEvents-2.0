@@ -10,7 +10,7 @@ La version candidate n’embarque ni mesure d’audience, ni publicité, ni pixe
 
 L’ajout futur d’un outil facultatif impose de le bloquer avant consentement, de permettre un retrait aussi simple que l’acceptation et d’actualiser la politique.
 
-Référence : Autorité de protection des données belge — https://www.autoriteprotectiondonnees.be/citoyen/cookie
+Référence : CNPD Luxembourg — https://cnpd.public.lu/fr/dossiers-thematiques/cookies0/cookies/principes-applicables.html
 
 ## Informations juridiques requises
 
@@ -18,8 +18,9 @@ Les variables suivantes doivent contenir des informations exactes avant le build
 
 ```dotenv
 VITE_LEGAL_NAME=
+VITE_LEGAL_FORM=
 VITE_LEGAL_ADDRESS=
-VITE_LEGAL_ENTERPRISE_NUMBER=
+VITE_LEGAL_REGISTRATION=
 VITE_LEGAL_EMAIL=
 VITE_LEGAL_PHONE=
 VITE_PRIVACY_EMAIL=
@@ -34,10 +35,12 @@ VITE_CONTACT_EMAIL=
 VITE_CONTACT_ENDPOINT=https://...
 ```
 
+`VITE_LEGAL_NAME` doit désigner la personne morale déjà constituée ou la personne physique réellement responsable de la publication le jour du lancement. La mention « Sàrl en cours de constitution » décrit un projet de forme sociale mais ne remplace pas l’identité de l’éditeur ni une immatriculation existante. Le gate rejette donc les formulations provisoires.
+
 Références :
 
-- SPF Économie — https://economie.fgov.be/fr/themes/line/commerce-electronique/vente-par-internet/site-dentreprise-et-comptes
-- Autorité de protection des données — https://www.autoriteprotectiondonnees.be/citoyen/declaration-de-protection-des-donnees-en-bref
+- Guichet.lu — https://guichet.public.lu/fr/entreprises/gestion-juridique-comptabilite/registre-commerce/depots-publications/immatriculation-entreprise-publication-rcs.html
+- CNPD Luxembourg — https://cnpd.public.lu/fr/dossiers-thematiques/psp/duree-conservation-donnes-service-paiement/obligation-informer.html
 
 ## SEO vérifié dans le build
 

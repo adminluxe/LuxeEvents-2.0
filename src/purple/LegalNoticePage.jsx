@@ -19,9 +19,10 @@ export default function LegalNoticePage({ language }) {
         <h2>{page.publisher}</h2>
         <p>{page.brand}</p>
         <dl className="legal-identity">
-          <div><dt>{page.labels.company}</dt><dd>{siteConfig.legalName}</dd></div>
+          <div><dt>{page.labels.publisher}</dt><dd>{siteConfig.legalName}</dd></div>
+          <div><dt>{page.labels.form}</dt><dd>{siteConfig.legalForm}</dd></div>
           <div><dt>{page.labels.address}</dt><dd>{siteConfig.legalAddress}</dd></div>
-          <div><dt>{page.labels.number}</dt><dd>{siteConfig.enterpriseNumber}</dd></div>
+          <div><dt>{page.labels.registration}</dt><dd>{siteConfig.legalRegistration}</dd></div>
           <div><dt>{page.labels.email}</dt><dd>{siteConfig.legalEmail}</dd></div>
           <div><dt>{page.labels.phone}</dt><dd>{siteConfig.legalPhone}</dd></div>
         </dl>
