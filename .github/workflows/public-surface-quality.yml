@@ -1,0 +1,31 @@
+name: Purple Events public surface quality
+
+on:
+  push:
+    branches:
+      - luxeevents-ultra-polish-v1
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@8.15.4 --activate
+      - name: Install
+        run: pnpm install --frozen-lockfile
+      - name: Static quality gate
+        run: pnpm check

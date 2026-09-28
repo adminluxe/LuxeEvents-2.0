@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-echo "Validation ESLint (src .js/.jsx)…"
-pnpm exec eslint --max-warnings=0 "src/**/*.{js,jsx}" || exit 1
