@@ -13,6 +13,8 @@ const required = [
   "mentions-legales/index.html",
   "en/legal-notice/index.html",
   "manifest.webmanifest",
+  "404.html",
+  ".htaccess",
   "robots.txt",
   "sitemap.xml",
   "images/apple-touch-icon.png",
@@ -24,6 +26,8 @@ const required = [
   "images/purple-orchid-emblem-v1.webp",
 ];
 const forbidden = [
+  /manuspre/i,
+  /manus\\.computer/i,
   /luxeevents/i,
   /luxeevents\.me/i,
   /trustpilot/i,
