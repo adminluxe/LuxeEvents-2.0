@@ -1,13 +1,13 @@
 # Purple Events — Truth Map publique
 
-Mise à jour : 7 septembre 2026.
+Mise à jour : 30 septembre 2026.
 
 ## Prouvé
 
 - Le nom de marque retenu est **Purple Events**.
 - Purple Events est présenté comme une initiative de **Purple Orchid Group**, selon la formulation fournie par le propriétaire du projet.
 - Le domaine canonique retenu est `purpleevents.fun`.
-- L’adresse annoncée est `14 rue de la Fonderie, L-1581 Luxembourg` ; les contacts annoncés sont `contact@purpleorchidgroup.com`, `support@purpleorchidgroup.com` et `+32 465 22 26 29`.
+- L’adresse annoncée est `14 rue de la Fonderie, L-1531 Luxembourg` ; les contacts annoncés sont `contact@purpleorchidgroup.com`, `support@purpleorchidgroup.com` et `+32 465 22 26 29`.
 - Purple Orchid Group est annoncée comme une Sàrl en cours de constitution ; aucune immatriculation RCS n’a été fournie à ce jalon et le site ne doit pas la présenter comme une société déjà enregistrée.
 - La branche candidate compile avec Vite et ne livre aucune occurrence de l’ancienne marque ni des preuves commerciales non vérifiées identifiées.
 - Le frontend ne charge aucun outil analytique, publicitaire, pixel marketing ou contenu social embarqué.
