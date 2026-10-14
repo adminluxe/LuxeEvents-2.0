@@ -28,6 +28,6 @@ jobs:
           corepack enable
           corepack prepare pnpm@8.15.4 --activate
       - name: Install
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --ignore-scripts
       - name: Static quality gate
         run: pnpm check
